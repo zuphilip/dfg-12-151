@@ -75,9 +75,7 @@ Darüber hinaus eingesetzte kontrollierte Vokabulare, z.B. Iconclass zur Bilders
   * METS/TEI für Handschriften 
   * EAD oder SAFTXML für Archivmaterial 
   * LIDO für (i.d.R. unikale) bildhafte und dreidimensionale Objekte 
-
-Die bereitgestellten Metadaten müssen gegen das jeweilige XML Schema valide sein und sind darüber hinaus auf semantische Korrektheit zu überprüfen. 
-
+* Die bereitgestellten Metadaten müssen gegen das jeweilige XML Schema valide sein und sind darüber hinaus auf semantische Korrektheit zu überprüfen. 
 * Die Publikation der deskriptiven Metadaten über eine OAI-Schnittstelle ist verpflichtend, wahlweise im eigenen System oder über ein geeignetes Zielportal. (? 2.3.1) 
 * Der Nachweis der Digitalisate und Metadaten muss bei Bibliotheksgut entweder durch Katalogisierung der elektronischen Ausgabe oder durch Angabe der PURL der Bilddateien bzw. Angabe einer persistenten Verknüpfung im Katalog (OPAC, Verbundsystem) erreicht werden. 
 Von Antragstellern aus universitären Einrichtungen wird erwartet, dass sie die Frage der Katalogisierung mit ihren örtlichen Bibliotheken abstimmen bzw. durch diese durchführen lassen. 
@@ -105,7 +103,8 @@ Für Druckwerke ab Erscheinungsjahr 1850 gilt verpflichtend, dass Volltext herge
 * Um eine gewisse Einheitlichkeit bei der Beurteilung der Textgenauigkeit zugrunde legen zu können, werden Antragsteller gebeten, diesbezügliche Angaben hinsichtlich der Buchstabengenauigkeit zu machen, d.h. mangelhafte Worttrennungen und Layoutfehler unberücksichtigt zu lassen. Stichproben sollten sich an dem in 2.4.1 beschriebenen statistischen Verfahren orientieren. (? 2.4.1) 
 * Bezüglich der Zeichencodierung wird empfohlen, die Texte in Unicode abzuspeichern. Zu favorisieren ist UTF-8. (? 2.4.2) 
 * Wenn nicht triftige Gründe dagegen sprechen, müssen Volltexte von Drucken und Handschriften nach dem Modell der Text Encoding Initiative (TEI) kodiert bzw. mit Markup versehen werden. (? 2.4.3) 
-* In manchen Fällen ist es bei der Präsentation eines Volltextes wichtig, das Layout eines Dokumentes langfristig zu sichern. Die Praxisregeln empfehlen bevorzugt für diese Fälle den Einsatz einer geeigneten Formatierungssprache (z.B. XSLT, XSL-FO, XQuery, CSS), die die Unabhängigkeit von spezieller Software weitgehend sicherstellt. Falls eine Archivierung des Formats mit XML-Techniken aus nachvollziehbaren Gründen nicht möglich ist, können Layoutinformationen zu Textdokumenten auch in PDF nach der ISO-Norm 19005-1 archiviert werden. PDF-Dateien sind aber, wie in 2.4.2. dargelegt, kein Ersatz für eine Bereitstellung der mit Markup versehene Volltext in XML. (? 2.4.4) 
+* In manchen Fällen ist es bei der Präsentation eines Volltextes wichtig, das Layout eines Dokumentes langfristig zu sichern. Die Praxisregeln empfehlen bevorzugt für diese Fälle den Einsatz einer geeigneten Formatierungssprache (z.B. XSLT, XSL-FO, XQuery, CSS), die die Unabhängigkeit von spezieller Software weitgehend sicherstellt. 
+Falls eine Archivierung des Formats mit XML-Techniken aus nachvollziehbaren Gründen nicht möglich ist, können Layoutinformationen zu Textdokumenten auch in PDF nach der ISO-Norm 19005-1 archiviert werden. PDF-Dateien sind aber, wie in 2.4.2. dargelegt, kein Ersatz für eine Bereitstellung der mit Markup versehene Volltext in XML. (? 2.4.4) 
 * Im Sinne des open access und der open source wird erwartet, dass maschinenlesbare Volltexte bzw. das den Volltexten zu Grunde liegende XML sowie XSLT-Skripte und DTDs oder XML-Schema-Dateien unter einer Creative Commons-Lizenz angeboten werden. (? 5.1) 
 
 
@@ -124,7 +123,8 @@ Es sei darauf hingewiesen, dass Digitalisierungsprojekte aus Sicht der DFG stets
 Dabei wird begrüßt, wenn sich kleinere Einrichtungen der Kompetenz und der Dienstleistung größerer Einrichtungen bedienen. (? 2.5) 
 
 Anträge müssen nachvollziehbare Aussagen zur institutionellen Langzeitsicherung und Archivierung enthalten.
-Digitalisate sind in redundanter Form zu archivieren. (? 2.5) Da die Langzeitarchivierung digitaler Medien ein bisher noch nicht abschließend diskutierter Bereich ist und die Konzepte sowie die angewandte Technik stetig voranschreiten, ist es nötig, sich jeweils einen aktuellen Überblick über dieses Thema zu verschaffen.
+Digitalisate sind in redundanter Form zu archivieren. (? 2.5) 
+Da die Langzeitarchivierung digitaler Medien ein bisher noch nicht abschließend diskutierter Bereich ist und die Konzepte sowie die angewandte Technik stetig voranschreiten, ist es nötig, sich jeweils einen aktuellen Überblick über dieses Thema zu verschaffen.
 Als Einstiegspunkt in das Thema eignet sich das Kompetenznetzwerk Nestor. (? 2.5) 
 
 
