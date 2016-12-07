@@ -6,55 +6,55 @@ DFG-Vordruck 12.151 – 12/16 – Praxisregeln „Digitalisierung“
 
 Vorbemerkung zu den Praxisregeln „Digitalisierung“ 4 
 
-1. Prüfliste für Antragstellende und für die Begutachtung 4 
-  1.1 Allgemeine technische Abläufe/Voraussetzungen 5 
-  1.2 Technische Parameter der digitalen Reproduktion 6 
-  1.3 Metadaten 6 
-  1.4 Volltextgenerierung 8 
-  1.5 Langzeitverfügbarkeit 8 
-  1.6 Organisatorische Fragen 9 
-  1.7 Zitieren, persistente Adressierung 9 
-  1.8 Bereitstellung der Metadaten und Digitalisate für die Öffentlichkeit 9 
-2. Ziele und Auswahl 11 
-  2.1 Ziele 11 
-  2.2 Auswahl 12 
-  2.3 Dublettenprüfung und Datenabgleich bei der Retrodigitalisierung publizierter Texte 13 
-3. Digitalisierung 13 
-  3.1 Bereitstellung der Materialien, konservatorische Prüfung 14 
-  3.2 Technische Parameter der digitalen Reproduktion 14 
-    3.2.1 Allgemeine Erläuterungen und Parameter 14 
-      3.2.1.1 Auflösung 15 
-      3.2.1.2 Farbtiefe 16 
-      3.2.1.3 Digitaler Aufnahmeablauf 17 
-      3.2.1.4 Dateiformate 20 
-    3.2.2 Materialspezifische Parameter 22 
-      3.2.2.1 Textwerke 22 
-      3.2.2.2 Grafische Darstellungen 23 
-      3.2.2.3 Fotografien 23 
-      3.2.2.4 Mikroformen 26 
-      3.2.2.5 Dreidimensionale Objekte 26 
-  3.3 Metadaten 30 
-    3.3.1 Erschließung, deskriptive Metadaten 31 
-    3.3.2 Strukturelle Metadaten für digitale Faksimiles 32 
-    3.3.3 Sammlungs- und Bestandsbeschreibung 33 
-    3.3.4 Austausch und Weitergabe der Metadaten 33 
-  3.4 Volltextgenerierung 34 
-    3.4.1 Texterfassung 34 
-    3.4.2 Zeichenkodierung 37 
-    3.4.3 Markup von Volltexten 38 
-    3.4.4 Layout 38 
-  3.5 Langzeitverfügbarkeit 39 
-4. Organisatorische Fragen – Eigendigitalisierung versus Digitalisierung in Dienstleistung 40 
-5. Zitieren digitaler Ressourcen, persistente Adressierung 41 
-6. Bereitstellung der Projektergebnisse für die Öffentlichkeit 42 
-  6.1 Rechte, Lizenzierung und Open Access 42 
-  6.2 Mindestanforderungen für die Bereitstellungssysteme von Digitalisaten 44 
-    6.2.1 Funktionalitätsanforderungen 44 
-    6.2.2 Technische Mindestanforderungen 45 
-7. Präsentationsstandards für Textwerke, DFG-Viewer 45 
-  7.1 Basisanforderungen und Architektur 46 
-  7.2 Funktionalitätsanforderungen 46 
-  7.3 DFG-Viewer 47 
+* 1. Prüfliste für Antragstellende und für die Begutachtung 4 
+  * 1.1 Allgemeine technische Abläufe/Voraussetzungen 5 
+  * 1.2 Technische Parameter der digitalen Reproduktion 6 
+  * 1.3 Metadaten 6 
+  * 1.4 Volltextgenerierung 8 
+  * 1.5 Langzeitverfügbarkeit 8 
+  * 1.6 Organisatorische Fragen 9 
+  * 1.7 Zitieren, persistente Adressierung 9 
+  * 1.8 Bereitstellung der Metadaten und Digitalisate für die Öffentlichkeit 9 
+* 2. Ziele und Auswahl 11 
+  * 2.1 Ziele 11 
+  * 2.2 Auswahl 12 
+  * 2.3 Dublettenprüfung und Datenabgleich bei der Retrodigitalisierung publizierter Texte 13 
+* 3. Digitalisierung 13 
+  * 3.1 Bereitstellung der Materialien, konservatorische Prüfung 14 
+  * 3.2 Technische Parameter der digitalen Reproduktion 14 
+    * 3.2.1 Allgemeine Erläuterungen und Parameter 14 
+      * 3.2.1.1 Auflösung 15 
+      * 3.2.1.2 Farbtiefe 16 
+      * 3.2.1.3 Digitaler Aufnahmeablauf 17 
+      * 3.2.1.4 Dateiformate 20 
+    * 3.2.2 Materialspezifische Parameter 22 
+      * 3.2.2.1 Textwerke 22 
+      * 3.2.2.2 Grafische Darstellungen 23 
+      * 3.2.2.3 Fotografien 23 
+      * 3.2.2.4 Mikroformen 26 
+      * 3.2.2.5 Dreidimensionale Objekte 26 
+  * 3.3 Metadaten 30 
+    * 3.3.1 Erschließung, deskriptive Metadaten 31 
+    * 3.3.2 Strukturelle Metadaten für digitale Faksimiles 32 
+    * 3.3.3 Sammlungs- und Bestandsbeschreibung 33 
+    * 3.3.4 Austausch und Weitergabe der Metadaten 33 
+  * 3.4 Volltextgenerierung 34 
+    * 3.4.1 Texterfassung 34 
+    * 3.4.2 Zeichenkodierung 37 
+    * 3.4.3 Markup von Volltexten 38 
+    * 3.4.4 Layout 38 
+  * 3.5 Langzeitverfügbarkeit 39 
+* 4. Organisatorische Fragen – Eigendigitalisierung versus Digitalisierung in Dienstleistung 40 
+* 5. Zitieren digitaler Ressourcen, persistente Adressierung 41 
+* 6. Bereitstellung der Projektergebnisse für die Öffentlichkeit 42 
+  * 6.1 Rechte, Lizenzierung und Open Access 42 
+  * 6.2 Mindestanforderungen für die Bereitstellungssysteme von Digitalisaten 44 
+    * 6.2.1 Funktionalitätsanforderungen 44 
+    * 6.2.2 Technische Mindestanforderungen 45 
+* 7. Präsentationsstandards für Textwerke, DFG-Viewer 45 
+  * 7.1 Basisanforderungen und Architektur 46 
+  * 7.2 Funktionalitätsanforderungen 46 
+  * 7.3 DFG-Viewer 47 
 * Anhang A: METS/MODS-Profil für die Darstellung im DFG-Viewer und Übermittlung per OAI 
 * Anhang B: METS/TEI-Spezifikation für die Darstellung von digitalisierten Handschriften 
 * Anhang C: LIDO-Kernelemente für die Publikation 
