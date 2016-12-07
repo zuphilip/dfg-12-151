@@ -79,16 +79,20 @@ Darüber hinaus eingesetzte kontrollierte Vokabulare, z.B. Iconclass zur Bilders
 Die bereitgestellten Metadaten müssen gegen das jeweilige XML Schema valide sein und sind darüber hinaus auf semantische Korrektheit zu überprüfen. 
 
 * Die Publikation der deskriptiven Metadaten über eine OAI-Schnittstelle ist verpflichtend, wahlweise im eigenen System oder über ein geeignetes Zielportal. (? 2.3.1) 
-
-* Der Nachweis der Digitalisate und Metadaten muss bei Bibliotheksgut entweder durch Katalogisierung der elektronischen Ausgabe oder durch Angabe der PURL der Bilddateien bzw. Angabe einer persistenten Verknüpfung im Katalog (OPAC, Verbundsystem) erreicht werden. Von Antragstellern aus universitären Einrichtungen wird erwartet, dass sie die Frage der Katalogisierung mit ihren örtlichen Bibliotheken abstimmen bzw. durch diese durchführen lassen. Der Nachweis digitalisierter Drucke im Zentralen Verzeichnis digitalisierter Drucke (ZVDD) wird erwartet. Materialien, die nicht in bibliothekarische Nachweisinstrumente eingebracht werden können, sollten in geeigneten fachlichen oder fachübergreifenden Online-Anwendungen präsentiert werden. Die Einbringung der Daten in die Deutsche Digitale Bibliothek (DDB) sowie die Europeana wird allen Projekten empfohlen. (? 2.3.1) 
-
-* Aus sämtlichen in übergeordnete Datenbanksysteme eingepflegten Daten oder Metadaten eines Projekts muss die Projektzugehörigkeit eindeutig hervorgehen. Es obliegt dem Datenbanksystem gegebenfalls sicherzustellen, dass diese Informationen durch einen Suchlink oder andere geeignete Filter bzw. Suchbedingungen selektiert werden können, um das Arbeitsergebnis überprüfen und dem von der DFG geförderten Projekt eindeutig zuordnen zu können. (? 2.3) 
-
+* Der Nachweis der Digitalisate und Metadaten muss bei Bibliotheksgut entweder durch Katalogisierung der elektronischen Ausgabe oder durch Angabe der PURL der Bilddateien bzw. Angabe einer persistenten Verknüpfung im Katalog (OPAC, Verbundsystem) erreicht werden. 
+Von Antragstellern aus universitären Einrichtungen wird erwartet, dass sie die Frage der Katalogisierung mit ihren örtlichen Bibliotheken abstimmen bzw. durch diese durchführen lassen. 
+Der Nachweis digitalisierter Drucke im Zentralen Verzeichnis digitalisierter Drucke (ZVDD) wird erwartet. Materialien, die nicht in bibliothekarische Nachweisinstrumente eingebracht werden können, sollten in geeigneten fachlichen oder fachübergreifenden Online-Anwendungen präsentiert werden. 
+Die Einbringung der Daten in die Deutsche Digitale Bibliothek (DDB) sowie die Europeana wird allen Projekten empfohlen. (? 2.3.1) 
+* Aus sämtlichen in übergeordnete Datenbanksysteme eingepflegten Daten oder Metadaten eines Projekts muss die Projektzugehörigkeit eindeutig hervorgehen. 
+Es obliegt dem Datenbanksystem gegebenfalls sicherzustellen, dass diese Informationen durch einen Suchlink oder andere geeignete Filter bzw. Suchbedingungen selektiert werden können, um das Arbeitsergebnis überprüfen und dem von der DFG geförderten Projekt eindeutig zuordnen zu können. (? 2.3) 
 * Die Ablieferung an die genannten Portale sollte gemäß den Standardformaten möglichst über OAI erfolgen. (? 2.3.1) 
-
-* Die Entscheidung über die Erstellung struktureller Metadaten ist immer eine material- und projektspezifische. Falls strukturelle Metadaten Verwendung finden, wird die Konsultation der über die Website des DFG-Viewers zugänglichen Liste von Bezeichnungen erwartet. Empfohlen wird nach dem derzeitigen Stand eine Orientierung an METS oder TEI, wobei der DFG-Viewer bei textuellen Materialien auf jeden Fall unterstützt werden muss. (? 2.3.2) 
-
-* Es wird erwartet, dass Digitalisierungsprojekte mindestens Gegenstand und Umfang der jeweiligen Material- bzw. Objektauswahl auf einer Seite im Netz, möglichst auch in Englisch, darstellen. Ebenfalls empfiehlt sich ein Wikipedia-Artikel, sobald erste Projektergebnisse online sind. Erwartet wird darüber hinaus eine normierte Sammlungsbeschreibung (collection level description) in XML, um diese Informationen in Zukunft besser in nationalen oder internationalen Portalen zusammenführen und gezielt recherchieren zu können. Diese Beschreibung kann gemäß dem Dublin Core Collections Application Profile oder in demselben Metadatenstandard erfolgen, in dem auch die Objektbeschreibungen verfügbar gemacht werden: METS, MODS oder TEI-Header, EAD/SAFT sowie LIDO bieten entsprechende Möglichkeiten. (? 2.3.3 sowie Anhang D) 
+* Die Entscheidung über die Erstellung struktureller Metadaten ist immer eine material- und projektspezifische. 
+Falls strukturelle Metadaten Verwendung finden, wird die Konsultation der über die Website des DFG-Viewers zugänglichen Liste von Bezeichnungen erwartet. 
+Empfohlen wird nach dem derzeitigen Stand eine Orientierung an METS oder TEI, wobei der DFG-Viewer bei textuellen Materialien auf jeden Fall unterstützt werden muss. (? 2.3.2) 
+* Es wird erwartet, dass Digitalisierungsprojekte mindestens Gegenstand und Umfang der jeweiligen Material- bzw. Objektauswahl auf einer Seite im Netz, möglichst auch in Englisch, darstellen. 
+Ebenfalls empfiehlt sich ein Wikipedia-Artikel, sobald erste Projektergebnisse online sind. 
+Erwartet wird darüber hinaus eine normierte Sammlungsbeschreibung (collection level description) in XML, um diese Informationen in Zukunft besser in nationalen oder internationalen Portalen zusammenführen und gezielt recherchieren zu können. 
+Diese Beschreibung kann gemäß dem Dublin Core Collections Application Profile oder in demselben Metadatenstandard erfolgen, in dem auch die Objektbeschreibungen verfügbar gemacht werden: METS, MODS oder TEI-Header, EAD/SAFT sowie LIDO bieten entsprechende Möglichkeiten. (? 2.3.3 sowie Anhang D) 
 
 [58] http://www.zvdd.de/ 
 
@@ -149,26 +153,18 @@ Alle Projekte sind so anzulegen, dass die Ergebnisse der Forschung frühzeitig u
 
 * Bereits mit Beginn der Projektplanung, spätestens aber zum Zeitpunkt der Antragstellung muss eine Rechteklärung bezüglich der zu digitalisierenden Materialien erfolgt sein.
 Insbesondere eventuell vorliegende Urheber-, Persönlichkeits- und Leistungsschutzrechte müssen dabei berücksichtigt werden. (? 5.1) 
-
 * Im Sinne des open access und der open source wird erwartet, dass alle Metadaten (deskriptive und strukturelle) und maschinenlesbaren Volltexte bzw. das den Volltexten zu Grunde liegende XML sowie XSLT-Skripte und DTDs oder XML-Schema-Dateien unter einer Creative Commons-Lizenz angeboten werden. (? 5.1) 
-
 * Darüber hinaus sollten Images in einer Form bereit gestellt werden, die eine vollumfängliche wissenschaftliche Nachnutzung in anderen Forschungskontexten erlaubt. (? 5.1) 
-
 * Bei Projekten, in denen nicht nur gemeinfreie Materialien digitalisiert werden und daher mit kommerziellen Partnern oder Verlagen zusammengearbeitet wird, kann eine verzögerte Publikation (moving wall) von bis zu einem Jahr nach Projektende vereinbart werden. (? 5.1)
 
 
 Digitalisate sollen im Regelfall über unterschiedliche Wege zugänglich sein: (? 5.2.1) 
 
 * über die Website der anbietenden Institution 
-
 * über eine OAI-Schnittstelle 
-
 * über den lokal implementierten oder an einem anderen Ort betriebenen „DFG-Viewer“, sofern für das angebotene Material zutreffend 
-
 * über eine Suchanfrage an den lokalen und regionalen Bibliothekskatalog / an die jeweilige materialspezifische Online-Anwendung 
-
 * sofern vorhanden über eines der von der DFG geförderten, materialspezifischen Portale, die einen integrierten Zugriff auf alle im DFG-Programm geförderten digitalen Sammlungen ermöglichen bzw. ein gemeinsames Portal der „Virtuellen Fachbibliotheken“ 
-
 * über Internet-Suchmaschinen 
 
 Alle Materialien sind in einer für wissenschaftliche Zwecke hinreichend guten Qualität anzubieten und mit intuitiv zu bedienenden Navigationsmöglichkeiten zu versehen, so dass die Benutzung für die fragliche Zielgruppe und auf an den Hochschulen üblicherweise vorhandenem Equipment mühelos möglich ist.
@@ -183,10 +179,7 @@ Dies erfolgt im Fall von Bilddigitalisaten in der Regel durch das Hinzurechnen e
 Im Regelfall – wenn die Natur der Digitalisate einen Teil dieses Leistungsspektrums nicht implizit ausschließt – wird erwartet, dass ein Digitalisierungsprojekt Pläne für folgende öffentlich zugängliche Schnittstellen bereitstellt: 
 
 * Einen selbständigen Server, der das digitalisierte Material mit zu seiner Nutzung notwendigen Instrumenten bereitstellt. 
-
 * Alle Digitalisate sind so anzubieten, dass langfristig zitierfähige URLs möglichst niedriger Granularität entstehen.
 Die Form, in der zitiert werden soll, ist deutlich anzuzeigen. 
-
 * Eine Schnittstelle im technischen Sinn, die einem für den jeweiligen Materialbereich von der DFG geförderten Portal den Zugriff auf alle im Rahmen des Projektes erstellten Metadaten ermöglicht, insbesondere eine OAI-Schnittstelle, die neben Dublin Core METS/MODS-, METS/TEI- oder METS/EAD-Metadaten an geeignete Harvester liefert. 
-
 * Geeignete Maßnahmen, die dazu führen, dass die Metadaten von Suchmaschinen gefunden werden. 
