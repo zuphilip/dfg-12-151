@@ -7,7 +7,7 @@ Forks/Branches gespeichert:
 | Version | Fork/Branch | Original-PDF |
 |---------|-------------|--------------|
 | `12/2016` | [`2016-12`](https://github.com/zuphilip/dfg-12-151/tree/2016-12) | [DFG-Webseite](http://www.dfg.de/formulare/12_151/12_151_de.pdf) |
-| `02/2013` | [`2013-02`](https://github.com/zuphilip/dfg-12-151/tree/2016-12) | [WayBackMachine](http://web.archive.org/web/20160913195655/http://www.dfg.de/formulare/12_151/12_151_de.pdf) |
+| `02/2013` | [`2013-02`](https://github.com/zuphilip/dfg-12-151/tree/2013-02) | [WayBackMachine](http://web.archive.org/web/20160913195655/http://www.dfg.de/formulare/12_151/12_151_de.pdf) |
 
 Das Ziel hier ist auch, die Unterschiede zwischen den verschiedenen Versionen relativ
 komfortabel aufzuzeigen.
