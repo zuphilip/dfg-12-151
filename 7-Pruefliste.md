@@ -2,9 +2,9 @@
 
 Wie aus den bisherigen Kapiteln ersichtlich wird, bestehen bei der Planung von Digitalisierungsprojekten zahlreiche Wahlmöglichkeiten.
 Eine rein mechanische Verpflichtung auf ganz bestimmte Standards würde daher eine unzulässige Einschränkung der zu fördernden Projekte bedeuten und deren dynamische Weiterentwicklung beschränken.
-Andererseits sollte klar werden, in welchen Bereichen Risiken für die Projektplanung und den Projektverlauf liegen. 
-
+Andererseits sollte klar werden, in welchen Bereichen Risiken für die Projektplanung und den Projektverlauf liegen.
 Die folgende Prüfliste ist daher folgendermaßen zu verstehen: 
+
 * Bei allen Anträgen mit Digitalisierungskomponenten werden unabhängig von ihrer inhaltlichen Begutachtung die vorgeschlagenen technischen Konzepte geprüft. 
 * Darüber hinaus wird geprüft, ob die gegebenenfalls notwendigen Rechteklärungen erfolgt sind, die eine vollumfängliche Nachnutzbarkeit der Digitalisate erlauben. 
 * Antragsteller müssen in ihren Anträgen nachvollziehbar belegen, dass die Durchführung des Projekts die im Folgenden aufgelisteten Standards einhält. 
@@ -98,7 +98,10 @@ Diese Beschreibung kann gemäß dem Dublin Core Collections Application Profile 
 ## Volltextgenerierung 
 
 Von allen Anträgen zur Digitalisierung textueller Materialen wird eine Auseinandersetzung mit Möglichkeiten der Volltextbereitstellung erwartet.
-Für Druckwerke ab Erscheinungsjahr 1850 gilt verpflichtend, dass Volltext hergestellt werden muss und eine bloße Bilddigitalisierung nicht ausreicht. (? 2.4) Volltexte umfassen die Zeichen der Vorlage, gegebenenfalls in den Text eingetragene Auszeichnungen bzw. Markup-Daten zur Markierung von Strukturmerkmalen sowie Metadaten, die üblicherweise Teil der gleichen Datei sind. (? 2.4) 
+Für Druckwerke ab Erscheinungsjahr 1850 gilt verpflichtend, dass Volltext hergestellt werden muss und eine bloße Bilddigitalisierung nicht ausreicht. (? 2.4) 
+
+Volltexte umfassen die Zeichen der Vorlage, gegebenenfalls in den Text eingetragene Auszeichnungen bzw. Markup-Daten zur Markierung von Strukturmerkmalen sowie Metadaten, die üblicherweise Teil der gleichen Datei sind. (? 2.4) 
+
 * Die Herstellung von Volltext kann auf zwei Wegen erfolgen: entweder durch OCR oder durch Abschreiben bzw. Transkription. (? 2.4.1) 
 * Um eine gewisse Einheitlichkeit bei der Beurteilung der Textgenauigkeit zugrunde legen zu können, werden Antragsteller gebeten, diesbezügliche Angaben hinsichtlich der Buchstabengenauigkeit zu machen, d.h. mangelhafte Worttrennungen und Layoutfehler unberücksichtigt zu lassen. Stichproben sollten sich an dem in 2.4.1 beschriebenen statistischen Verfahren orientieren. (? 2.4.1) 
 * Bezüglich der Zeichencodierung wird empfohlen, die Texte in Unicode abzuspeichern. Zu favorisieren ist UTF-8. (? 2.4.2) 
@@ -124,8 +127,9 @@ Dabei wird begrüßt, wenn sich kleinere Einrichtungen der Kompetenz und der Die
 
 Anträge müssen nachvollziehbare Aussagen zur institutionellen Langzeitsicherung und Archivierung enthalten.
 Digitalisate sind in redundanter Form zu archivieren. (? 2.5) 
+
 Da die Langzeitarchivierung digitaler Medien ein bisher noch nicht abschließend diskutierter Bereich ist und die Konzepte sowie die angewandte Technik stetig voranschreiten, ist es nötig, sich jeweils einen aktuellen Überblick über dieses Thema zu verschaffen.
-Als Einstiegspunkt in das Thema eignet sich das Kompetenznetzwerk Nestor. (? 2.5) 
+Als Einstiegspunkt in das Thema eignet sich das Kompetenznetzwerk Nestor. (? 2.5)
 
 
 ## Organisatorische Fragen 
@@ -133,7 +137,6 @@ Als Einstiegspunkt in das Thema eignet sich das Kompetenznetzwerk Nestor. (? 2.5
 Die Entscheidung darüber, ob ein Vorhaben als Inhouse-Projekt konzipiert oder ob auf das Angebot eines Dienstleisters zurückgegriffen wird, ist immer eine projektspezifische Entscheidung, die allein in die Verantwortung der Antragsteller fällt.
 Bei der Zusammenarbeit mit Dienstleistern muss die projektnehmende Einrichtung deutlich machen, dass sie ein Projekt kompetent begleiten kann.
 In Verträgen müssen Leistungen exakt festgelegt werden. 
-
 Die DFG erwartet, dass ein angemessener Prozentsatz des Rechnungsbetrags als Sicherheit zurückbehalten und erst nach einer durchgeführten Qualitätskontrolle zur Auszahlung an das Dienstleistungsunternehmen kommt. (? 3) 
 
 
