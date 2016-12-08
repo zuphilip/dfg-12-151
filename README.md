@@ -32,9 +32,11 @@ die Unbennung als ersten Commit einzeln zu machen und die gesamten restlichen Ä
 Datei in genau einem Commit, welcher dann auch schön die Änderungen über `git diff <commit>`
 enthält.
 
-* [0 TOC und Vorbemerkungen](https://github.com/zuphilip/dfg-12-151/blob/2016-12/0-TOC-Vorbemerkungen.md) (aus [2013er Version Kapitel 0](https://github.com/zuphilip/dfg-12-151/blob/2013-02/0-TOC-Vorbemerkungen.md)): [DIFF](https://github.com/zuphilip/dfg-12-151/commit/6b6d0617be3a200bc4ca6bbe4b4a757615e92faa?short_path=4cd65fa#diff-4cd65faa2464fd51cf1567ae298f3117)
-* [1 Prüfliste](https://github.com/zuphilip/dfg-12-151/blob/2016-12/1-Pruefliste.md) (aus [2013er Version Kapitel 7](https://github.com/zuphilip/dfg-12-151/blob/2013-02/7-Pruefliste.md)): [DIFF](https://github.com/zuphilip/dfg-12-151/commit/96a728cedf59bf19e9e904c3f32027698afc7fb0?short_path=bb7a226#diff-bb7a2265329e3e3855a69b992180a3c1)
-* [2 Ziele und Auswahl](https://github.com/zuphilip/dfg-12-151/blob/2016-12/2-Ziele-Auswahl.md) (aus [2013er Version Kapitel 1](https://github.com/zuphilip/dfg-12-151/blob/2013-02/1-Ziele-Auswahl.md)): [DIFF](https://github.com/zuphilip/dfg-12-151/commit/1fdd6fa92bd0da621634abb724afabbe3df094ab?short_path=63c0d40#diff-63c0d40236919f36e08f65d60a6bdc9c)
+|Kapitel in der 2016er Version| DIFF | zugehöriges Kapitel der 2013 Version|
+|---|---|---|
+| [0 TOC und Vorbemerkungen](https://github.com/zuphilip/dfg-12-151/blob/2016-12/0-TOC-Vorbemerkungen.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/6b6d0617be3a200bc4ca6bbe4b4a757615e92faa?short_path=4cd65fa#diff-4cd65faa2464fd51cf1567ae298f3117) :arrow_forward: | [Kapitel 0](https://github.com/zuphilip/dfg-12-151/blob/2013-02/0-TOC-Vorbemerkungen.md) |
+| [1 Prüfliste](https://github.com/zuphilip/dfg-12-151/blob/2016-12/1-Pruefliste.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/96a728cedf59bf19e9e904c3f32027698afc7fb0?short_path=bb7a226#diff-bb7a2265329e3e3855a69b992180a3c1) :arrow_forward: | [Kapitel 7](https://github.com/zuphilip/dfg-12-151/blob/2013-02/7-Pruefliste.md) |
+| [2 Ziele und Auswahl](https://github.com/zuphilip/dfg-12-151/blob/2016-12/2-Ziele-Auswahl.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/1fdd6fa92bd0da621634abb724afabbe3df094ab?short_path=63c0d40#diff-63c0d40236919f36e08f65d60a6bdc9c) :arrow_forward: | [Kapitel 1](https://github.com/zuphilip/dfg-12-151/blob/2013-02/1-Ziele-Auswahl.md) |
 
 (weitere Kapitel folgen noch)
 
