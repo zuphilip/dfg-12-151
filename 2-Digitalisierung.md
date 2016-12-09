@@ -83,6 +83,7 @@ Jedoch können höhere Auflösungen notwendig sein, wenn bildwichtige Details mi
 Bei einem Flächensensor mit 3.800 x 5.600 Pixeln ergibt sich also nach der Beziehung Kamerapixel/Zielauflösung in dpi = Zielgröße in inch folgende Ausgabegröße bei 300 dpi: 
 
 5600/300 = 18,7 inch x 2,54 cm/inch = 47 cm 
+
 3800/300 = 12,7 inch x 2,54 cm/inch = 32 cm 
 
 Hinweise für eine gegebenenfalls sinnvolle Abweichung von der grundsätzlichen Auflösungsempfehlung von 300 dpi bezogen auf das Vorlagenformat werden nachstehend bei den materialspezifischen Parametern genannt. (Vgl. Kapitel 2.2.2) 
@@ -258,6 +259,7 @@ Nach heutigem Stand sind Tonwerte von 95 % für Schwarz und 5 % für Weiß diffe
 Als maximale Helligkeitswerte empfehlen sich: 
 
 Schwarz:  RGB 16/16/16, Graustufen 90 % 
+
 Weiß:  RGB 232/232/232, Graustufen 10 % 
 
 Bei Reproduktionen von zweidimensionalen Vorlagen sind Freisteller so zu gestalten, dass die gesamte Vorlage mit leichtem, umlaufendem Rand abgebildet wird.
@@ -279,7 +281,6 @@ Dabei ist zu beachten, dass eine Farbtemperatur von 5.800 K statt 5.000 K am Mon
 Das Schweizer Kompetenzzentrum für Medien- und Druckereitechnologie empfiehlt für eine Kalibration die folgenden Eckwerte: [13] 
  
 * Luminanz: mindestens 120 cd/m^2
- 
 * Weißpunkt: 5800 K mit chromatischer Adaption 
 * Gradation: 1.8 Gamma oder alternativ L* 
 * Farbräume: ISOcoated v2 und ECI-RGB 1.0/2.0 
@@ -458,7 +459,9 @@ Kleinbild: 0,03 mm; Mittelformat: 0,05 mm; 9 x 12 cm: 0,1 mm; 18 x 24 cm: 0,2 mm
 Daraus abgeleitet ergeben sich folgende Zielgrößen: [20]
  
 Mittelformat: 4.000 dpi x 0,03/0,05 = 2.400 dpi 
+
 9 x 12:  4.000 dpi x 0,03/0,1 = 1.200 dpi 
+
 18 x 24: 4.000 dpi x 0,03/0,2 = 600 dpi 
 
 Aufgrund des großen Mehrwerts für die wissenschaftliche Benutzung sollte in einem 
@@ -486,6 +489,7 @@ Umgekehrt kann bei überformatigen Vorlagen (DIN A0 und größer) die Auflösung
 Großvergrößerungen sind hier als Beispiel zu nennen, sie sind auf Fernsicht ausgelegt.
 Bei zu nahem Betrachtungsabstand nimmt man das Filmkorn deutlich wahr.
 Hier kann die Auflösung bis auf 150 dpi reduziert werden, da mit wachsendem Betrachtungstand auch die Punktgröße wächst, die vom menschlichen Auge nicht mehr unterschieden werden kann. 
+
 Soll allerdings bei Mappenwerken mit historischen Fotopositiven die Konfektionierung inklusive Präsentationskarton dokumentiert werden, ist von einer verringerten Auflösung abzusehen, damit Bildunterschriften und Aufnahmedetails identifizierbar bleiben, da bei großformatigen Mappenwerken der Präsenationskarton durchaus bis zu 50 % oder mehr der Gesamtfläche des Mediums einnehmen kann. 
 
 Das Speichern von Farbinformationen bei SW-Vorlagen ist nur dann zu vertreten, wenn wichtige Informationen zu dem Medium in Farbe vorliegen, wie z.B. getonte Abzüge. 
@@ -800,14 +804,15 @@ Da die Berechnung relativ kompliziert ist, wird hier mit fest vorgegebenen Werte
 Vorgeschlagen wird eine Stichprobegröße von 500 beliebigen Zeichen; zu empfehlen ist die Benutzung eines Zufallsgenerators, der die Position der Zeichen bestimmt 
 (1. Zeichen: 15. Seite, 24. Zeile, 7. Zeichen. 2. Zeichen: 73. Seite, 3. Zeile, 32. Zeichen usw.).
 Unter dieser Voraussetzung gilt folgende Tabelle: 
-Behauptete Erkennungsquote Mindestzahl der korrekt erkannten Zeichen (Stichprobengröße = 500) 
 
-95 % 485 
-96 % 489 
-97 % 493 
-98 % 496 
-99 % 499 
-> 99 %  500 
+| Behauptete Erkennungsquote | Mindestzahl der korrekt erkannten Zeichen (Stichprobengröße = 500) |
+|---|---|
+| 95 % | 485 |
+| 96 % | 489 |
+| 97 % | 493 |
+| 98 % | 496 |
+| 99 % | 499 |
+| > 99 % | 500 |
  
 In der linken Spalte ist die behauptete Erkennungsquote angegeben, in der rechten die Zahl der in der Stichprobe mindestens korrekt erkannten Zeichen, die vorliegen muss, um überprüfen zu können, ob eine von einem Dienstleister behaupte Erkennungsquote als korrekt eingestuft werden kann.
 Wenn also ein Dienstleister behauptet, dass ein Text eine Genauigkeit von 96 % hat, müssen in der Stichprobe von 500 Zeichen mindestens 489 Zeichen korrekt erkannt werden, damit bei einer Irrtumswahrscheinlichkeit von 2,5 % die Behauptung des Dienstleisters akzeptiert werden kann.
@@ -818,23 +823,23 @@ Nachstehend zwei Tabellen, die beispielhaft zeigen, wie hoch die ermittelte Erke
 
 Behauptete Genauigkeit: 99,5 % 
 
-Stichprobengröße Mindestzahl der korrekt erkannten Zeichen 
-
-500 500 
-1000 999 
-2000 1996 
-5000 4985 
-10000 9960 
+| Stichprobengröße | Mindestzahl der korrekt erkannten Zeichen |
+|---|---|
+| 500 | 500 |
+| 1000 | 999 |
+| 2000 | 1996 |
+| 5000 | 4985 |
+| 10000 | 9960 |
  
 Behauptete Genauigkeit: 99,7 % 
 
-Stichprobengröße Mindestzahl der korrekt erkannten Zeichen 
-
-500 500 
-1000 1000 
-2000 1998 
-5000 4995 
-10000 9990 
+| Stichprobengröße | Mindestzahl der korrekt erkannten Zeichen |
+|---|---|
+| 500 | 500 |
+| 1000 | 1000 |
+| 2000 | 1998 |
+| 5000 | 4995 |
+| 10000 | 9990 |
  
 Grobe Orientierungswerte für Qualität auf dieser Basis sind, dass erst Texte ab einer Genauigkeit von 99,95 % als wissenschaftlich zuverlässig gelten können (also auch negative bzw. ausschließende Suchen zuverlässig möglich sind) und dass Texte je nach Betrachtungsperspektive mit einer Genauigkeit von ca. 80 bis 90 % als schlecht gelten (also zwar keine negativen, aber positive Suchen noch möglich sind).
 Unterhalb von 80 % scheint der Gesamtnutzen einer Konversion eher fragwürdig, im Bereich zwischen hochwertigem und schlechtem Text kommt es aber immer auf die Art des Projekts an wie auch auf die damit verbundenen Kosten. 
