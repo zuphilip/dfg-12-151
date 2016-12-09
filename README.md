@@ -47,4 +47,11 @@ daher sollte man im Zweifelsfall immer nochmals die Original-Dateien konsultiere
 Fehler können gerne hier gemeldet werden als [Issues](https://github.com/zuphilip/dfg-12-151/issues)
 bzw. Korrekturvorschläge als [Pull Requests](https://github.com/zuphilip/dfg-12-151/pulls).
 
+## Copyright
 
+Für den gesamten Text der Richtlinien in den verschiedenen Versionen "liegen Copyright 
+und alle weiteren Rechte bei der Deutschen Forschungsgemeinschaft. Die Weiterverbreitung,
+auch in Auszügen, für pädagogische, wissenschaftliche oder private Zwecke ist unter Angabe
+der Quelle gestattet (sofern nichts anderes an der entsprechenden Stelle ausdrücklich angegeben
+ist). Eine Verwendung im gewerblichen Bereich bedarf der Genehmigung durch die Deutsche 
+Forschungsgemeinschaft." Vgl. http://www.dfg.de/service/kontakt_impressum/impressum/#micro267425
