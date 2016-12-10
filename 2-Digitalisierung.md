@@ -6,6 +6,7 @@ Auf eine Differenzierung nach Materialarten (u.a. Druckwerke, unikale Dokumente,
 
 
 ### Bereitstellung der Materialien, konservatorische Prüfung 
+
 Vorbereitende Tätigkeiten werden bei Digitalisierungsprojekten oft unterschätzt und sollten vor einem Projekt genauestens geprüft werden.
 Sind die Materialien überhaupt verfügbar? Gibt es möglicherweise konservatorische Bedenken gegenüber der Digitalisierung der Originale?
 Stehen genug Mitarbeiterinnen und Mitarbeiter zur Aushebung und Bereitstellung der Materialien zur Verfügung? Ist wissenschaftlich bzw. bibliografisch geschultes Personal zur Hand, das Vollständigkeitskontrollen bzw. Kollationierungen vornimmt, sofern dies aus vorhandenen Katalogeinträgen nicht hervorgeht? Bei Textwerken sollte eine Digitalisierung von unvollständigen oder defekten Drucken nach Möglichkeit vermieden und eine Reproduktion eines vollständigen Exemplars angestrebt werden.
@@ -304,10 +305,8 @@ Zur Steigerung der Bildintegrität können Positionierungshilfen nachträglich a
 
 ##### Dateiformate 
 
-Bildmaster von Graustufen oder Farbbildern sollten nach dem derzeitigen Kenntnisstand in 
-„TIFF uncompressed“ [14] langzeitgesichert werden.
-Das Format TIFF gibt es schon seit den 
-1980er Jahren.
+Bildmaster von Graustufen oder Farbbildern sollten nach dem derzeitigen Kenntnisstand in „TIFF uncompressed“ [14] langzeitgesichert werden.
+Das Format TIFF gibt es schon seit den 1980er Jahren.
 Es hat sich als einer der wichtigsten Standards etabliert und es ist damit zu rechnen, dass es auch in Zukunft von allen Standardprogrammen unterstützt wird.
 Allerdings gilt dies nur für so genannte „Baseline-TIFFs“.
 Die weitgehenden Optionen von Extended TIFFs sollten für den digitalen Master nicht genutzt werden. 
@@ -361,8 +360,7 @@ Auch bei Vorliegen eines maschinenlesbaren Volltexts sollte auf die Imagedigital
 
 Die Lesbarkeit der Texte ist ausschlaggebend für die Wahl der Auflösung und von der im Text verwendeten Schriftgröße abhängig.
 Die benötigte Scanauflösung richtet sich in diesem Fall weniger nach den Maßen der Vorlage als nach der Lesbarkeit der einzelnen Lettern.
-So empfiehlt die FADGI für Textdokumente mit dem kleinsten signifikanten Zeichen ab 1,0 mm eine Auflösung von 400 dpi und erst ab 1,5 mm Mindestzeichengröße eine Auflösung von 
-300 dpi. [19] 
+So empfiehlt die FADGI für Textdokumente mit dem kleinsten signifikanten Zeichen ab 1,0 mm eine Auflösung von 400 dpi und erst ab 1,5 mm Mindestzeichengröße eine Auflösung von 300 dpi. [19] 
 
 Die Blätter/Seiten der Textwerke werden immer vollständig mit leichtem umlaufendem Rand gesichert, um deutlich zu machen, dass nichts von der Vorlage abgeschnitten wurde. 
 
@@ -382,15 +380,12 @@ Kupferstiche, Briefmarken, Medaillonportraits, Miniaturmalerei.
 Die erreichbare Maximalauflösung ist dabei von der eingesetzten Digitalisierungstechnik abhängig.
 Hierzu ein Rechenbeispieleispiel ohne Berücksichtigung der Objektivqualität: Eine  Briefmarke ließe sich mit einer Digitalkamera mit einem Sensor im Kleinbildformat 
 (24 x 36 mm) im Maßstab 1:1 reproduzieren.
-Bei einem Pixelmaß der Kamera von 3800 
-Pixeln/cm ergibt sich hochgerechnet eine Auflösung von 4021 dpi. 
+Bei einem Pixelmaß der Kamera von 3800 Pixeln/cm ergibt sich hochgerechnet eine Auflösung von 4021 dpi. 
 
 Umgekehrt kann bei überformatigen Vorlagen (DIN A0 und größer) die Auflösung bezogen auf das Vorlagenformat reduziert werden, wenn die Objekte für einen großen Betrachtungsabstand entworfen wurden.
 Plakate sind hier als Beispiel zu nennen, sie sind oftmals auf Signalwirkung und Fernsicht ausgelegt.
-In diesem Fall kann die Auflösung bis auf 
-150 dpi reduziert werden, da mit wachsendem Betrachtungsabstand auch die Punktgröße wächst, die vom menschlichen Auge nicht mehr unterschieden werden kann.
-Sind 
-Überformate jedoch detailreich wie beispielsweise Generalkarten oder Kupferstiche sollte mit mindestens 300 dpi digitalisiert werden. 
+In diesem Fall kann die Auflösung bis auf 150 dpi reduziert werden, da mit wachsendem Betrachtungsabstand auch die Punktgröße wächst, die vom menschlichen Auge nicht mehr unterschieden werden kann.
+Sind Überformate jedoch detailreich wie beispielsweise Generalkarten oder Kupferstiche sollte mit mindestens 300 dpi digitalisiert werden. 
 
 Aufgrund des großen Mehrwerts für die Benutzung sollte in einem ökonomisch vertretbaren Rahmen die volle Auflösung der eingesetzten Aufnahmetechnik bei den grafischen Darstellungen genutzt werden. 
 
@@ -430,8 +425,7 @@ Das Speichern von Farbinformationen bei SW-Vorlagen ist nur dann zu vertreten, w
 Gut ausgearbeitete Negative geben Bilder mit einem Dichteumfang (= Tonwertumfang) von bis zu 12 Blendenstufen wieder, die so auch von der Digitalisierungsvorrichtung reproduziert werden müssen. 
 
 Anders als die grafischen Darstellungen wird das fotografische Abbild technisch erzeugt.
-Die Qualität einer fotografischen Aufnahme ist somit vom Zusammenspiel unterschiedlicher technischer Faktoren abhängig: Aufnahmeformat, Objektiv, Filmtyp, Körnigkeit der Emulsion, 
-Entwicklung, Belichtung und Fokussierung etc. 
+Die Qualität einer fotografischen Aufnahme ist somit vom Zusammenspiel unterschiedlicher technischer Faktoren abhängig: Aufnahmeformat, Objektiv, Filmtyp, Körnigkeit der Emulsion, Entwicklung, Belichtung und Fokussierung etc. 
 
 Um diesen Aspekten in die Bestimmung einer sinnvollen Scanauflösung einfließen zu lassen, bietet sich folgende Alternative zu dem in 2.2.1.1 beschriebenen Verfahren an: 
 
@@ -494,8 +488,7 @@ Soll allerdings bei Mappenwerken mit historischen Fotopositiven die Konfektionie
 
 Das Speichern von Farbinformationen bei SW-Vorlagen ist nur dann zu vertreten, wenn wichtige Informationen zu dem Medium in Farbe vorliegen, wie z.B. getonte Abzüge. 
 
-Aufgrund des großen Mehrwerts für die Benutzung sollte in einem ökonomisch vertretbaren Rahmen die volle Auflösung der eingesetzten Aufnahmetechnik bei den Fotografien – 
-Durchsicht und Aufsicht – genutzt werden. 
+Aufgrund des großen Mehrwerts für die Benutzung sollte in einem ökonomisch vertretbaren Rahmen die volle Auflösung der eingesetzten Aufnahmetechnik bei den Fotografien – Durchsicht und Aufsicht – genutzt werden. 
 
 Die Fotografien werden immer vollständig mit leichtem umlaufendem Rand gesichert, um zu zeigen, dass nichts von der Vorlage abgeschnitten wurde. 
 
@@ -544,8 +537,7 @@ Weitere Vorteile sind:
 Dokumentation, Beschaffungsplanung, etc. 
 * virtuelle Präsentation (in Kombination mit neuen Präsentationstechniken, wie z.B. hybride Exponate) für die Öffentlichkeit als Mittel zur Attraktivitätssteigerung 
 * Referenz für die Restauration beschädigter Originale bzw. Generierung physischer Repliken auf Basis des digitalen 3D-Modells 
-* Ersatz für Ausleihe (Vermeidung von Beschädigung, Versicherungskosten, 
-Rechtsunsicherheit zu Eigentum) 
+* Ersatz für Ausleihe (Vermeidung von Beschädigung, Versicherungskosten, Rechtsunsicherheit zu Eigentum) 
 
 Man unterscheidet demnach folgende Digitalisierverfahren: 
 
@@ -724,7 +716,8 @@ Da die Basis in beiden Fällen XML ist und die beschriebenen Sachverhalte ähnli
 
 #### Sammlungs- und Bestandsbeschreibung 
 
-Sammlungs- und Bestandsbeschreibungen kontextualisieren das Einzelobjekt und sind häufig ihrerseits in ihrer historischen Verortung dokumentationswürdig, wenngleich die Abgrenzung einer Sammlung häufig nicht unproblematisch ist. [33] Schon in den klassischen Formen des bibliothekarischen und archivarischen Angebots spielte die Sammlungs- oder Bestandsbeschreibung eine wichtige Rolle, um den Nutzern einen Überblick über die Art und Zusammensetzung der in einer Altbestandsbibliothek oder einem Archiv vorhandenen Bestände zu ermöglichen.
+Sammlungs- und Bestandsbeschreibungen kontextualisieren das Einzelobjekt und sind häufig ihrerseits in ihrer historischen Verortung dokumentationswürdig, wenngleich die Abgrenzung einer Sammlung häufig nicht unproblematisch ist. [33] 
+Schon in den klassischen Formen des bibliothekarischen und archivarischen Angebots spielte die Sammlungs- oder Bestandsbeschreibung eine wichtige Rolle, um den Nutzern einen Überblick über die Art und Zusammensetzung der in einer Altbestandsbibliothek oder einem Archiv vorhandenen Bestände zu ermöglichen.
 Museumssammlungen sind per se nach Sammelgebieten, wissenschaftlichen und kuratorischen Gesichtspunkten geordnet.
 Die Bereitstellung einer Sammlungs- und Bestandsbeschreibung sollte folglich auch in den Online-Angeboten selbstverständlich sein. 
 
@@ -751,8 +744,7 @@ Ein generalisiertes Verfahren zum Austausch von Metadaten muss daher flexibel un
 Dieses lässt sich mit dem Protokoll der Open Archive Initiative (OAI) [34] gut erreichen.
 Die Verwendung von OAI ist mit Blick auf alte Drucke und Handschriften vor allem als technisches Austauschprotokoll sinnvoll.
 OAI schreibt vor, dass mindestens Dublin-Core-Daten geliefert werden müssen; das ist zwar für die deskriptive Beschreibung sowohl alter Drucke und Handschriften [35] als auch nichttextueller Objekte [36] ungenügend, als zusätzliche Information aber von Nutzen.
-Der OAI-Standard sieht die parallele Unterstützung weiterer Metadatenformate explizit vor; eine Verbindung von OAI mit allen XML-basierten Metadatenformaten ist daher möglich und nötig (MARCXML, MABxml, EAD, SAFT-XML, 
-METS/MODS, METS/TEI-HSS, TEI P5, LIDO etc.). 
+Der OAI-Standard sieht die parallele Unterstützung weiterer Metadatenformate explizit vor; eine Verbindung von OAI mit allen XML-basierten Metadatenformaten ist daher möglich und nötig (MARCXML, MABxml, EAD, SAFT-XML, METS/MODS, METS/TEI-HSS, TEI P5, LIDO etc.). 
 
 Die DFG setzt verpflichtend die Bereitstellung von Metadaten über OAI voraus.
 Dabei müssen neben den von OAI vorgeschriebenen Dublin-Core-Metadaten materialspezifsche Metadaten nach METS/MODS für alte Drucke, METS/TEI für mittelalterliche Handschriften, EAD oder SAFT-XML für Archivalien und LIDO für bildhafte und dreidimensionale Materialen ausgeliefert werden (vgl. auch Kapitel 5).
@@ -781,7 +773,7 @@ Dieses Ziel sollte auch während des gesamten Digitalisierungsprozesses nicht au
 
 #### Texterfassung 
  
-###### Textgenauigkeiten 
+##### Textgenauigkeiten 
 
 Unabhängig davon, ob man einen Text durch OCR oder manuelle Transkription herstellt, ist die Frage zu beantworten, welche Qualität für welche Zwecke benötigt wird und welche Kosten für das jeweilige Ziel angemessen sind.
 Je nach Projekt werden die Anforderungen an die Textgüte variieren.
@@ -926,10 +918,7 @@ Dessen ungeachtet ist PDF – neben zunehmend auch ePub für mobile Geräte – 
 
 Bei der Kodierung von XML-Strukturen in TEI-Dokumenten muss zunächst entschieden werden, wie und in welchem Umfang man textsortenspezifische Gliederungen wie z.B. Kapitel, 
 Unterkapitel, Jahresbände, Aufsätze etc. berücksichtigt.
-Hinzu kommen weitere denkbare Strukturmerkmale, z.B. Inhaltsverzeichnisse, Register, Zeilenumbruch, Spaltenumbruch, 
-Seitenumbruch, Kopfzeile/Fußzeile/Kolumnentitel, Seitenzahl, Bilder oder bildähnliche Elemente, Bildunterschriften, Marginalien, Schriftwechsel, z.B. der Wechsel von Fraktur zu Antiqua (etwa für fremdsprachige Zitate), der Wechsel der Schriftgröße, Wechsel der Schriftart 
-(recte, kursiv, fett usw.) u.a.m., Formeln, z.B. mathematische (MathML) oder chemische 
-(CML) Formeln, Fortsetzungsmarkierungen (Kustoden) am Fußende von Seiten (für Anschlussbogen) etc. 
+Hinzu kommen weitere denkbare Strukturmerkmale, z.B. Inhaltsverzeichnisse, Register, Zeilenumbruch, Spaltenumbruch, Seitenumbruch, Kopfzeile/Fußzeile/Kolumnentitel, Seitenzahl, Bilder oder bildähnliche Elemente, Bildunterschriften, Marginalien, Schriftwechsel, z.B. der Wechsel von Fraktur zu Antiqua (etwa für fremdsprachige Zitate), der Wechsel der Schriftgröße, Wechsel der Schriftart (recte, kursiv, fett usw.) u.a.m., Formeln, z.B. mathematische (MathML) oder chemische (CML) Formeln, Fortsetzungsmarkierungen (Kustoden) am Fußende von Seiten (für Anschlussbogen) etc. 
 
 Die Wahl des Markups unterliegt in der Regel projektspezifischen Besonderheiten.
 Um die Austauschbarkeit und Nachnutzung von auf diese Weise mit Markup versehenen Volltexten sicherzustellen, sollten daher die verwendeten XML-Elemente und Attribute im TEI-Header dokumentiert werden. 
@@ -960,7 +949,8 @@ Für die Langzeitsicherung und Archivierung digitaler Inhalte gibt es zum jetzig
 Im Rahmen der Langzeitsicherung werden Dateien in stabilen Formaten auf einem technisch wie organisatorisch sicheren Speichersystem gesichert.
 Die Archivierung elektronischer Daten setzt auf einem solchen Speicher auf, beinhaltet jedoch noch weitreichendere technische und  organisatorische Festlegungen, die nicht nur eine physische Erhaltung der Daten, sondern Strategien zur Erhaltung der Interpretierbarkeit und Unveränderbarkeit einbeziehen. 
 
-Für die Langzeitarchivierung sind besonders technische Informationen und solche über die Veränderungshistorie eines Objekts wichtig. [42] Insbesondere, wenn es um die Veränderungshistorie eines Objekts geht, hat sich PREMIS [43] als Datenmodell etabliert. 
+Für die Langzeitarchivierung sind besonders technische Informationen und solche über die Veränderungshistorie eines Objekts wichtig. [42] 
+Insbesondere, wenn es um die Veränderungshistorie eines Objekts geht, hat sich PREMIS [43] als Datenmodell etabliert. 
 
 Ob die erzeugten digitalen Inhalte langzeitgesichert oder archiviert werden, hängt von der Strategie der jeweiligen Institution ab, die mit einer Antragstellung erläutert werden muss. [44] 
 Wesentliche Erfolgsfaktoren für eine Langzeitsicherung und Archivierung von digitalen Dokumenten sind 
@@ -968,7 +958,8 @@ Wesentliche Erfolgsfaktoren für eine Langzeitsicherung und Archivierung von dig
 * (1) die Schaffung der organisatorischen und wirtschaftlichen Rahmenbedingungen, 
 * (2) die Schaffung der technischen Rahmenbedingungen bzw. die Auswahl einer geeigneten technischen Methode/Strategie. 
 
-Für die Archivierung elektronischer Daten ist das Open Archival Information System (OAIS) als Referenzmodell anzuwenden. [45] Die „Kriterien für vertrauenswürdige digitale Langzeitarchive“ sind essenziell.
+Für die Archivierung elektronischer Daten ist das Open Archival Information System (OAIS) als Referenzmodell anzuwenden. [45] 
+Die „Kriterien für vertrauenswürdige digitale Langzeitarchive“ sind essenziell.
 Mit ihnen werden u.a. der organisatorische Rahmen, gesetzlichen Rahmenbedingungen, das Qualitätsmanagement sowie die Authentizität für ein vertrauenswürdiges Archiv geschaffen. [46] 
 
 Die Langzeitverfügbarkeit der Ergebnisse von Digitalisierungsprojekten ergibt sich einerseits aus der Wahl der Daten- und Metadatenformate. Überlegungen dazu flossen in die vorigen Kapitel ein.
