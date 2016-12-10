@@ -4,10 +4,10 @@ Das Repositorium beinhaltet die Texte der DFG-Richtlinien "Digitalisierung" (DFG
 als Markdown-Dateien. Aktuell sind die Version von 2016 und 2013 in den entsprechenden
 Forks/Branches gespeichert:
 
-| Version | Fork/Branch | Original-PDF |
-|---------|-------------|--------------|
-| `12/2016` | [`2016-12`](https://github.com/zuphilip/dfg-12-151/tree/2016-12) | [DFG-Webseite](http://www.dfg.de/formulare/12_151/12_151_de.pdf) |
-| `02/2013` | [`2013-02`](https://github.com/zuphilip/dfg-12-151/tree/2013-02) | [WayBackMachine](http://web.archive.org/web/20160913195655/http://www.dfg.de/formulare/12_151/12_151_de.pdf) |
+| Fork/Branch | Beschreibung | Original-PDF | Version |
+|---------|---|-------------|--------------|
+| [`2016-12`](https://github.com/zuphilip/dfg-12-151/tree/2016-12) | Die aktuelle Version von 2016-12 der DFG-Richtlinie in Markdown aufbauend auf der vorherigen Version. | [DFG-Webseite](http://www.dfg.de/formulare/12_151/12_151_de.pdf) | `12/2016` |
+| [`2013-02`](https://github.com/zuphilip/dfg-12-151/tree/2013-02) | Die vorletzte Version von 2013-02 der DFG-Richtlinie in Markdown. Dieser Branch wird auch jeweils als Grundlage für die neuere Version genutzt (`git rebase`). | [WayBackMachine](http://web.archive.org/web/20160913195655/http://www.dfg.de/formulare/12_151/12_151_de.pdf) | `02/2013` |
 
 Das Ziel hier ist auch, die Unterschiede zwischen den verschiedenen Versionen relativ
 komfortabel aufzuzeigen.
@@ -34,9 +34,10 @@ enthält.
 
 |Kapitel in der 2016er Version| DIFF | zugehöriges Kapitel der 2013 Version|
 |---|---|---|
-| [0 TOC und Vorbemerkungen](https://github.com/zuphilip/dfg-12-151/blob/2016-12/0-TOC-Vorbemerkungen.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/6b6d0617be3a200bc4ca6bbe4b4a757615e92faa?short_path=4cd65fa#diff-4cd65faa2464fd51cf1567ae298f3117) :arrow_forward: | [Kapitel 0](https://github.com/zuphilip/dfg-12-151/blob/2013-02/0-TOC-Vorbemerkungen.md) |
-| [1 Prüfliste](https://github.com/zuphilip/dfg-12-151/blob/2016-12/1-Pruefliste.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/96a728cedf59bf19e9e904c3f32027698afc7fb0?short_path=bb7a226#diff-bb7a2265329e3e3855a69b992180a3c1) :arrow_forward: | [Kapitel 7](https://github.com/zuphilip/dfg-12-151/blob/2013-02/7-Pruefliste.md) |
-| [2 Ziele und Auswahl](https://github.com/zuphilip/dfg-12-151/blob/2016-12/2-Ziele-Auswahl.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/1fdd6fa92bd0da621634abb724afabbe3df094ab?short_path=63c0d40#diff-63c0d40236919f36e08f65d60a6bdc9c) :arrow_forward: | [Kapitel 1](https://github.com/zuphilip/dfg-12-151/blob/2013-02/1-Ziele-Auswahl.md) |
+| [0 TOC und Vorbemerkungen](https://github.com/zuphilip/dfg-12-151/blob/2016-12/0-TOC-Vorbemerkungen.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/d9f23a2e5620c0eee11fa97676540d4bb7d96ea5?short_path=4cd65fa#diff-4cd65faa2464fd51cf1567ae298f3117) :arrow_forward: | [Kapitel 0](https://github.com/zuphilip/dfg-12-151/blob/2013-02/0-TOC-Vorbemerkungen.md) |
+| [1 Prüfliste](https://github.com/zuphilip/dfg-12-151/blob/2016-12/1-Pruefliste.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/decc5a99cda33a015f3abed2675ef205d884dc87?short_path=bb7a226#diff-bb7a2265329e3e3855a69b992180a3c1) :arrow_forward: | [Kapitel 7](https://github.com/zuphilip/dfg-12-151/blob/2013-02/7-Pruefliste.md) |
+| [2 Ziele und Auswahl](https://github.com/zuphilip/dfg-12-151/blob/2016-12/2-Ziele-Auswahl.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/20643f89bf0f970c16e14cee26f517b94ae1180a?short_path=63c0d40#diff-63c0d40236919f36e08f65d60a6bdc9c) :arrow_forward: | [Kapitel 1](https://github.com/zuphilip/dfg-12-151/blob/2013-02/1-Ziele-Auswahl.md) |
+| [3 Digitalisierung](https://github.com/zuphilip/dfg-12-151/blob/2016-12/3-Digitalisierung.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/2d1aeebe092efe5974f8b9fd30a145a5e495c096?short_path=775195a#diff-775195aabd8e95314bcbe09192aaeacc) :arrow_forward: | [Kapitel 2](https://github.com/zuphilip/dfg-12-151/blob/2013-02/2-Digitalisierung.md) |
 
 (weitere Kapitel folgen noch)
 
