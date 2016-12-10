@@ -212,6 +212,9 @@ Zur Vermeidung des Moiré-Effekts sollte das notwendige Verfahren und die notwen
 Beispielhaft zu nennende Objekte, bei denen Moiré auftreten kann, sind: gedruckte Halbtonvorlagen, Kupferstiche, Textilien.
 
 
+[10] Das hier behandelte Moiré ist nicht mit dem Phänomen zu verwechseln, das aus der Interferenz von Druckpunkten gerasterter Vorlagen mit den Bildpunkten des Monitors entsteht.
+
+
 ###### Beleuchtungstechnik 
 
 Die Wahl der richtigen Beleuchtungstechnik ist im Vorfeld eines Digitalisierungsvorhabens unter konservatorischen Gesichtspunkten zu prüfen.
@@ -290,6 +293,11 @@ Bei hardwarekalibrierbaren Monitoren wird die interne Farbtabelle (LUT) des Moni
 Der Vorteil in der Hardware-Kalibrierung liegt darin, dass der Monitor auf die gewünschten Zielwerte bezüglich Gradation, Weißpunkt, Luminanz und Farbraum abgeglichen wird und nicht, wie bei der Software-Kalibrierung, Korrekturwerte in der Grafikkarte gespeichert werden, die für die korrekte Monitoransicht auf die Bilddateien angewendet werden.
 Vorsicht ist bei älteren Colorimetern geboten, da diese bei Monitoren mit neuer Technologie, wie LED-Hintergrundbeleuchtung oder erweiterten LUTs, oftmals nicht die gewünschten Ergebnisse liefern. 
 
+ 
+[11] European Color Initiative: http://www.eci.org  
+[12] http://www.colormanagement.org/de/workingspaces.html 
+[13] http://www.ugra.ch 
+
 
 ###### Digitale Bildnachbearbeitung 
 
@@ -297,10 +305,6 @@ Zur Optimierung der Bildqualität digitaler Aufnahmen ist in der Regel eine zus�
 Dabei sollte sich diese auf notwendige Farb- und Tonwertkorrekturen beschränken.
 Auf jeden Fall zu vermeiden sind Objektdeformationen, das Hinzufügen oder Löschen von Objektteilen, sowie Spezialeffekte, wie z.B. der Einsatz von Verfremdungsfiltern.
 Zur Steigerung der Bildintegrität können Positionierungshilfen nachträglich aus dem Bild entfernt werden oder Hintergründe bereinigt werden. 
-
-
-[10] Das hier behandelte Moiré ist nicht mit dem Phänomen zu verwechseln, das aus der Interferenz von Druckpunkten gerasterter Vorlagen mit den Bildpunkten des Monitors entsteht. 
-[11] European Color Initiative: http://www.eci.org  [12] http://www.colormanagement.org/de/workingspaces.html 
 
 
 ##### Dateiformate 
@@ -342,11 +346,12 @@ Diese Modelle ermöglichen es, die Form, die Textur und die optischen Materialei
 Infrage kommende Datenformate sollten möglichst robust gegenüber Beschädigungen auf den Datenträgern sein, Speicherplatz möglichst effizient nutzen, das Modell logisch strukturiert nachbilden, eine schnelle Datenverarbeitung ermöglichen und entsprechend verbreitet sein.
 Formate wie Collada [17], ein auf XML-basierendes offenes Austauschformat von 3D-Daten, oder X3D [18], welches speziell zur Visualisierung von 3D-Modellen über Web-Browser erschaffen wurde, bieten sich an. 
 
-[13] http://www.ugra.ch 
 [14] TIFF uncompressed, Revision 6: http://www.digitalpreservation.gov/formats/fdd/fdd000022.shtml 
 [15] http://www.jpeg.org/jpeg2000/  
 [16] Folgende Formate werden für die Langzeitarchivierung empfohlen, wobei zurzeit noch keine befriedigende Lösung vorliegt: 
 MJPEG2000, MPEG-4, MXF/AAF 
+[17] Vgl. http://www.khronos.org/
+[18] Vgl. http://www.web3d.org 
 
 
 #### Materialspezifische Parameter 
@@ -363,6 +368,9 @@ Die benötigte Scanauflösung richtet sich in diesem Fall weniger nach den Maße
 So empfiehlt die FADGI für Textdokumente mit dem kleinsten signifikanten Zeichen ab 1,0 mm eine Auflösung von 400 dpi und erst ab 1,5 mm Mindestzeichengröße eine Auflösung von 300 dpi. [19] 
 
 Die Blätter/Seiten der Textwerke werden immer vollständig mit leichtem umlaufendem Rand gesichert, um deutlich zu machen, dass nichts von der Vorlage abgeschnitten wurde. 
+
+
+[19] Vgl. Federal Agencies Digitization Guidelines Initiative (FADGI): Technical Guidelines for Digitizing Cultural Heritage Materials: Creation of Raster Image Master Files, August 2010: http://www.digitizationguidelines.gov/guidelines/FADGI_Still_Image-Tech_Guidelines_2010-08-24.pdf, S. 59. 
 
 
 ##### Grafische Darstellungen 
@@ -390,11 +398,6 @@ Sind Überformate jedoch detailreich wie beispielsweise Generalkarten oder Kupfe
 Aufgrund des großen Mehrwerts für die Benutzung sollte in einem ökonomisch vertretbaren Rahmen die volle Auflösung der eingesetzten Aufnahmetechnik bei den grafischen Darstellungen genutzt werden. 
 
 Die Grafiken werden immer vollständig mit leichtem umlaufendem Rand gesichert, um deutlich zu machen, dass nichts von der Vorlage abgeschnitten wurde. 
-
-
-[17] Vgl. http://www.khronos.org/
-[18] Vgl. http://www.web3d.org 
-[19] Vgl. Federal Agencies Digitization Guidelines Initiative (FADGI): Technical Guidelines for Digitizing Cultural Heritage Materials: Creation of Raster Image Master Files, August 2010: http://www.digitizationguidelines.gov/guidelines/FADGI_Still_Image-Tech_Guidelines_2010-08-24.pdf, S. 59. 
 
 
 ##### Fotografien 
@@ -464,6 +467,9 @@ Aufgrund des großen Mehrwerts für die wissenschaftliche Benutzung sollte in ei
 Die Fotografien werden immer vollständig mit leichtem umlaufendem Rand gesichert, um deutlich zu machen, dass nichts von der Vorlage abgeschnitten wurde. 
 
 
+[20] Diese Werte gibt auch die FADGI vor. Vgl. Federal Agencies Digitization Guidelines Initiative (FADGI): Technical Guidelines for Digitizing Cultural Heritage Materials: Creation of Raster Image Master Files, August 2010: http://www.digitizationguidelines.gov/guidelines/FADGI_Still_Image-Tech_Guidelines_2010-08-24.pdf, S. 60.
+
+
 ###### Aufsichtmedien 
 
 Das Fotopositiv ist ein Endprodukt.
@@ -492,8 +498,7 @@ Aufgrund des großen Mehrwerts für die Benutzung sollte in einem ökonomisch ve
 
 Die Fotografien werden immer vollständig mit leichtem umlaufendem Rand gesichert, um zu zeigen, dass nichts von der Vorlage abgeschnitten wurde. 
 
-
-[20] Diese Werte gibt auch die FADGI vor. Vgl. Federal Agencies Digitization Guidelines Initiative (FADGI): Technical Guidelines for Digitizing Cultural Heritage Materials: Creation of Raster Image Master Files, August 2010: http://www.digitizationguidelines.gov/guidelines/FADGI_Still_Image-Tech_Guidelines_2010-08-24.pdf, S. 60. 
+ 
 [21] Vgl. Federal Agencies Digitization Guidelines Initiative (FADGI): Technical Guidelines for Digitizing Cultural Heritage Materials: Creation of Raster Image Master Files, August 2010: http://www.digitizationguidelines.gov/guidelines/FADGI_Still_Image-Tech_Guidelines_2010-08-24.pdf, S. 62. 
 
 
@@ -681,6 +686,12 @@ Die Bereitstellung der Metadaten zur weiteren Nutzung gemäß den materialspezif
 Die bereitgestellten Metadaten müssen gegen das jeweilige XML Schema valide sein und sind darüber hinaus auf semantische Korrektheit zu überprüfen. 
 
 
+[25] CIDOC Conceptual Reference Model: http://cidoc-crm.org/  
+[26] IFLA Functional Requirements for Bibliogrpahic Records: http://www.ifla.org/en/publications/functional-requirements-for-bibliographic-records  
+[27] www.iconclass.nl/  
+[28] http://www.archivschule.de/content/462.html 
+
+
 #### Strukturelle Metadaten für digitale Faksimiles 
 
 Wohl zu erwägen ist die Frage der Anwendung von strukturellen Metadaten zur Erschließung von Images, also der Kodierung der strukturellen Elemente eines Dokumentes, wie z.B. Widmung, Vorwort, Kapitel oder Illustration.
@@ -708,10 +719,10 @@ Wenn daher TEI für Strukturdaten zum Einsatz kommt, ist im Rahmen des Projekts 
 Da die Basis in beiden Fällen XML ist und die beschriebenen Sachverhalte ähnlich, kann man davon ausgehen, dass diese Konversion keine größere Hürde darstellt. 
 
 
-[25] CIDOC Conceptual Reference Model: http://cidoc-crm.org/  
-[26] IFLA Functional Requirements for Bibliogrpahic Records: http://www.ifla.org/en/publications/functional-requirements-for-bibliographic-records  
-[27] www.iconclass.nl/  
-[28] http://www.archivschule.de/content/462.html 
+[29] http://www.dfg-viewer.de  
+[30] http://www.tei-c.org  
+[31] http://www.loc.gov/standards/mets  
+[32] http://www.tei-c.org/Sample_Manuals/bestpractice.htm 
 
 
 #### Sammlungs- und Bestandsbeschreibung 
@@ -727,11 +738,7 @@ Erwartet wird darüber hinaus eine normierte Beschreibung in XML, um diese Infor
 Diese Beschreibung kann gemäß dem Dublin Core Collections Application Profile (s. Anhang D) oder in demselben Metadatenstandard erfolgen, in dem auch die Objektbeschreibungen verfügbar gemacht werden: METS, MODS oder TEI-Header, EAD/SAFT sowie LIDO bieten entsprechende Möglichkeiten.
 Darüber hinaus sollte für eine Sammlung die eindeutige Identifizierung und Beschreibung gemäß ISO 27730, Information and Documentation – International Standard Collection Identifier (ISCI) erwogen werden, die auf der ISIL einer Institution aufbaut. 
 
-
-[29] http://www.dfg-viewer.de  
-[30] http://www.tei-c.org  
-[31] http://www.loc.gov/standards/mets  
-[32] http://www.tei-c.org/Sample_Manuals/bestpractice.htm  
+ 
 [33] Unter dem Begriff der Sammlung werde im Folgenden sowohl die in ihrer Zusammensetzung historisch zu verortende analoge Sammlung als auch die genuin digitale Sammlung (z.B. definiert über die in ein DFG-gefördertes Digitalisierungsprojekt einbezogenen Bestände) verstanden (vgl. dazu die beiden Beispiele in Anhang D). 
 
 
@@ -891,6 +898,7 @@ Da die meisten Dienstleister den Text nach Zeichenmenge inklusive des Markups be
 
 
 [37] http://www.loc.gov/standards/alto/ 
+[38] Z.B. teitite: http://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_tite.doc.html  
 
 
 ### Zeichenkodierung 
@@ -924,7 +932,6 @@ Die Wahl des Markups unterliegt in der Regel projektspezifischen Besonderheiten.
 Um die Austauschbarkeit und Nachnutzung von auf diese Weise mit Markup versehenen Volltexten sicherzustellen, sollten daher die verwendeten XML-Elemente und Attribute im TEI-Header dokumentiert werden. 
 
 
-[38] Z.B. teitite: http://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_tite.doc.html  
 [39] http://de.wikipedia.org/wiki/Unicode  
 [40] http://www.tei-c.org  
 [41] In anderen Fällen, in denen Texte bereits in PDF vorliegen, ist eine Umwandlung nach PDF/A erforderlich. Geprüft werden sollte, ob zur besseren Nachnutzbarkeit der Texte eine Wandlung in XML erfolgen kann. 
@@ -999,11 +1006,10 @@ Da die Langzeitarchivierung digitaler Medien ein bisher noch nicht abschließend
 Als Einstiegspunkt in das Thema eignet sich das Kompetenznetzwerk Nestor [47]. 
 
 
-[42] http://www.langzeitarchivierung.de/Subsites/nestor/DE/Standardisierung/Metadaten.html;jsessionid=5239B697C2522475FBEC
-D446877A114F.prod-worker5  
+[42] http://www.langzeitarchivierung.de/Subsites/nestor/DE/Standardisierung/Metadaten.html;jsessionid=5239B697C2522475FBECD446877A114F.prod-worker5  
 [43] http://www.loc.gov/standards/premis/understanding_premis_german.pdf  
 [44] Eine Institution kann in ihrer Strategie z.B. schlüssig festlegen, dass born digital-Objekte archiviert werden und Abbilder von analogen Objekten auf langzeitsicheren Speichern abgelegt werden. 
 Ebenso ist es aus guten Gründen möglich, auch die vom Original erstellten Digitalisate zu archivieren, wenn z.B. die Originale fragil sind.  
 [45] Das OAIS- Referenzmodell ist als ISO 14721-Standard verabschiedet: http://public.ccsds.org/publications/archive/650x0m2.pdf  
-[46] Vgl. Schoger, Astrid/Susanne Dobratz/Reinhard Altenhöner: Kriterienkatalog vertrauenswürdige digitale Langzeitarchive, 
-Frankfurt am Main, 2008. Vgl.: http://nbn-resolving.de/urn:nbn:de:0008-2008021802. Vgl. dazu auch: DIN 31644:2012-04. 
+[46] Vgl. Schoger, Astrid/Susanne Dobratz/Reinhard Altenhöner: Kriterienkatalog vertrauenswürdige digitale Langzeitarchive, Frankfurt am Main, 2008. Vgl.: http://nbn-resolving.de/urn:nbn:de:0008-2008021802. Vgl. dazu auch: DIN 31644:2012-04. 
+[47] http://www.langzeitarchivierung.de/ 
