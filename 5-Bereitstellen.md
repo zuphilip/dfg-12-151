@@ -1,6 +1,6 @@
-# Bereitstellung der Digitalisate für die Öffentlichkeit 
+## Bereitstellung der Digitalisate für die Öffentlichkeit 
 
-## Rechteklärung und Open Access 
+### Rechteklärung und Open Access 
 
 Die Deutsche Forschungsgemeinschaft ist Mitunterzeichnerin der „Berlin Declaration“ zum open access.
 Die Ergebnisse der durch sie geförderten Digitalisierungsprojekte stehen der weltweiten Forschung daher unentgeltlich und im Geiste dieser Erklärung zur Verfügung. [49] 
@@ -17,8 +17,9 @@ Die Rechteklärung gestaltet sich häufig aufwendiger als zunächst erwartet.
 Für die entsprechenden Aufwände ist daher ausreichend Zeit und personeller Einsatz einzuplanen.
 Stellt sich die Rechteklärung als schwierig dar, wird empfohlen, professionelle Unterstützung, beispielsweise durch das Justiziariat der bestandshaltenden Einrichtung zu suchen.
  
-Im Sinne des open access und der open source [50] wird erwartet, dass alle Metadaten 
-(deskriptive und strukturelle) und maschinenlesbaren Volltexte bzw. das den Volltexten zu Grunde liegende XML sowie XSLT-Skripte und DTDs oder XML-Schema-Dateien unter einer Creative Commons-Lizenz angeboten werden.
+ 
+Im Sinne des open access und der open source [50] wird erwartet, dass alle Metadaten (deskriptive und strukturelle) und maschinenlesbaren Volltexte bzw. das den Volltexten zu Grunde liegende XML sowie XSLT-Skripte und DTDs oder XML-Schema-Dateien unter einer Creative Commons-Lizenz angeboten werden.
+
 Maßgebliches Ziel ist es, Möglichkeiten zu schaffen, Metadaten und Volltexte auch in anderen Nutzungskontexten als der unmittelbaren Projektumgebung (z.B. zum Zwecke des data mining oder der Datenaggregation z.B. im ZVDD) auswerten zu können; dies erfordert das Herunterladen, die Neuindexierung und das Anbieten in eigenen Forschungs- und Präsentationskontexten.
 Um die Leistung des Urhebers angemessen zu würdigen, wird empfohlen diese Texte unter einer CC BY-SA-Lizenz zur Verfügung zu stellen.
 Bei Metadaten ist zu prüfen, ob sie unter einer CC0-Lizenz zur Verfügung gestellt werden können. 
@@ -70,10 +71,14 @@ Außerdem sind folgende Funktionen zu implementieren:
 
 * Downloadfunktion [52] 
 * Druckfunktion für die ausgegebene Dokumentansicht [53] 
-* Aus zentralen DFG-geförderten Informationssystemen (VD16, VD17, VD18, 
-Fachportalen etc.) sollte zuerst auf eine Ansicht im Style „DFG-Viewer“ verlinkt werden. 
+* Aus zentralen DFG-geförderten Informationssystemen (VD16, VD17, VD18, Fachportalen etc.) sollte zuerst auf eine Ansicht im Style „DFG-Viewer“ verlinkt werden. 
 * Für sämtliche DFG-geförderten Bereitstellungssysteme wird erwartet, dass Nutzerinnen und Nutzer die automatisierte Möglichkeit zum Feedback bezüglich des digitalen Angebots erhalten.
 Eine entsprechende Möglichkeit ist auf der Projektseite bzw. im digitalen Bereitstellungssystem an zentraler Stelle einzurichten. 
+
+
+[51] http://www.sitemaps.org/  
+[52] Ein Download nach Abschnitten oder einzelnen Seiten ist dann vorzusehen, wenn die Größe der Gesamtdatei nicht mehr handhabbar wäre.  
+[53] Eine Druckfunktion nach Abschnitten oder einzelnen Seiten ist dann vorzusehen, wenn die Größe der Gesamtdatei nicht mehr handhabbar wäre.
 
 
 #### Technische Mindestanforderungen 
@@ -87,9 +92,6 @@ Dies wird beispielsweise dadurch erreicht, dass Schrift in einer Größe angebot
 * alle jeweils gängigen Browser unterstützen, soweit dies der Natur der Sache nach nicht unmöglich ist. [55] 
 
 
-[51] http://www.sitemaps.org/  
-[52] Ein Download nach Abschnitten oder einzelnen Seiten ist dann vorzusehen, wenn die Größe der Gesamtdatei nicht mehr handhabbar wäre.  
-[53] Eine Druckfunktion nach Abschnitten oder einzelnen Seiten ist dann vorzusehen, wenn die Größe der Gesamtdatei nicht mehr handhabbar wäre.  
 [54] Hier wird nachdrücklich das Kriterium der Alltagstauglichkeit gefordert, es geht nicht um die Realisierung abstrakter Wünschbarkeiten.
 Können Objekte eines Projekts ihrer Natur nach auf Bildschirmen mit einer Auflösung unter 1600 x 1200 nicht sinnvoll dargestellt werden, wird kein Aufwand für Scheinlösungen gefordert; ist ein Objekt unter 3 MB nicht sinnvoll bearbeitbar, verletzt es das Kriterium der DSL-Tauglichkeit des Servers nicht, wenn kein Angebot kleinerer Versionen erfolgt. 
 [55] Wird ein für eine fortgeschrittene 3D-Anwendung notwendiges Format von einem Browser nicht unterstützt, ist es nicht erforderlich den Aufwand zu betreiben, ein geeignetes Plugin zu entwickeln. 
