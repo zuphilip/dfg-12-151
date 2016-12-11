@@ -19,8 +19,7 @@ Folgende grundlegende Alternativen sind denkbar:
 
 * Die Metadaten werden zentral in einem Katalogsystem (z. B. dem lokalen OPAC oder einem Bibliotheksverbundkatalog) gehalten, die digitalen Dokumentdateien (inkl. elektronischem Inhaltsverzeichnis und Register) werden in einem hierarchisch gegliederten Dateisystem auf einem gesonderten Dokumentenserver für den Online-Zugriff bereitgestellt.
 Die Struktur der digitalisierten Sammlung bzw. die interne Struktur der digitalisierten Dokumente kann dabei durch die Hierarchie des Dateisystems abgebildet werden. 
-* Ein Dokumenten-Management-System (DMS) oder Content-Management-System 
-(CMS) kommt zum Einsatz. 
+* Ein Dokumenten-Management-System (DMS) oder Content-Management-System (CMS) kommt zum Einsatz. 
 
 
 ### Funktionalitätsanforderungen 
@@ -39,8 +38,7 @@ Die folgenden Navigationsmöglichkeiten gelten als Basisanforderungen:
 
 Wenn sachlich möglich und geboten, sind Inhaltsverzeichnisse/Strukturbäume oder funktionale Äquivalente vorzusehen; diese sind grundsätzlich durchsuchbar zu gestalten. 
 Wünschenswert sind Navigationshilfen, z.B. grafische Repräsentationen in einer Kopfzeile, die den Nutzerinnen und Nutzern signalisieren, an welcher Stelle des digitalen Dokuments sie sich gerade befinden.
-Enthält ein Server Materialien, die konzeptuell in der Benutzung 
-üblicherweise zu übergeordneten Einheiten zusammengefasst werden (mehrbändige Werke), so sollen diese übergeordneten Einheiten als solche sichtbar werden. 
+Enthält ein Server Materialien, die konzeptuell in der Benutzung üblicherweise zu übergeordneten Einheiten zusammengefasst werden (mehrbändige Werke), so sollen diese übergeordneten Einheiten als solche sichtbar werden. 
 
 
 ### DFG-Viewer 
