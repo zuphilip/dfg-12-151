@@ -1,0 +1,1588 @@
+Anhang A: 
+METS/MODS-Profil für die Darstellung im DFG-Viewer und 
+Übermittlung per OAI 
+ 
+# DFG-Viewer 
+Zum Zweck der einheitlichen Präsentation beim Zugriff aus überregionalen 
+Nachweissystemen (z.B. VD16/VD17/VD18, ZVDD, „Virtuelle Fachbibliotheken“) auf lokale digitale Angebote sollten DFG-geförderte Projekte die als DFG-Viewer bekannte Browserdarstellung nutzen sowie die dem Viewer hinterlegten Schnittstellen bedienen. 
+Wissenschaftlerinnen und Wissenschaftlern soll auf diese Weise die Nutzung digitalisierter Inhalte erleichtert werden. Aus dem DFG-Viewer heraus ist die Weiterleitung auf die speziellen lokalen Angebote der jeweiligen Einrichtungen möglich. 
+Der Viewer [1] wurde im Rahmen der Aktionslinie „Digitalisierung des VD16/VD17“ durch die in der ersten Ausschreibungsrunde geförderten Bibliotheken aufgebaut. Er wird durch diese in Zusammenarbeit mit weiteren Partnern beständig weiterentwickelt. Gehostet wird die Referenzanwendung des DFG-Viewers derzeit an der SLUB Dresden. 
+Um den DFG-geförderten Projekten eine größtmögliche Sicherheit bei der Planung ihrer 
+Anträge zu ermöglichen und um die Konformität der Metadaten mit den Anforderungen des 
+DFG-Viewers sicherzustellen, sollten Metadaten aus Projekten gegen das von der Website des Viewers abzurufende XML-Schema valide sein. [2] 
+Zur Darstellung von Metadaten im Viewer wird METS [3] verwendet. METS dient dabei als ein 
+Rahmenformat (wrapper), innerhalb dessen sowohl deskriptive, administrative und strukturelle 
+Metadaten, als auch Ressourcen (z.B. Images, Volltexte) verzeichnet werden. Der DFG-Viewer benötigt zum Zwecke der Anzeige bibliografischer Metadaten (nur Drucke) nach 
+MODS [4] kodierte Metadaten (vgl. unten, Punkt 2).
+Für administrative Metadaten (u.a. lokale Anwendung, Homepage, Logo der Einrichtung) wird zur Verlinkung ein spezielles, für den Viewer entwickeltes Format (Namespace dv) verwendet. 
+Eine ausführliche Dokumentation zur Implementierung des METS-Formats befindet sich auf der Homepage der Referenzanwendung des DFG-Viewers. 
+Diese Vorgaben gelten zunächst nur für den Bereich der gedruckten Überlieferung 
+(METS/MODS). 
+
+[1] http://www.dfg-viewer.de/ 
+[2] http://dfg-viewer.de/profil-der-metadaten 
+[3] http://www.loc.gov/standards/mets/ 
+[4] http://www.loc.gov/standards/mods/ 
+ 
+
+
+# MODS-DFG-Standard-Set (Printbestände) 
+
+Der MODS-Standard bietet ein vereinfachtes subset zu MARC21, daher sollten automatische 
+Konversionen aus gängigen Katalogen leicht möglich sein.
+Für die Anzeige im Viewer sind nur wenige Pflichtfelder erforderlich (s. nachstehende Tabelle). 
+ 
+Element /Unterelement Wiederholbar 
+Bemerkungen /Erläuterungen Status 
+ 
+1 Titelinformation 
+<titleInfo> ja Titelinformationen; sofern das 
+Werk keinen Titel enthält, muss er 
+fingiert werden. In Fällen von 
+mehrbändigen Werken ohne 
+Stücktitel reicht es aus, den Titel 
+des mehrbändigen Werkes in dem 
+Element mods:relatedItem 
+anzugeben. Verpflichtend ist dann 
+aber die Angabe der Bandzählung 
+in dem Element mods:part mit den 
+Unterelementen mods:detail 
+und mods:number. 
+ 
+Pflicht 
+(Ausnahme 
+sind 
+mehrbändige 
+Werke ohne 
+Stücktitel) 
+<titleInfo> / <title> nein Enthält den Haupttitel des Werks. Pflicht 
+<titleInfo> / <subTitle> nein Enthält den Zusatz zum Haupttitel der 
+Werks. 
+Pflicht, wenn 
+vh. 
+ 
+2 Person 
+<name type="personal" 
+authority="…"> 
+ja Person, die mit dem Werk in 
+Beziehung steht (z.B. der Autor). Das 
+Attribut @authority enthält den Code 
+für das Regelwerk, nach dem die 
+Person angesetzt wurde; in der Regel 
+„GND“. 
+ 
+ 
+ 
+ 
+Pflicht, wenn 
+vh. 
+<name> / <namePart 
+type="…"> 
+ja Enthält Namensbestandteile, deren Art 
+in @type festgelegt ist. Mögliche Werte 
+sind „date“, „family“, „given“, 
+„termsOfAddress“. 
+<name> / <displayForm> nein Name in der gewünschten Anzeigeform Empfohlen 
+<name> / <role> nein Rahmenelement zur Funktion der 
+Person 
+ 
+Pflicht, wenn 
+vh. 
+<name> / <role> / 
+<roleTerm type="code" 
+authority="marcrelator"> 
+nein Funktion der Person; der Wert des 
+Feldes <roleTerm> ist kodiert 
+(MARC Relator Code) [5]. 
+ 
+  
+
+[5] Ein Code aus der Liste MARC Value List for Relators and Roles: http://www.loc.gov/marc/sourcecode/relator/relatorlist.html. 
+
+ 
+Element /Unterelement Wieder- 
+holbar 
+Bemerkungen /Erläuterungen Status 
+ 
+3 Körperschaft 
+<name type="corporate" 
+authority=""> 
+ja Körperschaft, die mit dem Werk in 
+Beziehung steht. 
+ 
+ 
+ 
+Pflicht, wenn 
+vh. <name> / <namePart> ja s.o. 
+<name> / <role> nein s.o. 
+<name> / <role> / 
+<roleTerm type="code" 
+authority="marcrelator"> 
+nein s.o. 
+ 
+4 Erscheinungsvermerk 
+
+<originInfo> ja Erscheinungsvermerk; der erste 
+<originInfo>-Block ist für Angaben zur 
+Quelle vorgesehen, Angaben zur 
+digitalen Edition können in einem 
+zweiten <originInfo> Block gemacht 
+werden. Sofern dieser optionale 
+zweite Block angelegt wird, muss er 
+verpflichtend ein Unterelement 
+<mods:edition> mit dem Inhalt 
+[Electronic ed.] enthalten (s.u.). 
+ 
+ 
+Pflicht, wenn 
+vh. 
+<originInfo> / <place> ja Enthält Elemente zum Erscheinungsort. Pflicht, wenn 
+vh. 
+<originInfo> / <place> / 
+<placeTerm type="text"> 
+nein Enthält den Erscheinungsort; sofern 
+kein Erscheinungsort zu ermitteln ist, 
+„[o.O.]“ angeben. 
+ 
+Pflicht 
+<originInfo> / <publisher> ja Enthält den Verlag/Drucker. Pflicht, wenn 
+vh. 
+<originInfo> / <dateIssued 
+keyDate="yes" 
+encoding="w3cdtf"> 
+ja Enthält das Erscheinungsjahr der 
+Quelle; sofern kein Erscheinungsjahr 
+zu ermitteln ist, „[o.J.]“ angeben. 
+ 
+Pflicht 
+ 
+5 Ausgabevermerk 
+<originInfo> / <edition> ja Enthält die Ausgabebezeichnung (s.a. 
+oben bezg. Angaben zur elektronischen 
+Ausgabe). 
+Pflicht, wenn 
+vh. 
+ 
+6 Kollationsvermerk/physische Beschreibung 
+<physicalDescription> nein Kollationsvermerk Pflicht 
+<physicalDescription> / 
+<extent> 
+ja Enthält Umfangs-, Format und 
+Illustrationsangaben. 
+Pflicht, wenn 
+vh. 
+<physicalDescription> / 
+<digitalOrigin> 
+nein Bei digitalisierten Drucken ist der 
+Inhalt des Feldes <digitalOrigin> 
+normalerweise „reformatted digital“. 
+ 
+Pflicht 
+ 
+
+ 
+Element /Unterelement Wieder- 
+holbar 
+Bemerkungen /Erläuterungen Status 
+ 
+7 Übergeordnetes Werk 
+<relatedItem type="host"> 
+/ <recordInfo> / 
+<recordIdentifier> 
+nein <recordIdentifier> ist ein Identifier, 
+der zur Verknüpfung mit 
+hierarchisch übergeordneten 
+Datensätzen dient. 
+ 
+Pflicht, wenn 
+Hierarchie 
+ 
+8 Bandangabe 
+<part order=""> / <detail> / 
+<number> 
+nein Angaben zu Teilen; Wert des Attributs 
+@order ist ein beliebiger 
+numerischer Wert, der die 
+Reihenfolge der Teile sicherstellt. 
+<number> enthält die 
+Bandangabe. 
+ 
+Pflicht, wenn 
+Hierarchie 
+vh. 
+ 
+9 Sprache 
+<language> ja Sprachangaben 
+ 
+ 
+Pflicht, wenn 
+vh. 
+<language> / 
+<languageTerm 
+type="code" 
+authority="iso639-2b"> 
+nein Enthält die Sprache des Werks in 
+gemäß ISO 639-2/B kodierter 
+Form. 
+ 
+10 Zitierfähige Identifizierung 
+<identifier type="…"> ja Weltweit eindeutige Identifizierung der 
+Ressource (Attribut @type z.B. 
+URN, PURL, DOI, Handle, URI etc.). 
+Angegeben werden muss auch, 
+wenn vorhanden, die GW- und VD-Nummer des Drucks (Attribute 
+@type VD16, VD17, GW). 
+ 
+ 
+ 
+ 
+Pflicht 
+ 
+11 Datenbank-ID 
+<recordInfo> / 
+<recordIdentifier> 
+nein Datensatz-Identifier zur eindeutigen 
+Identifizierung innerhalb eines 
+Datenbanksystems, z.B. Pica 
+Produktionsnummer 
+Pflicht 
+ 
+12 Signatur 
+<location> 
+<physicalLocation> 
+<shelfLocator> 
+ja Standort und Signatur des Originals Empfohlen 
+ 
+Sollten diese Daten auch für ein Harvesting über OAI in Betracht kommen, ist je nach 
+Materialart und Projektzuschnitt eine Erweiterung dieses Basissets zu erwägen. Für diesen 
+Zweck stehen auf der Seite des DFG-Viewers differenziertere Formatdefinitionen zur 
+Verfügung. Diese enthalten auch weitere Erläuterungen zur Besetzung der jeweiligen Felder. 
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Beispiel für einen METS/MODS Datensatz nach dem DFG-Standard 
+ 
+
+<mets:mets 
+xmlns:mets="http://www.loc.gov/METS/" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dv="http://dfg-viewer.de/"> 
+<mets:dmdSec ID="dmd_586140484"> 
+<mets:mdWrap MDTYPE="MODS"> 
+<mets:xmlData> 
+<mods:mods> 
+<mods:recordInfo> 
+<mods:recordIdentifier source="WDB_OPAC">oai:diglib.hab.de:ppn_586140484</mods:recordIdentifier> 
+</mods:recordInfo> 
+<mods:location> 
+<mods:physicalLocation>Herzog August Bibliothek Wolfenbüttel</mods:physicalLocation> 
+<mods:shelfLocator>M: Gn 4° 1572:1</mods:shelfLocator> 
+</mods:location> 
+<mods:identifier type="purl">http://diglib.hab.de/drucke/gn-4f-1572-1b/start.htm</mods:identifier> 
+<mods:identifier type="urn">urn:nbn:de:gbv:23-drucke/gn-4f-1572-1b3</mods:identifier> 
+<mods:language> 
+<mods:languageTerm type="code" authority="iso639-2b">lat</mods:languageTerm> 
+</mods:language> 
+<mods:name type="personal"> 
+<mods:namePart type="family">Leibniz</mods:namePart> 
+<mods:namePart type="given">Gottfried Wilhelm</mods:namePart> 
+<mods:displayForm>Leibniz, Gottfried Wilhelm</mods:displayForm> 
+<mods:namePart type="date">1646-1716</mods:namePart> 
+<mods:role> 
+<mods:roleTerm type="code" authority="marcrelator">ctb</mods:roleTerm> 
+</mods:role> 
+</mods:name> 
+<mods:originInfo> 
+<mods:place> 
+<mods:placeTerm type="text">Hanoverae</mods:placeTerm> 
+</mods:place> 
+<mods:publisher>Foerster</mods:publisher> 
+<mods:dateIssued keyDate="yes" encoding="w3cdtf">1707</mods:dateIssued> 
+</mods:originInfo> 
+<mods:originInfo> 
+<mods:place> 
+<mods:placeTerm type="text">Wolfenbüttel</mods:placeTerm> 
+</mods:place> 
+<mods:publisher>Herzog August Bibliothek</mods:publisher> 
+<mods:dateIssued encoding="w3cdtf">2008</mods:dateIssued> 
+<mods:edition>[Electronic ed.]</mods:edition> 
+</mods:originInfo> 
+<mods:physicalDescription> 
+<mods:extent>2°</mods:extent> 
+<mods:extent>[22] Bl., 1004 S., [1] Bl</mods:extent> 
+
+ 
+<mods:digitalOrigin>reformatted digital</mods:digitalOrigin> 
+</mods:physicalDescription> 
+<mods:titleInfo> 
+<mods:title>Scriptores Rervm Brvnsvicensivm Illustrationi Inservientis, Antiqvi Omnes Et Religionis Reformatione Priores ...</mods:title> 
+</mods:titleInfo> 
+<mods:relatedItem type="host"> 
+<mods:recordInfo> 
+<mods:recordIdentifier source="WDB_OPAC">oai:diglib.hab.de:ppn_58614045X</mods:recordIdentifier> 
+</mods:recordInfo> 
+</mods:relatedItem> 
+<mods:part type="host" order="1"> 
+<mods:detail> 
+<mods:number>[1]</mods:number> 
+</mods:detail> 
+</mods:part> 
+</mods:mods> 
+</mets:xmlData> 
+</mets:mdWrap> 
+</mets:dmdSec> 
+<mets:amdSec ID="amd_586140484"> 
+<mets:rightsMD ID="amd_dvrights_586140484"> 
+<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="DVRIGHTS"> 
+<mets:x
+mlData> 
+<dv:rights> 
+<dv:owner>Herzog August Bibliothek Wolfenbüttel</dv:owner> 
+<dv:ownerLogo> 
+http://www.hab.de/images/logo_dfg_viewer.gif</dv:ownerLogo> 
+<dv:ownerSiteURL>http://www.hab.de/</dv:ownerSiteURL> 
+<dv:ownerContact>auskunft@hab.de/</dv:ownerContact> 
+</dv:rights> 
+</mets:x
+mlData> 
+</mets:mdWrap> 
+</mets:rightsMD> 
+<mets:digiprovMD ID="amd_dvlinks_586140484"> 
+<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="DVLINKS"> 
+<mets:x
+mlData> 
+<dv:links> 
+<dv:reference> http://sunny.biblio.etc.tu-bs.de:8080/DB=2/SET=2/TTL=2/CMD?ACT=SRCHA&amp;IKT=1016&amp;
+SRT=YO P&amp;TRM=url+diglib.hab.de %5C %2Fdrucke %5C %2Fgn-4f-1572-1b %5C %2Fstart.htm 
+</dv:reference> 
+<dv:presentation>http://diglib.hab.de/drucke/gn-4f-1572-1b/start.htm</dv:presentation> 
+</dv:links> 
+</mets:x
+mlData> 
+</mets:mdWrap> 
+</mets:digiprovMD> 
+</mets:amdSec> 
+<mets:fileSec> 
+<mets:fileGrp USE="DEFAULT"> 
+<mets:file ID="drucke_gn-4f-1572-1b_00001" MIMETYPE="image/jpeg"> 
+
+ 
+<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/00001.jpg" LOCTYPE="URL"/> 
+</mets:file> 
+<!-- Kürzung um 00001.jpg bis 01057.jpg DEFAULT Auflösung --> 
+<mets:file ID="drucke_gn-4f-1572-1b_01058" MIMETYPE="image/jpeg"> 
+<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/01058.jpg" LOCTYPE="URL"/> 
+</mets:file> 
+</mets:fileGrp> 
+<mets:fileGrp USE="MIN"> 
+<mets:file ID="min_drucke_gn-4f-1572-1b_00001" MIMETYPE="image/jpeg"> 
+<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/min/00001.jpg" LOCTYPE="URL"/> 
+</mets:file> 
+<!-- Kürzung um 00002.jpg bis 01057.jpg Minimale Auflösung --> 
+<mets:file ID="min_drucke_gn-4f-1572-1b_01058" MIMETYPE="image/jpeg"> 
+<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/min/01058.jpg" LOCTYPE="URL"/> 
+</mets:file> 
+</mets:fileGrp> 
+<mets:fileGrp USE="MAX"> 
+<mets:file ID="max_drucke_gn-4f-1572-1b_00001" MIMETYPE="image/jpeg"> 
+<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/max/00001.jpg" LOCTYPE="URL"/> 
+</mets:file> 
+<!-- Kürzung um 00002.jpg bis 01057.jpg Maximale Auflösung --> 
+<mets:file ID="max_drucke_gn-4f-1572-1b_01058" MIMETYPE="image/jpeg"> 
+<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/max/01058.jpg" LOCTYPE="URL"/> 
+</mets:file> 
+</mets:fileGrp> 
+<mets:fileGrp USE="THUMBS"> 
+<mets:file ID="thumbs_drucke_gn-4f-1572-1b_00001" MIMETYPE="image/jpeg"> 
+<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/thumbs/00001.jpg" LOCTYPE="URL"/> 
+</mets:file> 
+<!-- Kürzung um 00002.jpg bis 01057.jpg Thumbnails --> 
+<mets:file ID="thumbs_drucke_gn-4f-1572-1b_01058" MIMETYPE="image/jpeg"> 
+<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/thumbs/01058.jpg" LOCTYPE="URL"/> 
+</mets:file> 
+</mets:fileGrp> 
+</mets:fileSec> 
+<mets:structMap TYPE="LOGICAL"> 
+<mets:div ID="logMD_586140484" TYPE="Monograph" DMDID="dmd_586140484" ADMID="amd_586140484"/> 
+
+ 
+</mets:structMap> 
+<mets:structMap TYPE="PHYSICAL"> 
+<mets:div ID="physMD_586140484" TYPE="physSequence"> 
+<mets:div ID="physMD_586140484_1" TYPE="page" ORDER="1"> 
+<mets:fptr FILEID="drucke_gn-4f-1572-1b_00001"/> 
+<mets:fptr FILEID="min_drucke_gn-4f-1572-1b_00001"/> 
+<mets:fptr FILEID="max_drucke_gn-4f-1572-1b_00001"/> 
+<mets:fptr FILEID="thumbs_drucke_gn-4f-1572-1b_00001"/> 
+</mets:div> 
+<!-- Kürzung um Zuordnungen von 00002 bis 01057 --> 
+<mets:div ID="physMD_586140484_1058" TYPE="page" ORDER="1058"> 
+<mets:fptr FILEID="drucke_gn-4f-1572-1b_01058"/> 
+<mets:fptr FILEID="min_drucke_gn-4f-1572-1b_01058"/> 
+<mets:fptr FILEID="max_drucke_gn-4f-1572-1b_01058"/> 
+<mets:fptr FILEID="thumbs_drucke_gn-4f-1572-1b_01058"/> 
+</mets:div> 
+</mets:div> 
+</mets:structMap> 
+<mets:structLink> 
+<mets:smLink xlink:from="logMD_586140484" xlink:to="physMD_586140484" /> 
+</mets:structLink> 
+</mets:mets> 
+ 
+ 
+ 
+
+
+
+4. Hinzurechnen einer Fußzeile 
+Die Fußzeile sollte bei den an die Nutzer ausgelieferten bzw. im Internet angebotenen Formaten am unteren Rand des Images hinzurechnet werden. Links sollte sich das 
+Bibliothekslogo, bei Förderung durch die DFG nach Möglichkeit rechts zusätzlich das Logo der DFG befinden. Die Angabe einer zitierfähigen URL im Mittelbereich (ergänzend zur Übergabe 
+in der Viewer-XML-Datei) wird empfohlen. Schrift und Logos müssen der Auflösung 
+entsprechend skaliert werden. In PDF-Dateien zum Download können – zusätzlich zu einem Vorblatt – ebenfalls Fußzeilen an jedes Bild angefügt werden. Vergleiche die untenstehenden Beispiele: 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+Anhang B: 
+METS/TEI-Spezifikation für die Darstellung von digitalisierten Handschriften 
+
+
+# DFG-Viewer 
+
+Ziel der vorliegenden METS/TEI-Spezifikation für digitalisierte mittelalterliche und frühneuzeitliche 
+Handschriften ist die Darstellung der Digitalisate unter der vereinheitlichten Oberfläche des DFG-Viewers. Der ursprünglich für die Präsentation von digitalisierten Druckwerken geschaffene DFG-Viewer wird somit medientypologisch erweitert, ohne dabei die gewohnte Bedienoberfläche 
+aufzugeben. Diese wird lediglich um wenige Funktionen ergänzt, um den spezifischen Anforderungen des neuen Medientyps gerecht zu werden. 
+Da es sich nicht um eine grundsätzlich neue Implementierung des DFG-Viewers handelt, sondern 
+lediglich um die Unterstützung eines zusätzlichen Anwendungsprofils für METS/TEI, gelten die in 
+Anhang A gemachten Angaben zu Druckwerken analog auch für digitalisierte Handschriften – insbesondere die allgemeinen Informationen zum DFG-Viewer in Abschnitt 1 sowie die Hinweise zum Hinzurechnen einer Fußzeile in Abschnitt 4. 
+Weitere Informationen zu den vom DFG-Viewer unterstützten Datenformaten und Funktionen sowie 
+zur Einbindung des Webdienstes in das eigene Angebot finden Sie auf der Webseite des DFG-Viewers 1 . 
+
+
+# TEI-DFG-Standard-Set (Handschriftenbestände) 
+Die folgenden Angaben zur Kodierung einer digitalisierten Handschrift in TEI beschränken sich auf die 
+nötigen Pflichtfelder und stellen nicht das vollständige Spektrum aller Möglichkeiten dar. 
+Eine ausführliche Dokumentation aller Optionen findet sich auf der Webseite des DFG-Viewers. 
+Grundlagen des Anwendungsprofils sind die TEI-Spezifikation der Text Encoding Initiative 2 sowie die Vorarbeiten des Europeana Regia-Projekts 3 zu denen das DFG-Standard-Set kompatibel ist. 
+Element / Unterelement wiederholbar 
+Bemerkungen / Erläuterungen Status 
+1 Angaben zur Identifikation 
+Alle in diesem Abschnitt beschriebenen Elemente sind Unterelemente von 
+teiHeader/fileDesc/sourceDesc/msDesc 
+<head> / <title> nein Enthält den Titel der Handschrift nach DFG-Richtlinien zur Handschriftenkatalogisierung. 
+Pflicht, 
+wenn vh. 
+<msIdentifier> / <settlement> 
+nein Enthält den geographischen Aufbewahrungsort der Handschrift. 
+Pflicht 
+
+
+1 http://dfg-viewer.de/ 
+2 http://www.tei-c.org/ 
+3 http://www.europeanaregia.eu/ 
+
+ 
+<msIdentifier> / 
+<repository> 
+nein Enthält den Namen der die Handschrift 
+aufbewahrenden Einrichtung. 
+Pflicht 
+<msIdentifier> / <idno> nein Enthält einen innerhalb der aufbewahrenden 
+Einrichtung eindeutigen Identifikator, in der 
+Regel die Signatur ggf. ergänzt um eine 
+Angabe der Blätter, über die sich die logische Struktur erstreckt. 
+Pflicht 
+<msIdentifier> / 
+<msName> 
+ja Enthält einen nicht-kanonischen Titel der 
+Handschrift. 
+Empfohlen 
+2 Angaben zur Entstehung 
+Alle in diesem Abschnitt beschriebenen Elemente sind Unterelemente von 
+teiHeader/fileDesc/sourceDesc/msDesc/history . 
+<origin> / <origPlace> nein Enthält den Entstehungsort der Handschrift 
+wie er im DFG-Viewer erscheinen soll. 
+Empfohlen 
+<origin> / <origDate> nein Enthält Angaben zur Entstehungszeit der 
+Handschrift wie sie im DFG-Viewer angezeigt 
+werden sollen. Exakte numerische Angaben 
+werden in den Attributen when, notBefore, 
+notAfter, from und to gemacht, wenn möglich. 
+Empfohlen 
+3 Angaben zur physischen Beschaffenheit 
+Alle in diesem Abschnitt beschriebenen Elemente sind Unterelemente von 
+teiHeader/fileDesc/sourceDesc/msDesc/physDesc/objectDesc . 
+<supportDesc material=“…“> 
+nein Die Angabe zum Material erfolgt im 
+Attribut material . Die Verwendung der 
+Attributwerte 
+paper
+, 
+parchment
+, 
+papyrus
+, 
+sowie 
+mixed
+ wird empfohlen. 
+Pflicht, 
+wenn vh. 
+<supportDesc> / 
+<support> 
+nein Enthält Angaben zum Beschreibstoff wie sie 
+im DFG-Viewer angezeigt werden sollen. 
+Pflicht, 
+wenn vh. 
+<supportDesc> / 
+<extent> / <measure> 
+nein Enthält Mengenangaben zum Umfang wie z.B. 
+die Blattzahl, die auch im DFG-Viewer angezeigt wird. 
+Pflicht, 
+wenn vh. 
+<supportDesc> / 
+<extent> /<dimensions> 
+nein Enthält Angaben zur physischen Abmessung 
+wie etwa das Blattformat, das auch im DFG-Viewer angezeigt wird. 
+Die konkreten Größenangaben erfolgen in den 
+Unterelementen depth , height sowie width . 
+Pflicht, 
+wenn vh. 
+
+ 
+4 Angaben zum Inhalt 
+Alle in diesem Abschnitt beschriebenen Elemente sind Unterelemente von 
+teiHeader/fileDesc/sourceDesc/msDesc/msContents . 
+<summary> nein Enthält eine summarische 
+Inhaltsbeschreibung. 
+Empfohlen 
+<textLang mainLang=“…“ 
+otherLangs=“…“> 
+nein Enthält Angaben zu den Sprachen, in denen 
+die Texte der Handschrift verfasst sind. 
+Das Attribut mainLang sollte die überwiegend 
+verwendete Sprache benennen, während alle 
+weiteren vorkommenden Sprachen jeweils mit 
+Leerzeichen getrennt im Attribut otherLangs 
+kodiert werden sollten. Die Attributwerte 
+müssen Sprachcodes nach den Standards ISO 
+639-2 oder ISO 639-3 sein. 
+Empfohlen 
+5 Administrative Angaben zum Digitalisat 
+Alle in diesem Abschnitt beschriebenen Elemente sind Unterelemente von teiHeader/fileDesc . 
+<titleStmt> / <title> nein Enthält einen Titel für das Digitalisat. In der 
+Regel ist dies die Schlagzeile nach DFG-Richtlinien bestehend aus Signatur der digitalisierten Handschrift und deren Titel. 
+Dieses Feld ist nicht mit dem Titel zu verwechseln und kommt im DFG-Viewer nicht zur Anzeige! 
+Die Verpflichtung ergibt sich aus der allgemeinen TEI-Spezifikation und ist nicht 
+Viewer-spezifisch. 
+Pflicht 
+<titleStmt> / <funder> ja Enthält einen für die Digitalisierung relevanten 
+Geldgeber, also etwa „Deutsche Forschungsgemeinschaft“. Das kann aber z.B. auch die digitalisierende Institution sein. 
+Empfohlen 
+<publicationStmt> / 
+<publisher> 
+ja Enthält den Herausgeber des Digitalisats, in 
+aller Regel also die digitalisierende Einrichtung. Mindestens ein Unterelement 
+von publicationStmt ist verpflichtend. 
+Pflicht, 
+wenn vh. 
+<publicationStmt> / 
+<pubPlace> / <ptr target=“…“ cRef=“…“ 
+type=“…“ /> 
+ja Enthält einen persistenten Identifier des Digitalisats. Handelt es sich beim Identifier um 
+eine URL, so ist diese im Attribut target anzugeben, andernfalls im Attribut cRef . 
+Darüber hinaus muss die Art des Identifiers im Attribut type mit den Werten 
+urn
+ oder 
+purl
+ 
+Pflicht, 
+wenn vh. 
+
+ 
+angegeben werden. Mindestens ein Unterelement von publicationStmt ist verpflichtend. 
+<publicationStmt> / <idno> 
+ja Enthält einen Identifier des Datensatzes. Optional kann dessen Typ im Attribut type angegeben werden. 
+Pflicht, 
+wenn vh. 
+ 
+3. Beispiel für einen METS/TEI Datensatz nach dem DFG-Standard 
+Das folgende Beispiel zeigt den METS/TEI-Datensatz aufgrund seines Umfangs nur ausschnittsweise. 
+Der Auszug stellt einen vollständigen deskriptiven Metadatensatz dar, der alle oben beschriebenen 
+Pflicht- und Optionalfelder exemplarisch enthält. Dieser Auszug befindet sich in einer METS-Datei 
+innerhalb eines dmdSec -Abschnitts. 
+<tei:teiHeader> 
+  <tei:fileDesc> 
+    <tei:titleStmt> 
+      <!-- Fingierter Titel für das Digitalisat (obligatorisch) 
+         Es handelt sich hierbei nicht um den bibliografischen Titel der 
+         Handschrift, sondern um die nach DFG-Richtlinien gebildete Schlagzeile 
+         Bestehend aus Signatur und wissenschaftlichem Titel. Der Titel kommt im 
+         DFG-Viewer nicht zur Anzeige, ist aber aufgrund der TEI- 
+         Spezifikation dennoch verpflichtend. --> 
+      <tei:title> 
+        Zeugbuch Kaiser Maximilians I. - BSB Cod.icon. 222 
+      </tei:title> 
+      <!-- Förderer der Digitalisierung (optional) --> 
+      <tei:funder>Deutsche Forschungsgemeinschaft</tei:funder> 
+    </tei:titleStmt> 
+    <tei:publicationStmt> 
+      <!-- Herausgeber des Digitalats (obligatorisch, sofern bekannt) --> 
+      <tei:publisher>Bayerische Staatsbibliothek</tei:publisher> 
+      <!-- Persistenter Identifikator für das Digitalisat (obligatorisch) --> 
+      <tei:pubPlace> 
+        <tei:ptr 
+          target="http://daten.digitale-sammlungen.de/~db/0002/bsb00020956/" 
+          type="purl"/> 
+      </tei:pubPlace> 
+      <!—Identifikator für den Datensatz (obligatorisch) --> 
+      <tei:idno type="zend">bsb00020956</tei:idno> 
+    </tei:publicationStmt> 
+    <tei:sourceDesc> 
+      <tei:msDesc> 
+        <tei:msIdentifier> 
+          <!-- Geographischer Aufbewahrungsorts (obligatorisch) --> 
+          <tei:settlement>München</tei:settlement> 
+          <!-- Name der bewahrenden Institution (obligatorisch) --> 
+          <tei:repository>Bayerische Staatsbibliothek</tei:repository> 
+          <!-- Signatur o. eindeutiger Identifikator (obligatorisch) --> 
+          <tei:idno>Cod.icon. 222</tei:idno> 
+          <!-- Nicht-kanonischer Titel (optional, wiederholbar) --> 
+          <tei:msName>Zeugbuch Kaiser Maximilians I.</tei:msName> 
+        </tei:msIdentifier> 
+        <tei:head> 
+          <!-- Handschriftentitel (obligatorisch, sofern vorhanden) --> 
+          <tei:title/> 
+        </tei:head> 
+        <tei:history> 
+          <tei:origin> 
+            <!-- Entstehungsort (empfohlen, sofern bekannt) --> 
+            <tei:origPlace>Innsbruck</tei:origPlace> 
+            <!-- Entstehungszeit (empfohlen, sofern bekannt) --> 
+            <tei:origDate notBefore="1500" notAfter="1505"> 
+              um 1502 
+            </tei:origDate> 
+          </tei:origin> 
+        </tei:history> 
+
+ 
+Der übrige Aufbau der METS-Datei folgt analog der Dokumentation für Drucke. Innerhalb des 
+structMap -Elements mit dem Attribut TYPE=LOGICAL wird in der METS-Datei die logische Struktur der 
+Handschrift kodiert. Jede logische Struktureinheit (z.B. ein Textfragment) kann wiederum auf einen 
+eigenen Abschnitt mit deskriptiven Metadaten verweisen, der ebenfalls dem oben beschriebenen 
+Aufbau folgen muss. 
+        <tei:physDesc> 
+          <tei:objectDesc> 
+            <!-- Angabe des Materials (obligatorisch, sofern ermittelbar) --> 
+            <tei:supportDesc material="mixed"> 
+              <!-- Angaben zum Beschreibstoff (obligatorisch, sofern 
+                 ermittelbar) --> 
+              <tei:support> 
+                Pergament (2-8, 11-30, 34, 48, 295, 296) und Papier 
+              </tei:support> 
+              <tei:extent> 
+               <!-- Angaben zum Umfang wie z.B. die Blattzahl 
+                  (obligatorisch, sofern ermittelbar) --> 
+               <tei:measure type="leavesCount">2 + 276 Blätter</tei:measure> 
+               <!-- Blattformat (obligatorisch, sofern ermittelbar) --> 
+               <tei:dimensions unit="mm" type="leaves"> 
+                <tei:height>420</tei:height> 
+                <tei:width>285</tei:width> 
+               </tei:dimensions> 
+              </tei:extent> 
+            </tei:supportDesc> 
+          </tei:objectDesc> 
+         </tei:physDesc> 
+         <tei:msContents> 
+           <!-- Summarische Beschreibung des Inhalts (empfohlen) --> 
+           <tei:summary/> 
+           <!-- Textsprache (empfohlen, sofern bekannt) --> 
+           <tei:textLang mainLang="ger">Deutsch</tei:textLang> 
+         </tei:msContents> 
+      </tei:msDesc> 
+    </tei:sourceDesc> 
+  </tei:fileDesc> 
+</tei:teiHeader> 
+Deutsche Forschungsgemeinschaft 
+Kennedyallee 40 ∙ 53175 Bonn ∙ Postanschrift: 53170 Bonn 
+Telefon: + 49 228 885-1 ∙ Telefax: + 49 228 885-2777 ∙ postmaster@dfg.de ∙ www.dfg.de DFG 
+ 
+Anhang C: 
+LIDO-Kernelemente für die Publikation 
+ 
+1. LIDO-Kernelemente für bildhafte und dreidimensionale Objekte 
+Der LIDO-Standard fokussiert als Harvestingformat auf die Bereitstellung von deskriptiven und 
+administrativen Metadaten für die Recherche und Präsentation von in der Regel unikalen, 
+bildhaften und dreidimensionalen Objekten in Online-Umgebungen. 
+Es sind nur wenige Pflichtfelder erforderlich. Für unterschiedliche Objektarten kann eine 
+Ausdifferenzierung der allgemeingültigen Beschreibungselemente durch ein type-Attribut 
+erfolgen, jedoch immer unter Beibehaltung der im Standard definierten Semantik eines 
+Elements. Je nach Materialart und Projektzuschnitt ist eine Erweiterung dieses Basissets 
+angezeigt. 
+Für weitere Erläuterungen zur Besetzung der jeweiligen Felder sei auf die LIDO-Spezifikation 
+sowie weitergehende Informationen auf der LIDO-Webseite unter http://www.lido-schema.org 
+verwiesen. 
+Vorbemerkung: Zahlreiche LIDO-Elemente (z.B. Objekttyp, Material, Technik) werden mit 
+Datenwerten belegt, die idealerweise als Konzepte („unit of thought“) in kontrollierten 
+Vokabularen (Thesauri, Klassifikationssystem, Wortlisten) [1] definiert sind. Solche Elemente, die 
+im Folgenden in der jeweiligen Erläuterung als Konzept markiert werden, bestehen immer aus 
+den Unterelementen conceptID zur Angabe des Identifikators im kontrollierten Vokabular und 
+term zur Angabe einer Bezeichnung für das Konzept. 
+Deskriptive Metadaten 
+Element /Unterelement Wieder- 
+holbar 
+Bemerkungen /Erläuterungen Status 
+ 
+1 LIDO Identifikationsnummer 
+<lidoRecordID> ja Eindeutige Identifikationsnummer 
+für den LIDO Datensatz, 
+typischerweise zusammengesetzt 
+aus der ISIL-Nummer des 
+Datenlieferanten sowie der 
+lokalen Datensatznummer. 
+(Zu ISIL-Nummern für Museen 
+siehe http://www.museen-in-deutschland.de/) 
+ 
+ 
+ 
+ 
+Pflicht 
+
+[1] Dies können sowohl publizierte, zentral gepflegte als auch unpublizierte, lokal gepflegte Vokabulare sein. Im Sinne der Vernetzung ist ersteren i.d.R. der Vorzug zu geben. 
+
+ 
+ 
+Element /Unterelement Wieder- 
+holbar 
+Bemerkungen /Erläuterungen Status 
+ 
+2 Objekttyp 
+<objectWorkType> ja Objekt- oder Werktyp 
+Konzept 
+Pflicht 
+3 Klassifikation 
+<classification type=“…“> ja Ein Begriff / Konzept, das ein Objekt in 
+einem größeren Kontext kategorisiert. 
+Das (optionale) type-Attribut qualifiziert 
+die Art der Klassifikation, z.B. Gattung, 
+biologische Systematik o.ä. 
+Konzept 
+Pflicht, wenn 
+vh. 
+4 Titel/Objektname 
+<titleSet> ja Umschlag für Titelinformationen; 
+sofern das Objekt keinen Titel hat, 
+muss er generiert werden, z.B. 
+aus dem Objekttyp. 
+ 
+ 
+ 
+ 
+Pflicht 
+< titleSet> / 
+<appellationValue> 
+nur für 
+Sprachvarianten 
+Titel oder Name, der einem Objekt 
+gegeben wurde. 
+5 Aufbewahrung/Standort 
+<repositorySet 
+type=“current“> 
+ja Umschlag für die aktuelle 
+Aufbewahrungs- bzw. Standort-Information 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Pflicht, wenn 
+vh. 
+<repositorySet> / 
+<repositoryName> / 
+<legalBodyName> / 
+<appellationValue> 
+nur für 
+Sprachvarianten 
+Bezeichnung für die aufbewahrende 
+Institution 
+<repositorySet> / 
+<workID> 
+ja Eine eindeutige numerische oder 
+alphanumerische Identifikationsnummer, 
+die die aufbewahrende Institution dem 
+Objekt gegeben hat; typischerweise die 
+Inventarnummer 
+<repositorySet> / 
+<repositoryLocation> / 
+<namePlaceSet> / 
+<appellationValue> 
+nur für 
+Sprachvarianten 
+Bezeichnung des Standorts 
+(insbes. für Architektur Pflichtangabe) 
+  
+
+ 
+Element /Unterelement Wieder- 
+holbar 
+Bemerkungen /Erläuterungen Status 
+6 Objektbeschreibung 
+<objectDescriptionSet 
+type=“…“> 
+ja Umschlag für Beschreibungstexte und 
+ihre Quellen. Das (optionale) type-Attribut qualifiziert die Art der 
+Beschreibung, z.B. Objektgeschichte, 
+Katalogtext o.ä. 
+ 
+ 
+Empfohlen 
+< objectDescriptionSet> / 
+<descriptiveNoteValue> 
+nur für 
+Sprachvarianten 
+Kurzer, essay-ähnlicher Text, der das 
+Objekt beschreibt. 
+7 Maßangaben 
+<objectMeasurementsSet
+> 
+ja Umschlag für Maßangaben  
+ 
+Pflicht, wenn 
+vh. 
+<objectMeasurementsSet
+> / 
+<displayObjectMeasurem
+ents> 
+nur für 
+Sprachvarianten 
+Maßangabe in Textform 
+<objectMeasurementsSet
+> / 
+<objectMeasurements> / 
+<measurementsSet> 
+nein Maßangabe in strukturierter Form mit 
+den Unterelementen measurementType, 
+measurementUnit, measurementValue 
+Empfohlen 
+8 Ereignis 
+<eventSet> ja Umschlag für Informationen über 
+ein Ereignis im Lebenszyklus des 
+Objekts 
+ 
+ 
+ 
+ 
+ 
+Pflicht, wenn 
+vh. 
+<eventSet> / <event> / 
+<eventType> 
+nein Art der Beziehung zwischen 
+Objekt und Ereignis. 
+Je nach Objektart sind typische 
+Ereignisse: Herstellung, Fund, 
+Nutzung. Für empfohlene 
+Ereignistypen 
+sieht http://terminology.lido-schema.org/eventType 
+Konzept 
+ 
+  
+
+ 
+Element /Unterelement Wieder- 
+holbar 
+Bemerkungen /Erläuterungen Status 
+Am Ereignis beteiligte identifizierbare Akteure 
+<eventSet> / <event> / 
+<eventActor> 
+ja Umschlag für Information zur Beteiligung 
+einer Person, Institution, Gruppe, 
+Familie am Ereignis 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Pflicht, 
+wenn vh. 
+<eventSet> / <event> / 
+<eventActor> / 
+<actorInRole> / 
+<actor> / 
+<actorID> 
+ja Identifikator für den beteiligten Akteur. 
+Referenziert idealerweise eine 
+Normdatei. 
+Für DFG-Projekte soll die GND 
+verwendet werden. 
+<eventSet> / <event> / 
+<eventActor> / 
+<actorInRole> / 
+<actor> / 
+<nameActorSet> / 
+<appellationValue> 
+nur für 
+Namensvarianten 
+Name des beteiligten Akteurs 
+<eventSet> / <event> / 
+<eventActor> / 
+<actorInRole> / 
+<attributionQualifierActor
+> 
+ja Information zur Zuschreibung eines 
+Objekts zu einem Beteiligten; besonders 
+bei Künstlern relevant 
+Empfohlen 
+Kultureller Kontext des Ereignisses 
+<culture> ja Kultureller Kontext zum Ereignis; 
+vor allem relevant für Herstellung 
+und Nutzung, wenn kein 
+konkretes Individuum als Akteur 
+benannt werden kann 
+Konzept 
+ 
+ 
+Pflicht, wenn 
+vh. 
+Datierung des Ereignisses 
+<eventDate> nein Datierung des Ereignisses  
+ 
+ 
+ 
+ 
+Pflicht, 
+wenn vh. 
+<eventDate > / 
+<displayDate> 
+nur für 
+Sprachvarianten 
+Datierungsangabe in Textform, in der 
+ggf. Ungenauigkeiten zum Ausdruck 
+gebracht werden können. 
+<eventDate > / 
+<earliestDate> 
+nein Jahresangabe oder exaktes Datum, das 
+den frühestmöglichen Zeitpunkt angibt, 
+zu dem das Ereignis stattgefunden resp. 
+begonnen hat. 
+<eventDate > / 
+<latestDate> 
+nein Jahresangabe oder exaktes Datum, das 
+den letztmöglichen Zeitpunkt angibt, zu 
+dem das Ereignis stattgefunden resp. 
+geendet hat. 
+ 
+  
+
+ 
+Element /Unterelement Wieder- 
+holbar 
+Bemerkungen /Erläuterungen Status 
+Zeitperiode zum Ereignis 
+<periodName> nur für 
+Angabe 
+frühester / 
+spätester 
+Periode 
+Zeitperiode zum Ereignis; vor 
+allem relevant im archäologischen 
+und naturhistorischen Kontext 
+Konzept 
+ 
+ 
+Pflicht, wenn 
+vh. 
+Ortsangaben zum Ereignis 
+<eventPlace> ja Umschlag für Ortsinformation zum 
+Ereignis 
+ 
+ 
+Pflicht, 
+wenn vh. 
+<eventPlace > / 
+<place> / 
+<namePlaceSet> 
+<appellationValue> 
+nur für 
+Namensvarianten 
+Name des Ortes 
+<eventPlace > / 
+<place> / 
+<gml> 
+ja Georeferenzen des Ortes Empfohlen 
+Material- und Technikangaben zum Ereignis 
+<eventMaterialsTech> ja Umschlag für Material- und 
+Technikangaben zum Ereignis; 
+kann für verschiedene Objektteile 
+differenziert werden. 
+ 
+ 
+ 
+Pflicht, 
+wenn vh. 
+< eventMaterialsTech > / 
+<materialsTech> / 
+<termMaterialsTech 
+type=“…“> 
+ja Ein Material oder eine Technik 
+Das type-Attribut qualifiziert Material 
+oder Technik 
+Konzept 
+9 Thema / Bildinhalt 
+<subjectSet> ja Umschlag für Informationen zum Thema 
+oder Bildinhalt eines Objektes 
+Beachte: Unterschiedliche Entitäten 
+(Konzept, Akteur, Ort, Ereignis, Objekt) 
+haben je eigene Unterelemente. 
+ 
+ 
+ 
+ 
+Pflicht, wenn 
+vh. 
+<subjectSet> / 
+<subject> / 
+<subjectConcept> 
+ja Verschlagwortung der Themen oder 
+Bildinhalte eines Objekts 
+Kontrolliert z.B. ICONCLASS 
+Konzept 
+  
+
+ 
+Administrative Metadaten 
+10 Rechte am Objekt 
+<rightsWorkSet> 
+ 
+ja Umschlag für Rechte-Information zum 
+Objekt / Werk. 
+ 
+ 
+Pflicht, wenn 
+vh. 
+<rightsWorkSet > / 
+<rightsHolder> / 
+<legalBodyName>/ 
+<appellationValue> 
+nur für 
+Sprachvarianten 
+Name des Rechteinhabers. 
+11 Datensatz 
+<recordID> ja Eindeutige Identifikationsnummer 
+im (lokalen) System des 
+Datenlieferanten. 
+ 
+Pflicht 
+<recordType>  nein Angabe, ob der Datensatz ein 
+Einzelobjekt, eine Sammlung, 
+Serie, Objektgruppe o.a. 
+beschreibt. 
+Konzept. 
+ 
+Pflicht 
+< recordSource> ja Datensatzquelle, i.d.R. die 
+datenliefernde Institution 
+ 
+ 
+Pflicht 
+<recordSource> / 
+<legalBodyName>/ 
+<appellationValue> 
+nur für 
+Sprachvarianten 
+Name zur Datensatzquelle. 
+<recordRights>  ja Umschlag für Rechte-Information zum 
+Datensatz. 
+ 
+ 
+Pflicht, wenn 
+vh. 
+<recordRights> / 
+<rightsHolder> / 
+<legalBodyName>/ 
+<appellationValue> 
+nur für 
+Sprachvarianten 
+Name des Rechteinhabers. 
+<recordInfoSet> / 
+<recordInfoLink> 
+ja Link zur Objektbeschreibung. Pflicht, wenn 
+vh. 
+12 Reproduktionen 
+<resourceSet>  ja Umschlag für Angaben zu (digitalen) 
+Reproduktionen des Objekts. 
+ 
+ 
+ 
+ 
+ 
+Pflicht, wenn 
+vh. 
+<resourceSet> / 
+<resourceRepresentation
+> 
+ja Link(s) zur digitalen Reproduktion des 
+Objekts, , ggf. in verschiedenen 
+Auflösungen und mit technischen 
+Angaben zur Wiedergabe (Audio, Video) 
+<resourceSet> / 
+<rightsResource> / 
+<rightsHolder> 
+ja Umschlag für Rechte-Information zur 
+digitalen Reproduktion. 
+<resourceSet> / 
+<rightsResource> / 
+<rightsHolder> / 
+<legalBodyName>/ 
+<appellationValue> 
+nur für 
+Sprachvarianten 
+Name des Rechteinhabers. 
+  
+
+ 
+2. Beispiel für einen LIDO Datensatz 
+ 
+<?xml version="1.0" encoding="UTF-8"?> 
+<lido:lido xmlns:lido="http://www.lido-schema.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.lido-schema.org http://www.lido-schema.org/schema/v1.0/lido-v1.0.xsd"> 
+ <lido:lidoRecID lido:type="local" lido:source="Deutsches Dokumentationszentrum für Kunstgeschichte - 
+Bildarchiv Foto Marburg">DE-Mb112/lido/obj/00154983</lido:lidoRecID> 
+ <lido:descriptiveMetadata xml:lang="de"> 
+ <lido:objectClassificationWrap> 
+  <lido:objectWorkTypeWrap> 
+  <lido:objectWorkType lido:type="Sachbegriff"> 
+   <lido:term>Gemälde</lido:term> 
+  </lido:objectWorkType> 
+  </lido:objectWorkTypeWrap> 
+  <lido:classificationWrap> 
+  <lido:classification lido:type="Gattung"> 
+   <lido:term>Tafelmalerei</lido:term> 
+  </lido:classification> 
+  </lido:classificationWrap> 
+ </lido:objectClassificationWrap> 
+ <lido:objectIdentificationWrap> 
+  <lido:titleWrap> 
+  <lido:titleSet> 
+   <lido:appellationValue lido:pref="preferred">La Primavera / Der Frühling</lido:appellationValue> 
+  </lido:titleSet> 
+  </lido:titleWrap> 
+  <lido:repositoryWrap> 
+  <lido:repositorySet lido:type="current"> 
+   <lido:repositoryName> 
+   <lido:legalBodyName> 
+    <lido:appellationValue>Galleria degli Uffizi — Pinacoteca (Florenz)</lido:appellationValue> 
+   </lido:legalBodyName> 
+   </lido:repositoryName> 
+   <lido:workID lido:type="Inventarnummer">8360 (Inv. 1890)</lido:workID> 
+   <lido:repositoryLocation> 
+   <lido:namePlaceSet> 
+    <lido:appellationValue>Florenz</lido:appellationValue> 
+   </lido:namePlaceSet> 
+   </lido:repositoryLocation> 
+  </lido:repositorySet> 
+  </lido:repositoryWrap> 
+  <lido:objectMeasurementsWrap> 
+  <lido:objectMeasurementsSet> 
+   <lido:displayObjectMeasurements>Höhe x Breite: 203 x 314 cm</lido:displayObjectMeasurements> 
+   <lido:objectMeasurements> 
+   <lido:measurementsSet> 
+    <lido:measurementType>Höhe x Breite</lido:measurementType> 
+    <lido:measurementUnit>cm</lido:measurementUnit> 
+    <lido:measurementValue>203 x 314</lido:measurementValue> 
+   </lido:measurementsSet> 
+   </lido:objectMeasurements> 
+  </lido:objectMeasurementsSet> 
+  </lido:objectMeasurementsWrap> 
+ </lido:objectIdentificationWrap> 
+ <lido:eventWrap> 
+  <lido:eventSet> 
+  <lido:event> 
+   <lido:eventType> 
+
+ 
+   <lido:conceptID lido:type="URI" lido:source="http://terminology.lido-schema.org/eventType">http://terminology.lido-schema.org/lido00007</lido:conceptID> 
+   <lido:term>Herstellung</lido:term> 
+   </lido:eventType> 
+   <lido:eventActor> 
+   <lido:actorInRole> 
+    <lido:actor lido:type="person"> 
+    <lido:actorID lido:type="local" lido:source="Bildindex">kue 02553338</lido:actorID> 
+    <lido:actorID lido:type="URL" 
+lido:source="http://www.bildindex.de">http://www.bildindex.de/dokumente/html/kue02553338</lido:actor
+ID> 
+    <lido:actorID lido:type="URI" lido:source="http://d-nb.info/gnd">http://d-nb.info/gnd/118514008</lido:actorID> 
+    <lido:nameActorSet> 
+     <lido:appellationValue lido:pref="preferred">Botticelli, Sandro</lido:appellationValue> 
+    </lido:nameActorSet> 
+    <lido:nameActorSet> 
+     <lido:appellationValue lido:pref="alternative">Filipepi, Alessandro</lido:appellationValue> 
+    </lido:nameActorSet> 
+    <lido:nameActorSet> 
+     <lido:appellationValue lido:pref="alternative">Filipepi, Sandro</lido:appellationValue> 
+    </lido:nameActorSet> 
+    <lido:nationalityActor> 
+     <lido:term>Italien</lido:term> 
+    </lido:nationalityActor> 
+    <lido:vitalDatesActor> 
+     <lido:earliestDate lido:type="evidenceDate">1445</lido:earliestDate> 
+     <lido:latestDate lido:type="evidenceDate">1510-05-17</lido:latestDate> 
+    </lido:vitalDatesActor> 
+    <lido:genderActor>männlich</lido:genderActor> 
+    </lido:actor> 
+    <lido:roleActor> 
+    <lido:term>Maler</lido:term> 
+    </lido:roleActor> 
+   </lido:actorInRole> 
+   </lido:eventActor> 
+   <lido:eventDate> 
+   <lido:displayDate>um 1482</lido:displayDate> 
+   <lido:date> 
+    <lido:earliestDate>1472</lido:earliestDate> 
+    <lido:latestDate>1492</lido:latestDate> 
+   </lido:date> 
+   </lido:eventDate> 
+   <lido:eventMaterialsTech> 
+   <lido:materialsTech> 
+    <lido:termMaterialsTech lido:type="Material"> 
+    <lido:term>Tempera</lido:term> 
+    </lido:termMaterialsTech> 
+    <lido:termMaterialsTech lido:type="Material"> 
+    <lido:term>Pappelholz</lido:term> 
+    </lido:termMaterialsTech> 
+   </lido:materialsTech> 
+   </lido:eventMaterialsTech> 
+  </lido:event> 
+  </lido:eventSet> 
+  <lido:eventSet> 
+  <lido:event> 
+   <lido:eventType> 
+   <lido:conceptID lido:type="URI" lido:source="http://terminology.lido-schema.org/eventType">http://terminology.lido-schema.org/lido00034</lido:conceptID> 
+   <lido:term>Restaurierung</lido:term> 
+
+ 
+   </lido:eventType> 
+   <lido:eventDate> 
+   <lido:displayDate>1982</lido:displayDate> 
+   <lido:date/> 
+   </lido:eventDate> 
+  </lido:event> 
+  </lido:eventSet> 
+ </lido:eventWrap> 
+ <lido:objectRelationWrap> 
+  <lido:subjectWrap> 
+  <lido:subjectSet> 
+   <lido:subject lido:type="Ikonographie"> 
+   <lido:subjectConcept> 
+    <lido:conceptID lido:type="URI" 
+lido:source="http://iconclass.org">http://iconclass.org/23D42</lido:conceptID> 
+    <lido:term lido:pref="preferred">23 D 42</lido:term> 
+    <lido:term lido:pref="alternative">Frühling; Ripa: Ver; Primavera</lido:term> 
+   </lido:subjectConcept> 
+   </lido:subject> 
+  </lido:subjectSet> 
+  <lido:subjectSet> 
+   <lido:subject lido:type="Ikonographie"> 
+   <lido:subjectConcept> 
+    <lido:conceptID lido:type="URI" 
+lido:source="http://iconclass.org">http://iconclass.org/57A9:</lido:conceptID> 
+    <lido:term lido:pref="preferred">57 A 9</lido:term> 
+    <lido:term lido:pref="alternative">Menschlichkeit, Höflichkeit; Ripa: Cortesia, Humanità</lido:term> 
+   </lido:subjectConcept> 
+   </lido:subject> 
+  </lido:subjectSet> 
+  <lido:subjectSet> 
+   <lido:subject lido:type="Ikonographie"> 
+   <lido:subjectConcept> 
+    <lido:conceptID lido:type="URI" 
+lido:source="http://iconclass.org">http://iconclass.org/92C47</lido:conceptID> 
+    <lido:term lido:pref="preferred">92 C 47</lido:term> 
+    <lido:term lido:pref="alternative">spezifische Darstellungsformen, allegorische Darstellungsformen; 
+Venus als Schutzgottheit</lido:term> 
+   </lido:subjectConcept> 
+   </lido:subject> 
+  </lido:subjectSet> 
+  <lido:subjectSet> 
+   <lido:subject lido:type="Ikonographie"> 
+   <lido:subjectConcept> 
+    <lido:conceptID lido:type="URI" 
+lido:source="http://iconclass.org">http://iconclass.org/92D3</lido:conceptID> 
+    <lido:term lido:pref="preferred">92 D 3</lido:term> 
+    <lido:term lido:pref="alternative">Grazien (Chariten), meist als Dreiergespann; Ripa: 
+Gratie</lido:term> 
+   </lido:subjectConcept> 
+   </lido:subject> 
+  </lido:subjectSet> 
+  <lido:subjectSet> 
+   <lido:subject lido:type="Ikonographie"> 
+   <lido:subjectConcept> 
+    <lido:conceptID lido:type="URI" 
+lido:source="http://iconclass.org">http://iconclass.org/92E5421</lido:conceptID> 
+    <lido:term lido:pref="preferred">92 E 54 21</lido:term> 
+    <lido:term lido:pref="alternative">Zephyrus entführt Flora (oder Chloris), die in der Regel Blumen 
+streut</lido:term> 
+   </lido:subjectConcept> 
+
+ 
+   </lido:subject> 
+  </lido:subjectSet> 
+  <lido:subjectSet> 
+   <lido:subject lido:type="Ikonographie"> 
+   <lido:subjectConcept> 
+    <lido:conceptID lido:type="URI" 
+lido:source="http://iconclass.org">http://iconclass.org/96A2351</lido:conceptID> 
+    <lido:term lido:pref="preferred">96 A 23 51</lido:term> 
+    <lido:term lido:pref="alternative">Flora in ihrem Königreich: ein Garten voller Blumen, der ihr von 
+Zephyrus geschenkt worden ist</lido:term> 
+   </lido:subjectConcept> 
+   </lido:subject> 
+  </lido:subjectSet> 
+  <lido:subjectSet> 
+   <lido:subject lido:type="Ikonographie"> 
+   <lido:subjectConcept> 
+    <lido:conceptID lido:type="URI" 
+lido:source="http://iconclass.org">http://iconclass.org/92D1521</lido:conceptID> 
+    <lido:term lido:pref="preferred">92 D 15 21</lido:term> 
+    <lido:term lido:pref="alternative">Cupido schießt einen Pfeil</lido:term> 
+   </lido:subjectConcept> 
+   </lido:subject> 
+  </lido:subjectSet> 
+  </lido:subjectWrap> 
+ </lido:objectRelationWrap> 
+ </lido:descriptiveMetadata> 
+ <lido:administrativeMetadata xml:lang="de"> 
+ <lido:rightsWorkWrap> 
+  <lido:rightsWorkSet> 
+  <lido:rightsHolder> 
+   <lido:legalBodyName> 
+   <lido:appellationValue>Galleria degli Uffizi — Pinacoteca (Florenz)</lido:appellationValue> 
+   </lido:legalBodyName> 
+  </lido:rightsHolder> 
+  </lido:rightsWorkSet> 
+ </lido:rightsWorkWrap> 
+ <lido:recordWrap> 
+  <lido:recordID lido:type="local">obj/00154983</lido:recordID> 
+  <lido:recordType> 
+  <lido:term>Einzelobjekt</lido:term> 
+  </lido:recordType> 
+  <lido:recordSource> 
+  <lido:legalBodyID lido:type="URI" lido:source="ISIL (ISO 15511)">info:isil/DE-Mb112</lido:legalBodyID> 
+  <lido:legalBodyName> 
+   <lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto 
+Marburg</lido:appellationValue> 
+  </lido:legalBodyName> 
+  <lido:legalBodyWeblink>http://www.fotomarburg.de</lido:legalBodyWeblink> 
+  </lido:recordSource> 
+  <lido:recordRights> 
+  <lido:rightsType> 
+   <lido:conceptID 
+lido:type="URI">http://creativecommons.org/publicdomain/zero/1.0/</lido:conceptID> 
+   <lido:term>CC0 1.0 Public Domain Dedication</lido:term> 
+  </lido:rightsType> 
+  <lido:rightsHolder> 
+   <lido:legalBodyID lido:type="URI" lido:source="ISIL (ISO 15511)">info:isil/DE-Mb112</lido:legalBodyID> 
+   <lido:legalBodyName> 
+
+ 
+   <lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto 
+Marburg</lido:appellationValue> 
+   </lido:legalBodyName> 
+  </lido:rightsHolder> 
+  </lido:recordRights> 
+  <lido:recordInfoSet> 
+  <lido:recordInfoLink 
+lido:formatResource="html">http://www.bildindex.de/dokumente/html/obj00154983</lido:recordInfoLink> 
+  </lido:recordInfoSet> 
+  <lido:recordInfoSet> 
+  <lido:recordInfoLink lido:formatResource="xml">http://oai.bildindex.de/db/apsisa.dll/oai-pmh?verb=GetRecord&amp;identifier=DE-Mb112/lido/obj/00154983&amp;metadataPrefix=lido</lido:recordInfoLink> 
+  </lido:recordInfoSet> 
+ </lido:recordWrap> 
+ <lido:resourceWrap> 
+  <lido:resourceSet> 
+  <lido:resourceID lido:type="local">C 654.591</lido:resourceID> 
+  <lido:resourceRepresentation lido:type="image_thumb"> 
+   <lido:linkResource 
+lido:formatResource="jpg">http://www.bildindex.de/bilder/fmc654591b.jpg</lido:linkResource> 
+  </lido:resourceRepresentation> 
+  <lido:resourceType> 
+   <lido:term>Negativ</lido:term> 
+  </lido:resourceType> 
+  <lido:resourceDateTaken> 
+   <lido:displayDate>1949</lido:displayDate> 
+  </lido:resourceDateTaken> 
+  <lido:rightsResource> 
+   <lido:rightsType> 
+   <lido:conceptID lido:type="URI">http://www.europeana.eu/rights/rr-f/</lido:conceptID> 
+   <lido:term>Rights Reserved - Free Access</lido:term> 
+   </lido:rightsType> 
+   <lido:rightsHolder> 
+   <lido:legalBodyID lido:type="URI" lido:source="ISIL (ISO 15511)">info:isil/DE-Mb112</lido:legalBodyID> 
+   <lido:legalBodyName> 
+    <lido:appellationValue>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto 
+Marburg</lido:appellationValue> 
+   </lido:legalBodyName> 
+   </lido:rightsHolder> 
+  </lido:rightsResource> 
+  </lido:resourceSet> 
+ </lido:resourceWrap> 
+ </lido:administrativeMetadata> 
+</lido:lido> 
+ 
+ 
+Deutsche Forschungsgemeinschaft 
+Kennedyallee 40 ∙ 53175 Bonn ∙ Postanschrift: 53170 Bonn 
+Telefon: + 49 228 885-1 ∙ Telefax: + 49 228 885-2777 ∙ postmaster@dfg.de ∙ www.dfg.de DFG 
+ 
+Anhang D: 
+Sammlungs- und Bestandsbeschreibung 
+
+1. Kernelemente für die Sammlungs- und Bestandsbeschreibung 
+
+Sammlungs- und Bestandsbeschreibungen können gemäß Dublin Core Collections Application Profile [1] oder in demselben Metadatenstandard erfolgen, in dem auch die Objektbeschreibungen verfügbar gemacht werden: METS, MODS oder TEI-Header, EAD/SAFT sowie LIDO bieten entsprechende Möglichkeiten. 
+In Anlehnung an die im ISO-Standard ISO 27730, Information and Documentation – 
+International Standard Collection Identifier (ISCI) vorgeschriebenen Beschreibungsfelder für 
+eine Sammlung, welche im Dublin Core Collections Application Profile definiert sind, werden 
+folgende Kernelemente für die Sammlungs- und Bestandsbeschreibung empfohlen: 
+Element Wieder- 
+holbar 
+Bemerkungen / Erläuterungen Status 
+<dc:identifier>  ja Sammlungsidentifikator Pflicht 
+<dc:type> ja Art der beschriebenen Ressource: 
+Sammlung, Bestand 
+Pflicht 
+<dc:title>  ja Name der Sammlung Pflicht 
+<dc:language> ja Sprache der Sammlungsobjekte Pflicht, 
+wenn vh. 
+<dcterms:abstract >  ja Zusammenfassende 
+Beschreibung der Sammlung. 
+Pflicht 
+<cld:isLocatedAt >  ja Aufbewahrende Institution der 
+Sammlung 
+Pflicht 
+<cld:isAccessedVia >  ja Angebot für den Zugang zu den 
+Sammlungsobjekten 
+Pflicht 
+<dcterms:provenance >  ja Herkunft der Sammlung  Pflicht, 
+wenn vh. 
+<dc:subject> ja Thema der Sammlung Empfohlen 
+<dc:creator> ja Sammler Empfohlen 
+<cld:itemType> ja Art der Einzelobjekte der Sammlung Empfohlen 
+<cld:itemFormat> ja Format der Einzelobjekte der Sammlung Empfohlen 
+<dcterms:hasPart> ja Teilsammlung Empfohlen 
+<dcterms:isPartOf> ja Übergeordnete Sammlung Empfohlen 
+<cld:associatedCollection
+> 
+ja Andere Sammlung mit Bezug zur 
+beschriebenen Sammlung 
+Empfohlen 
+  
+                         [1] http://dublincore.org/groups/collections/collection-application-profile/ 
+
+ 
+## Erstes Beispiel einer Sammlungsbeschreibung im Dublin Core 
+Collections Application Profile 
+ 
+<?xml version="1.0" encoding="UTF-8"?> 
+<cld:cld xmlns:cld="http://purl.org/cld/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" 
+xmlns:dcterms="http://purl.org/dc/terms/" xmlns:marcrel="http://www.loc.gov/loc.terms/relators/" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <dc:identifier>DE-Mb112/Bickell1977</dc:identifier> 
+ <dc:type>Sammlung</dc:type> 
+ <dc:title>Bickell, Ludwig</dc:title> 
+ <dcterms:abstract>Ludwig Bickell (1838-1901) war seit 1892 Bezirkskonservator von 
+Kurhessen und außerdem Begründer des Marburger Universitätsmuseums. Der Bestand umfaßt seinen 
+fotografischen Nachlaß, etwa 3.000 Glasplatten (teilweise 30 x 40), überwiegend aus dem 19. 
+Jahrhundert. Im Archiv der Archive befinden sich zusätzlich 5 Abzüge der Photographischen Anstalt 
+L.BICKELL, weitere konfektionierte Vintageabzüge (Großformat) von 1893 im 
+Plattenarchiv.</dcterms:abstract> 
+ <cld:isLocatedAt>Deutsches Dokumentationszentrum für Kunstgeschichte - Bildarchiv Foto 
+Marburg</cld:isLocatedAt> 
+ <cld:isAccessedVia>http://www.bildindex.de/?+qfotograf:"bickell ludwig"</cld:isAccessedVia> 
+ <dcterms:provenance>Marburg, Verein für hessische Geschichte und Landeskunde, 
+Zweigverein Marburg e. V.</dcterms:provenance> 
+ <dcterms:provenance>Der Bestand wurde dem Bildarchiv vom &quot;Verein für hessische 
+Geschichte und Landeskunde, Zweigverein Marburg e. V.&quot; 1977 als Dauerleihgabe anvertraut. 
+Hinweis: Der sonstige Nachlaß wird im Hessischen Staatsarchiv Marburg verwaltet. (Staatsarchiv 
+Marburg, StaM 340, Bickell)</dcterms:provenance> 
+ <dc:subject>Kunst</dc:subject> 
+ <dc:subject>Architektur</dc:subject> 
+ <dc:subject>Hessen</dc:subject> 
+ <dc:creator>Bickell, Ludwig</dc:creator> 
+ <cld:itemType>Glasnegativ</cld:itemType> 
+ <cld:itemType>Abzug</cld:itemType> 
+ <cld:dateItemsCreated>1869-1900</cld:dateItemsCreated> 
+ <cld:itemFormat>18 x 24</cld:itemFormat> 
+ <cld:itemFormat>30 x 40</cld:itemFormat> 
+</cld:cld> 
+ 
+  
+
+ 
+2.2 Zweites Beispiel einer Sammlungsbeschreibung im Dublin Core 
+Collections Application Profile (Projektbeschreibung) 
+ 
+<?xml version="1.0" encoding="UTF-8"?> 
+<cld:cld xmlns:cld="http://purl.org/cld/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" 
+xmlns:dcterms="http://purl.org/dc/terms/" xmlns:marcrel="http://www.loc.gov/loc.terms/relators/" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <dc:identifier>http://diglib.hab.de/?link=023</dc:identifier> 
+ <dc:type>Virtuelle Sammlung</dc:type> 
+ <dc:title>Helmstedter Drucke Online</dc:title> 
+ <dcterms:abstract>Ziel des Projektes ist die Image- und Volltextdigitalisierung der in Helmstedt 
+gedruckten Werke, die sich in der Herzog August Bibliothek befinden. Die Herzog August Bibliothek 
+besitzt etwa 10.000 Drucke, die bis zur Schließung der Universität Helmstedt 1810 in Helmstedt 
+gedruckt worden sind. In der ersten zweijährigen Phase des Projektes sollen die auf das 16. und 17. Jh. 
+entfallenden Drucke als Image präsentiert, mit Strukturdaten zur Navigation versehen und im 
+Verbundkatalog sowie im VD 16 und VD 17 nachgewiesen werden. Zugleich wird erstmals 
+experimentell eine größere Menge von 120.000 Seiten per OCR bearbeitet und im Volltext angeboten 
+werden. In einer zweiten Phase soll auch der aus dem 18 Jh. stammende Anteil digitalisiert, auf 
+nationalbibliographischem Niveau katalogisiert und zur Nachnutzung einem möglichen VD 18 zur 
+Verfügung gestellt werden. 
+Mit der nahezu kompletten Digitalisierung der Produktion eines der wichtigsten norddeutschen 
+Universitätsdruckorte - Helmstedt findet sich unter den 10 am häufigsten nachgewiesenen Druckorten 
+im VD 17 - wird nicht nur ein substantieller Beitrag zur Komplettdigitalisierung des deutsche gedruckten 
+Kulturerbes geleistet, sondern erstmals ein Überblick über die Druckproduktion einer bedeutenden 
+frühneuzeitlichen Universität geschaffen. Das Projekt flankiert den programmatischen und auf mehrere 
+Jahre angelegten Forschungsschwerpunkt der HAB zur Erforschung der Universitätsgeschichte 
+Helmstedts und wird unmittelbar mehreren Forschungsprojekten in diesem Feld zugute 
+kommen.</dcterms:abstract> 
+ <cld:isLocatedAt>Herzog August Bibliothek Wolfenbüttel</cld:isLocatedAt> 
+ <cld:isAccessedVia>http://diglib.hab.de/?link=023</cld:isAccessedVia> 
+ <dcterms:provenance>ehem. Universitätsbibliothek Helmstedt</dcterms:provenance> 
+ <cld:itemType>Images</cld:itemType> 
+       <cld:itemType>Fulltext</cld:itemType> 
+ <cld:dateItemsCreated>2010-2014</cld:dateItemsCreated> 
+  
+</cld:cld> 
+ 
