@@ -2,22 +2,22 @@ Anhang A:
 METS/MODS-Profil für die Darstellung im DFG-Viewer und 
 Übermittlung per OAI 
  
+
 # DFG-Viewer 
 Zum Zweck der einheitlichen Präsentation beim Zugriff aus überregionalen 
-Nachweissystemen (z.B. VD16/VD17/VD18, ZVDD, „Virtuelle Fachbibliotheken“) auf lokale digitale Angebote sollten DFG-geförderte Projekte die als DFG-Viewer bekannte Browserdarstellung nutzen sowie die dem Viewer hinterlegten Schnittstellen bedienen. 
+Nachweissystemen (z.B. VD16/VD17/VD18, ZVDD, „Virtuelle Fachbibliotheken“, Deutsche Digitale Bibliothek, Archivportal-D) auf lokale digitale Angebote sollten DFG-geförderte Projekte die als DFG-Viewer bekannte Browserdarstellung nutzen sowie die dem Viewer hinterlegten Schnittstellen bedienen. 
 Wissenschaftlerinnen und Wissenschaftlern soll auf diese Weise die Nutzung digitalisierter Inhalte erleichtert werden. Aus dem DFG-Viewer heraus ist die Weiterleitung auf die speziellen lokalen Angebote der jeweiligen Einrichtungen möglich. 
-Der Viewer [1] wurde im Rahmen der Aktionslinie „Digitalisierung des VD16/VD17“ durch die in der ersten Ausschreibungsrunde geförderten Bibliotheken aufgebaut. Er wird durch diese in Zusammenarbeit mit weiteren Partnern beständig weiterentwickelt. Gehostet wird die Referenzanwendung des DFG-Viewers derzeit an der SLUB Dresden. 
+Der Viewer [1] wurde im Rahmen der Aktionslinie „Digitalisierung des VD16/VD17“ durch die in der ersten Ausschreibungsrunde geförderten Bibliotheken aufgebaut. Er wird durch die SLUB Dresden in Zusammenarbeit mit weiteren Partnern beständig weiterentwickelt. Gehostet wird die Referenzanwendung des DFG-Viewers derzeit an der SLUB Dresden. 
 Um den DFG-geförderten Projekten eine größtmögliche Sicherheit bei der Planung ihrer 
 Anträge zu ermöglichen und um die Konformität der Metadaten mit den Anforderungen des 
-DFG-Viewers sicherzustellen, sollten Metadaten aus Projekten gegen das von der Website des Viewers abzurufende XML-Schema valide sein. [2] 
+DFG-Viewers sicherzustellen, sollten Metadaten aus Projekten gegen eines der von der Website des Viewers abzurufenden Anwendungsprofile valide sein. [2]
 Zur Darstellung von Metadaten im Viewer wird METS [3] verwendet. METS dient dabei als ein 
 Rahmenformat (wrapper), innerhalb dessen sowohl deskriptive, administrative und strukturelle 
-Metadaten, als auch Ressourcen (z.B. Images, Volltexte) verzeichnet werden. Der DFG-Viewer benötigt zum Zwecke der Anzeige bibliografischer Metadaten (nur Drucke) nach 
-MODS [4] kodierte Metadaten (vgl. unten, Punkt 2).
-Für administrative Metadaten (u.a. lokale Anwendung, Homepage, Logo der Einrichtung) wird zur Verlinkung ein spezielles, für den Viewer entwickeltes Format (Namespace dv) verwendet. 
+Metadaten als auch Ressourcen (z. B. Images, Volltexte) verzeichnet werden. Der DFG-Viewer benötigt zum Zwecke der Anzeige von deskriptiven Metadaten (Drucke, Zeitschriften, Zeitungen, Archivgut) nach 
+MODS [4] kodierte Metadaten (vgl. unten, Punkt 2). 
+Für administrative Metadaten (u. a. lokale Anwendung, Homepage, Logo der Einrichtung) wird zur Verlinkung ein spezielles, für den Viewer entwickeltes Format (Namespace dv) verwendet. 
 Eine ausführliche Dokumentation zur Implementierung des METS-Formats befindet sich auf der Homepage der Referenzanwendung des DFG-Viewers. 
-Diese Vorgaben gelten zunächst nur für den Bereich der gedruckten Überlieferung 
-(METS/MODS). 
+Diese Vorgaben gelten grundsätzlich für alle digitalisierten Medienarten. Im Einzelfall gibt es jedoch Formatalternativen, die anstelle von METS/MODS verwendet werden können (METS/TEI für mittelalterliche und frühneuzeitliche Handschriften, EAD zur Kodierung von archivischen Findmitteln, LIDO für museale Objekte – dann allerdings ohne Möglichkeit der Anzeige im DFG-Viewer). 
 
 [1] http://www.dfg-viewer.de/ 
 [2] http://dfg-viewer.de/profil-der-metadaten 
@@ -26,10 +26,10 @@ Diese Vorgaben gelten zunächst nur für den Bereich der gedruckten Überlieferu
  
 
 
-# MODS-DFG-Standard-Set (Printbestände) 
+# MODS-DFG-Standard-Set (Bibliotheksbestände) 
 
 Der MODS-Standard bietet ein vereinfachtes subset zu MARC21, daher sollten automatische 
-Konversionen aus gängigen Katalogen leicht möglich sein.
+Konversionen aus gängigen Katalogen leicht möglich sein. 
 Für die Anzeige im Viewer sind nur wenige Pflichtfelder erforderlich (s. nachstehende Tabelle). 
  
 Element /Unterelement Wiederholbar 
@@ -69,7 +69,9 @@ Beziehung steht (z.B. der Autor). Das
 Attribut @authority enthält den Code 
 für das Regelwerk, nach dem die 
 Person angesetzt wurde; in der Regel 
-„GND“. 
+„gnd“. Wahlweise kann in @valueURI 
+ein URI für den Personennamen 
+verwendet werden. 
  
  
  
@@ -93,10 +95,10 @@ vh.
 authority="marcrelator"> 
 nein Funktion der Person; der Wert des 
 Feldes <roleTerm> ist kodiert 
-(MARC Relator Code) [5]. 
+(MARC Relator Code) [5] . 
  
   
-
+                        
 [5] Ein Code aus der Liste MARC Value List for Relators and Roles: http://www.loc.gov/marc/sourcecode/relator/relatorlist.html. 
 
  
@@ -122,16 +124,12 @@ nein s.o.
  
 4 Erscheinungsvermerk 
 
-<originInfo> ja Erscheinungsvermerk; der erste 
+<originInfo eventType=“publication“> ja Erscheinungsvermerk; der erste 
 <originInfo>-Block ist für Angaben zur 
 Quelle vorgesehen, Angaben zur 
 digitalen Edition können in einem 
-zweiten <originInfo> Block gemacht 
-werden. Sofern dieser optionale 
-zweite Block angelegt wird, muss er 
-verpflichtend ein Unterelement 
-<mods:edition> mit dem Inhalt 
-[Electronic ed.] enthalten (s.u.). 
+zweiten <originInfo> Block mit dem eventType=“ digitisation“ gemacht 
+werden. 
  
  
 Pflicht, wenn 
@@ -228,7 +226,7 @@ Form.
 10 Zitierfähige Identifizierung 
 <identifier type="…"> ja Weltweit eindeutige Identifizierung der 
 Ressource (Attribut @type z.B. 
-URN, PURL, DOI, Handle, URI etc.). 
+urn, purl, doi, handle, uri etc.). 
 Angegeben werden muss auch, 
 wenn vorhanden, die GW- und VD-Nummer des Drucks (Attribute 
 @type VD16, VD17, GW). 
@@ -260,214 +258,499 @@ Verfügung. Diese enthalten auch weitere Erläuterungen zur Besetzung der jeweil
  
 
  
+# Hinweise für Archive zur Konversion von EAD(DDB) nach MODS 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Beispiel für einen METS/MODS Datensatz nach dem DFG-Standard 
+Das Mapping von EAD(DDB) auf entsprechende MODS-Elemente ist grundsätzlich leicht 
+durchführbar. Für die vereinfachte Bearbeitung von archivischen Datensätzen stehen in der 
+archivischen Community auch Tools zur Verfügung, die von interessierten Einrichtungen 
+genutzt werden können. [6]
+Für archivische Daten werden folgende Elemente empfohlen; es ist Einrichtungen aber natürlich 
+freigestellt, auch weitere Erschließungsinformationen entsprechend des MODS-Anwendungsprofils anzugeben: 
  
-
-<mets:mets 
-xmlns:mets="http://www.loc.gov/METS/" 
-xmlns:xlink="http://www.w3.org/1999/xlink" 
-xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dv="http://dfg-viewer.de/"> 
-<mets:dmdSec ID="dmd_586140484"> 
-<mets:mdWrap MDTYPE="MODS"> 
-<mets:xmlData> 
-<mods:mods> 
-<mods:recordInfo> 
-<mods:recordIdentifier source="WDB_OPAC">oai:diglib.hab.de:ppn_586140484</mods:recordIdentifier> 
-</mods:recordInfo> 
-<mods:location> 
-<mods:physicalLocation>Herzog August Bibliothek Wolfenbüttel</mods:physicalLocation> 
-<mods:shelfLocator>M: Gn 4° 1572:1</mods:shelfLocator> 
-</mods:location> 
-<mods:identifier type="purl">http://diglib.hab.de/drucke/gn-4f-1572-1b/start.htm</mods:identifier> 
-<mods:identifier type="urn">urn:nbn:de:gbv:23-drucke/gn-4f-1572-1b3</mods:identifier> 
-<mods:language> 
-<mods:languageTerm type="code" authority="iso639-2b">lat</mods:languageTerm> 
-</mods:language> 
-<mods:name type="personal"> 
-<mods:namePart type="family">Leibniz</mods:namePart> 
-<mods:namePart type="given">Gottfried Wilhelm</mods:namePart> 
-<mods:displayForm>Leibniz, Gottfried Wilhelm</mods:displayForm> 
-<mods:namePart type="date">1646-1716</mods:namePart> 
-<mods:role> 
-<mods:roleTerm type="code" authority="marcrelator">ctb</mods:roleTerm> 
-</mods:role> 
-</mods:name> 
-<mods:originInfo> 
-<mods:place> 
-<mods:placeTerm type="text">Hanoverae</mods:placeTerm> 
-</mods:place> 
-<mods:publisher>Foerster</mods:publisher> 
-<mods:dateIssued keyDate="yes" encoding="w3cdtf">1707</mods:dateIssued> 
-</mods:originInfo> 
-<mods:originInfo> 
-<mods:place> 
-<mods:placeTerm type="text">Wolfenbüttel</mods:placeTerm> 
-</mods:place> 
-<mods:publisher>Herzog August Bibliothek</mods:publisher> 
-<mods:dateIssued encoding="w3cdtf">2008</mods:dateIssued> 
-<mods:edition>[Electronic ed.]</mods:edition> 
-</mods:originInfo> 
-<mods:physicalDescription> 
-<mods:extent>2°</mods:extent> 
-<mods:extent>[22] Bl., 1004 S., [1] Bl</mods:extent> 
+Feldbezeichnung EAD(DDB) MODS Status 
+   
+ 
+Titel c/did/unittitle mods:titleInfo, gegebenenfalls 
+mit Unterelementen 
+ 
+MODS-Definition: 
+A word, phrase, character, or 
+group of characters, normally 
+appearing in a resource, that 
+names it or the work contained 
+in it. 
+ 
+Kommentar: 
+Für das Wurzelstrukturelement 
+in einem METS/MODS-Satz ist 
+die Angabe mindestens eines 
+Titels unter Verwendung des 
+Elements mods:titleInfo mit 
+dem Unterelement mods:title 
+verpflichtend. 
+Pflicht 
+Institution ancestor::archdes
+c/did/repository/co
+rpname 
+mods:physicalLocation 
+ 
+MODS-Definition: 
+The institution or repository that 
+holds the resource or where it is 
+available. 
+Pflicht 
+Signatur c/did/unitid[not(@t
+ype)] 
+mods:shelfLocator 
+ 
+MODS-Definition: 
+Shelfmark or other shelving 
+designation that indicates the 
+location identifier for a copy. 
+Pflicht 
+                        
+6 Weitere Informationen unter https://pro.deutsche-digitale-bibliothek.de/dokumente-links-fuer-archive. 
 
  
-<mods:digitalOrigin>reformatted digital</mods:digitalOrigin> 
-</mods:physicalDescription> 
-<mods:titleInfo> 
-<mods:title>Scriptores Rervm Brvnsvicensivm Illustrationi Inservientis, Antiqvi Omnes Et Religionis Reformatione Priores ...</mods:title> 
-</mods:titleInfo> 
-<mods:relatedItem type="host"> 
-<mods:recordInfo> 
-<mods:recordIdentifier source="WDB_OPAC">oai:diglib.hab.de:ppn_58614045X</mods:recordIdentifier> 
-</mods:recordInfo> 
-</mods:relatedItem> 
-<mods:part type="host" order="1"> 
-<mods:detail> 
-<mods:number>[1]</mods:number> 
-</mods:detail> 
-</mods:part> 
-</mods:mods> 
-</mets:xmlData> 
-</mets:mdWrap> 
-</mets:dmdSec> 
-<mets:amdSec ID="amd_586140484"> 
-<mets:rightsMD ID="amd_dvrights_586140484"> 
-<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="DVRIGHTS"> 
-<mets:x
-mlData> 
-<dv:rights> 
-<dv:owner>Herzog August Bibliothek Wolfenbüttel</dv:owner> 
-<dv:ownerLogo> 
-http://www.hab.de/images/logo_dfg_viewer.gif</dv:ownerLogo> 
-<dv:ownerSiteURL>http://www.hab.de/</dv:ownerSiteURL> 
-<dv:ownerContact>auskunft@hab.de/</dv:ownerContact> 
-</dv:rights> 
-</mets:x
-mlData> 
-</mets:mdWrap> 
-</mets:rightsMD> 
-<mets:digiprovMD ID="amd_dvlinks_586140484"> 
-<mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="DVLINKS"> 
-<mets:x
-mlData> 
-<dv:links> 
-<dv:reference> http://sunny.biblio.etc.tu-bs.de:8080/DB=2/SET=2/TTL=2/CMD?ACT=SRCHA&amp;IKT=1016&amp;
-SRT=YO P&amp;TRM=url+diglib.hab.de %5C %2Fdrucke %5C %2Fgn-4f-1572-1b %5C %2Fstart.htm 
-</dv:reference> 
-<dv:presentation>http://diglib.hab.de/drucke/gn-4f-1572-1b/start.htm</dv:presentation> 
-</dv:links> 
-</mets:x
-mlData> 
-</mets:mdWrap> 
-</mets:digiprovMD> 
-</mets:amdSec> 
-<mets:fileSec> 
-<mets:fileGrp USE="DEFAULT"> 
-<mets:file ID="drucke_gn-4f-1572-1b_00001" MIMETYPE="image/jpeg"> 
+Laufzeit c/did/unitdate mods:dateCreated 
+ 
+MODS-Definition: 
+The date of creation of the 
+resource 
+Kommentar: Datum der Entstehung 
+bzw. der Laufzeit der analogen 
+Vorlage. 
+Pflicht, 
+wenn v.h. 
+Kontext P6F
+7  ancestor::c/did/uni
+ttitle 
+mods:relatedItem, gegebenenfalls 
+mit Unterelementen 
+ 
+MODS-Definition: 
+Information that identifies other 
+resources related to the one being 
+described. 
+ 
+Über mods:relatedItem lassen sich 
+nicht nur hierarchische Beziehungen 
+abbilden. Vielmehr lassen sich 
+mittels des type-Attributs eine 
+Vielzahl von Beziehungen darstellen. 
+ 
+Um die Beziehung zwischen 
+Dokumenten oder Dokumentteilen 
+mit MODS herzustellen, müssen 
+eindeutige Identifier verwendet 
+werden. 
+ 
+Empfohlen 
+ID c/@id mods:recordIdentifier 
+MODS-Definition: Contains the 
+system control number assigned by 
+the organization creating, using, or 
+distributing the record. 
+Pflicht 
+  
+                        
+7 Dies bezieht sich auf den Bestandskontext der Ressource, also die darüber liegenden Verzeichnungsstufen aus Tektonik und 
+Klassifikation. 
+
+
+# Beispiele für METS/MODS Datensätze nach dem DFG-Standard 
+ 
+## Für Bibliotheksgut: 
+
+<?xml version="1.0" encoding="UTF-8"?> 
+<mets:mets xmlns:mets="http://www.loc.gov/METS/" xmlns:tei="http://www.tei-c.org/ns/1.0" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:mods="http://www.loc.gov/mods/v3" xmlns:dv="http://dfg-viewer.de/" 
+  xsi:schemaLocation="http://www.loc.gov/METS/ http://www.loc.gov/mets/mets.xsd"> 
+  <mets:metsHdr> 
+    <mets:agent ROLE="IPOWNER"> 
+      <mets:name>Herzog August Bibliothek Wolfenbüttel</mets:name> 
+    </mets:agent> 
+    <mets:agent ROLE="CREATOR"> 
+      <mets:name>Herzog August Bibliothek Wolfenbüttel</mets:name> 
+    </mets:agent> 
+  </mets:metsHdr> 
+  <mets:dmdSec ID="dmdsec"> 
+    <mets:mdWrap MDTYPE="MODS"> 
+      <mets:xmlData> 
+        <mods:mods 
+          xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd"> 
+          <mods:titleInfo> 
+            <mods:title>Occulta Philosophia</mods:title> 
+            <mods:subTitle>Von den verborgenen Philosophischen Geheimnussen […]</mods:subTitle> 
+          </mods:titleInfo> 
+          <mods:identifier type="fingerprint">inl- t?h- esin Woab 3 1613R</mods:identifier> 
+          <mods:identifier type="vd17">39:122887Y</mods:identifier> 
+          <mods:originInfo eventType="publication"> 
+            <mods:dateIssued keyDate="yes" encoding="iso8601">1613</mods:dateIssued> 
+            <mods:place> 
+              <mods:placeTerm type="text">Franckfurt am Mayn</mods:placeTerm> 
+            </mods:place> 
+            <mods:publisher>Bringer</mods:publisher> 
+          </mods:originInfo> 
+          <mods:name type="personal" valueURI="http://d-nb.info/gnd/119068982"> 
+            <mods:namePart type="termsOfAddress">Trismegistus</mods:namePart> 
+            <mods:namePart type="given">Hermes</mods:namePart> 
+            <mods:displayForm>Hermes &lt;Trismgivenegistus&gt;</mods:displayForm> 
+            <mods:role> 
+              <mods:roleTerm authority="marcrelator" type="code" 
+valueURI="http://id.loc.gov/vocabulary/relators/oth">oth</mods:roleTerm> 
+            </mods:role> 
+          </mods:name> 
+          <mods:name type="personal" valueURI="http://d-nb.info/gnd/118507036"> 
+            <mods:namePart type="termsOfAddress">Valentinus</mods:namePart> 
+            <mods:namePart type="given">Basilius</mods:namePart> 
+            <mods:displayForm>Basilius &lt;Valentinus&gt;</mods:displayForm> 
+            <mods:role> 
+              <mods:roleTerm authority="marcrelator" type="code" 
+valueURI="http://id.loc.gov/vocabulary/relators/oth">oth</mods:roleTerm> 
+            </mods:role> 
 
  
-<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/00001.jpg" LOCTYPE="URL"/> 
-</mets:file> 
-<!-- Kürzung um 00001.jpg bis 01057.jpg DEFAULT Auflösung --> 
-<mets:file ID="drucke_gn-4f-1572-1b_01058" MIMETYPE="image/jpeg"> 
-<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/01058.jpg" LOCTYPE="URL"/> 
-</mets:file> 
-</mets:fileGrp> 
-<mets:fileGrp USE="MIN"> 
-<mets:file ID="min_drucke_gn-4f-1572-1b_00001" MIMETYPE="image/jpeg"> 
-<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/min/00001.jpg" LOCTYPE="URL"/> 
-</mets:file> 
-<!-- Kürzung um 00002.jpg bis 01057.jpg Minimale Auflösung --> 
-<mets:file ID="min_drucke_gn-4f-1572-1b_01058" MIMETYPE="image/jpeg"> 
-<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/min/01058.jpg" LOCTYPE="URL"/> 
-</mets:file> 
-</mets:fileGrp> 
-<mets:fileGrp USE="MAX"> 
-<mets:file ID="max_drucke_gn-4f-1572-1b_00001" MIMETYPE="image/jpeg"> 
-<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/max/00001.jpg" LOCTYPE="URL"/> 
-</mets:file> 
-<!-- Kürzung um 00002.jpg bis 01057.jpg Maximale Auflösung --> 
-<mets:file ID="max_drucke_gn-4f-1572-1b_01058" MIMETYPE="image/jpeg"> 
-<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/max/01058.jpg" LOCTYPE="URL"/> 
-</mets:file> 
-</mets:fileGrp> 
-<mets:fileGrp USE="THUMBS"> 
-<mets:file ID="thumbs_drucke_gn-4f-1572-1b_00001" MIMETYPE="image/jpeg"> 
-<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/thumbs/00001.jpg" LOCTYPE="URL"/> 
-</mets:file> 
-<!-- Kürzung um 00002.jpg bis 01057.jpg Thumbnails --> 
-<mets:file ID="thumbs_drucke_gn-4f-1572-1b_01058" MIMETYPE="image/jpeg"> 
-<mets:FLocat xlink:href="http://diglib.hab.de/drucke/gn-4f-1572-1b/thumbs/01058.jpg" LOCTYPE="URL"/> 
-</mets:file> 
-</mets:fileGrp> 
-</mets:fileSec> 
-<mets:structMap TYPE="LOGICAL"> 
-<mets:div ID="logMD_586140484" TYPE="Monograph" DMDID="dmd_586140484" ADMID="amd_586140484"/> 
+          </mods:name> 
+          <mods:name type="personal"> 
+            <mods:namePart type="given">Ludwig Georg</mods:namePart> 
+            <mods:namePart type="family">Stolberg</mods:namePart> 
+            <mods:displayForm>Stolberg, Ludwig Georg</mods:displayForm> 
+            <mods:role> 
+              <mods:roleTerm authority="marcrelator" type="code" 
+valueURI="http://id.loc.gov/vocabulary/relators/dte">dte</mods:roleTerm> 
+            </mods:role> 
+          </mods:name> 
+          <mods:name type="personal"> 
+            <mods:namePart type="given">Johann</mods:namePart> 
+            <mods:namePart type="family">Bringer</mods:namePart> 
+            <mods:displayForm>Bringer, Johann</mods:displayForm> 
+            <mods:role> 
+              <mods:roleTerm authority="marcrelator" type="code" 
+valueURI="http://id.loc.gov/vocabulary/relators/clb">clb</mods:roleTerm> 
+            </mods:role> 
+          </mods:name> 
+          <mods:name type="personal" valueURI="http://d-nb.info/gnd/1037506073"> 
+            <mods:namePart type="given">Johann</mods:namePart> 
+            <mods:namePart type="family">Bringer</mods:namePart> 
+            <mods:displayForm>Bringer, Johann</mods:displayForm> 
+            <mods:role> 
+              <mods:roleTerm authority="marcrelator" type="code" 
+valueURI="http://id.loc.gov/vocabulary/relators/prt">prt</mods:roleTerm> 
+            </mods:role> 
+          </mods:name> 
+          <mods:language> 
+            <mods:languageTerm type="code" authority="iso639-2b">ger</mods:languageTerm> 
+          </mods:language> 
+          <mods:genre authority="aad">Alchemie</mods:genre> 
+          <mods:location> 
+            <mods:physicalLocation authority="marcorg">DE-23</mods:physicalLocation> 
+            <mods:shelfLocator>M: Nd 14 (1)</mods:shelfLocator> 
+          </mods:location> 
+          <mods:physicalDescription> 
+            <mods:extent>[4] Bl., 78 S.</mods:extent> 
+            <mods:extent>4°</mods:extent> 
+            <mods:extent>Tbl. r&amp;s, Ill. (Holzschn.)</mods:extent> 
+          </mods:physicalDescription> 
+          <mods:recordInfo> 
+            <mods:recordIdentifier source="DE-23">092275664</mods:recordIdentifier> 
+            <mods:recordOrigin xml:lang="en">Converted from PICA using a local XSL transformation 
+script</mods:recordOrigin> 
+            <mods:recordContentSource authority="marcorg">DE-23</mods:recordContentSource> 
+          </mods:recordInfo> 
+        </mods:mods> 
+      </mets:xmlData> 
+    </mets:mdWrap> 
+  </mets:dmdSec> 
+  <mets:amdSec ID="amdsec"> 
+    <mets:rightsMD ID="rights"> 
 
  
-</mets:structMap> 
-<mets:structMap TYPE="PHYSICAL"> 
-<mets:div ID="physMD_586140484" TYPE="physSequence"> 
-<mets:div ID="physMD_586140484_1" TYPE="page" ORDER="1"> 
-<mets:fptr FILEID="drucke_gn-4f-1572-1b_00001"/> 
-<mets:fptr FILEID="min_drucke_gn-4f-1572-1b_00001"/> 
-<mets:fptr FILEID="max_drucke_gn-4f-1572-1b_00001"/> 
-<mets:fptr FILEID="thumbs_drucke_gn-4f-1572-1b_00001"/> 
-</mets:div> 
-<!-- Kürzung um Zuordnungen von 00002 bis 01057 --> 
-<mets:div ID="physMD_586140484_1058" TYPE="page" ORDER="1058"> 
-<mets:fptr FILEID="drucke_gn-4f-1572-1b_01058"/> 
-<mets:fptr FILEID="min_drucke_gn-4f-1572-1b_01058"/> 
-<mets:fptr FILEID="max_drucke_gn-4f-1572-1b_01058"/> 
-<mets:fptr FILEID="thumbs_drucke_gn-4f-1572-1b_01058"/> 
-</mets:div> 
-</mets:div> 
-</mets:structMap> 
-<mets:structLink> 
-<mets:smLink xlink:from="logMD_586140484" xlink:to="physMD_586140484" /> 
-</mets:structLink> 
+      <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="DVRIGHTS"> 
+        <mets:xmlData> 
+          <dv:rights> 
+            <dv:owner>Herzog August Bibliothek Wolfenbüttel</dv:owner> 
+            <dv:ownerLogo>http://www.hab.de/images/logo_dfg_viewer.gif</dv:ownerLogo> 
+            <dv:ownerSiteURL>http://www.hab.de/</dv:ownerSiteURL> 
+            <dv:ownerContact>mailto:auskunft@hab.de</dv:ownerContact> 
+          </dv:rights> 
+        </mets:xmlData> 
+      </mets:mdWrap> 
+    </mets:rightsMD> 
+    <mets:digiprovMD ID="digiprov"> 
+      <mets:mdWrap MDTYPE="OTHER" OTHERMDTYPE="DVLINKS"> 
+        <mets:xmlData> 
+          <dv:links> 
+            <dv:reference>http://opac.lbs-braunschweig.gbv.de/DB=2/PPN?PPN=092275664</dv:reference> 
+            <dv:presentation>http://diglib.hab.de/drucke/nd-14-1s/start.htm</dv:presentation> 
+          </dv:links> 
+        </mets:xmlData> 
+      </mets:mdWrap> 
+    </mets:digiprovMD> 
+  </mets:amdSec> 
+  <mets:fileSec> 
+    <mets:fileGrp USE="DEFAULT"> 
+      <mets:file ID="file--idp65681520" MIMETYPE="image/jpeg"> 
+        <mets:FLocat xlink:href="http://diglib.hab.de/drucke/nd-14-1s/00001.jpg" 
+          LOCTYPE="URL"/> 
+      </mets:file> 
+      <!-- weitere Verweise auf Images aus Umfangsgründen ausgelassen --> 
+      <mets:file ID="file--idp65467888" MIMETYPE="image/jpeg"> 
+        <mets:FLocat xlink:href="http://diglib.hab.de/drucke/nd-14-1s/eb04.jpg" 
+          LOCTYPE="URL"/> 
+      </mets:file> 
+    </mets:fileGrp> 
+    <mets:fileGrp USE="MAX"> 
+      <mets:file ID="file-max-idp65681520" MIMETYPE="image/jpeg"> 
+        <mets:FLocat xlink:href="http://diglib.hab.de/drucke/nd-14-1s/max/00001.jpg" 
+          LOCTYPE="URL"/> 
+      </mets:file> 
+      <!-- weitere Verweise auf Images aus Umfangsgründen ausgelassen --> 
+      <mets:file ID="file-max-idp65467888" MIMETYPE="image/jpeg"> 
+        <mets:FLocat xlink:href="http://diglib.hab.de/drucke/nd-14-1s/max/eb04.jpg" 
+          LOCTYPE="URL"/> 
+      </mets:file> 
+    </mets:fileGrp> 
+    <mets:fileGrp USE="MIN"> 
+      <mets:file ID="file-min-idp65681520" MIMETYPE="image/jpeg"> 
+        <mets:FLocat xlink:href="http://diglib.hab.de/drucke/nd-14-1s/min/00001.jpg" 
+          LOCTYPE="URL"/> 
+      </mets:file> 
+      <!-- weitere Verweise auf Images aus Umfangsgründen ausgelassen]--> 
+      <mets:file ID="file-min-idp65467888" MIMETYPE="image/jpeg"> 
+        <mets:FLocat xlink:href="http://diglib.hab.de/drucke/nd-14-1s/min/eb04.jpg" 
+
+ 
+          LOCTYPE="URL"/> 
+      </mets:file> 
+    </mets:fileGrp> 
+    <mets:fileGrp USE="THUMBS"> 
+      <mets:file ID="file-thumbs-idp65681520" MIMETYPE="image/jpeg"> 
+        <mets:FLocat xlink:href="http://diglib.hab.de/drucke/nd-14-1s/thumbs/00001.jpg" 
+          LOCTYPE="URL"/> 
+      </mets:file> 
+      <!-- weitere Verweise auf Images aus Umfangsgründen ausgelassen --> 
+      <mets:file ID="file-thumbs-idp65467888" MIMETYPE="image/jpeg"> 
+        <mets:FLocat xlink:href="http://diglib.hab.de/drucke/nd-14-1s/thumbs/eb04.jpg" 
+          LOCTYPE="URL"/> 
+      </mets:file> 
+    </mets:fileGrp> 
+  </mets:fileSec> 
+  <mets:structMap TYPE="PHYSICAL"> 
+    <mets:div ID="struct-physical" TYPE="physSequence" DMDID="dmdsec" ADMID="amdsec"> 
+      <mets:div ID="struct-physical-idp65681520" 
+        CONTENTIDS="http://diglib.hab.de/drucke/nd-14-1s/start.htm?image=00001" TYPE="page" 
+        ORDER="1"> 
+        <mets:fptr FILEID="file--idp65681520"/> 
+        <mets:fptr FILEID="file-min-idp65681520"/> 
+        <mets:fptr FILEID="file-max-idp65681520"/> 
+        <mets:fptr FILEID="file-thumbs-idp65681520"/> 
+      </mets:div> 
+      <!-- weitere Verweise auf Strukturen aus Umfangsgründen ausgelassen --> 
+      <mets:div ID="struct-physical-idp65467888" 
+        CONTENTIDS="http://diglib.hab.de/drucke/nd-14-1s/start.htm?image=eb04" TYPE="page" 
+        ORDER="94"> 
+        <mets:fptr FILEID="file--idp65467888"/> 
+        <mets:fptr FILEID="file-min-idp65467888"/> 
+        <mets:fptr FILEID="file-max-idp65467888"/> 
+        <mets:fptr FILEID="file-thumbs-idp65467888"/> 
+      </mets:div> 
+    </mets:div> 
+  </mets:structMap> 
+  <mets:structMap TYPE="LOGICAL"> 
+    <mets:div ID="struct-logical" TYPE="Monograph" DMDID="dmdsec" ADMID="amdsec" 
+      CONTENTIDS="http://diglib.hab.de/drucke/nd-14-1s/start.htm"> 
+      <mets:div ID="struct-logical-idp65475312" TYPE="binding"> 
+        <mets:div ID="struct-logical-idp65474288" TYPE="endsheet"/> 
+      </mets:div> 
+      <mets:div ID="struct-logical-idp65472496" TYPE="section"> 
+        <mets:div ID="struct-logical-idp65477616" TYPE="title_page"/> 
+        <mets:div ID="struct-logical-idp65477104" TYPE="dedication" 
+          LABEL="Dem Wolgebornen Graffen und Herrn/ Herrn Lufwig Georgen/ Graffen zu Stolberg / 
+Königstein / Roschefort/ Weringeroda und Hohenstein / ..."> 
+          <mets:div ID="struct-logical-idp65478128" TYPE="ornament"/> 
+        </mets:div> 
+      </mets:div> 
+      <mets:div ID="struct-logical-idp65474032" TYPE="section" 
+        LABEL="Das Erste Theil., Ein Colloquium oder Gesprech zwischen einem alten und jungen 
+Studenten."> 
+
+ 
+        <mets:div ID="struct-logical-idp65483504" TYPE="section" 
+          LABEL="Adolphus. Mein Freundtlichen Gruß und alle Wolfahrt wünsche ich Euch lieber alter 
+Senior: ..."> 
+          <mets:div ID="struct-logical-idp65482352" TYPE="ornament"/> 
+        </mets:div> 
+        <mets:div ID="struct-logical-idp65494384" TYPE="section" 
+          LABEL="und Abgöttisch ist / ein ander Werck neben Gottes zusetzen/ ..."/> 
+        <mets:div ID="struct-logical-idp65498224" TYPE="section" 
+          LABEL="greiff das ewig Leben/ dazu du auch beruffen bist/ ..."/> 
+      </mets:div> 
+      <mets:div ID="struct-logical-idp65499248" TYPE="section" 
+        LABEL="Das ander Theil Aureliae Occultae Philosophorum."> 
+        <mets:div ID="struct-logical-idp65498352" TYPE="illustration"/> 
+        <mets:div ID="struct-logical-idp65505904" TYPE="section" 
+          LABEL="Schmaragt Tafel Hermetis."> 
+          <mets:div ID="struct-logical-idp65511152" TYPE="illustration"/> 
+          <mets:div ID="struct-logical-idp65510640" TYPE="illustration"/> 
+          <mets:div ID="struct-logical-idp65507952" TYPE="illustration"/> 
+          <mets:div ID="struct-logical-idp65516400" TYPE="illustration"/> 
+        </mets:div> 
+        <mets:div ID="struct-logical-idp65516656" TYPE="section" 
+          LABEL="Würckung deß Philosophischen Wercks/ erst Figur."> 
+          <mets:div ID="struct-logical-idp65521520" TYPE="illustration"/> 
+        </mets:div> 
+        <mets:div ID="struct-logical-idp65513584" TYPE="section" 
+          LABEL="Die ander Figur deß Wercks."> 
+          <mets:div ID="struct-logical-idp65520240" TYPE="illustration"/> 
+        </mets:div> 
+<!-- weitere Strukturmerkmale aus Umfangsgründen ausgelassen--> 
+      </mets:div> 
+      <mets:div ID="struct-logical-idp65539824" TYPE="binding"> 
+        <mets:div ID="struct-logical-idp65543536" TYPE="endsheet"/> 
+      </mets:div> 
+      <mets:div ID="struct-logical-idp65538672" TYPE="binding"> 
+        <mets:div ID="struct-logical-idp65538928" TYPE="cover"/> 
+        <mets:div ID="struct-logical-idp65541232" TYPE="paste_down"/> 
+        <mets:div ID="struct-logical-idp65539312" TYPE="annotation"/> 
+        <mets:div ID="struct-logical-idp65549296" TYPE="paste_down"/> 
+        <mets:div ID="struct-logical-idp65549424" TYPE="cover"/> 
+      </mets:div> 
+    </mets:div> 
+  </mets:structMap> 
+  <mets:structLink> 
+    <mets:smLink xlink:from="struct-logical" xlink:to="struct-physical"/> 
+    <mets:smLink xlink:from="struct-logical-idp65475312" xlink:to="struct-physical-idp65681520"/> 
+    <!-- weitere Verknüpfungslinks aus Umfangsgründen ausgelassen--> 
+    <mets:smLink xlink:from="struct-logical-idp65549424" xlink:to="struct-physical-idp65467888" 
+    /> 
+  </mets:structLink> 
 </mets:mets> 
+  
+
+ 
+## Für Archivgut: 
+ 
+<mets:dmdSec ID="DMDLOG_1"> 
+  <mets:mdWrap MDTYPE="MODS"> 
+   <mets:xmlData> 
+    <mods:mods> 
+     <mods:recordInfo> 
+      <mods:recordIdentifier>labw-1-1263080</mods:recordIdentifier> 
+      <mods:descriptionStandard>DFG-Viewer/Archiv v2.3</mods:descriptionStandard> 
+     </mods:recordInfo> 
+     <mods:location> 
+      <mods:physicalLocation>Landesarchiv Baden-Württemberg, Abt. Hauptstaatsarchiv 
+Stuttgart</mods:physicalLocation> 
+      <mods:shelfLocator>H 51 U 589</mods:shelfLocator> 
+     </mods:location> 
+     <mods:titleInfo> 
+      <mods:title>Kaiser Karl publiziert die dreiundzwanzig ersten Kapitel der Goldenen Bulle</mods:title> 
+     </mods:titleInfo> 
+     <mods:originInfo eventType="production"> 
+      <mods:dateCreated point="end" qualifier="approximate" encoding="iso8601">1356 Januar 
+10</mods:dateCreated> 
+     </mods:originInfo> 
+     <mods:relatedItem type="host" displayLabel="Gliederung"> 
+      <mods:titleInfo> 
+       <mods:title>Urkunden</mods:title> 
+      </mods:titleInfo> 
+      <mods:relatedItem type="host" displayLabel="Bestand"> 
+       <mods:titleInfo> 
+        <mods:title>Kaiserselekt</mods:title> 
+       </mods:titleInfo> 
+      </mods:relatedItem> 
+     </mods:relatedItem> 
+    </mods:mods> 
+   </mets:xmlData> 
+  </mets:mdWrap> 
+ </mets:dmdSec> 
+ <mets:amdSec ID="amd1"> 
+  <mets:rightsMD ID="rights1"> 
+   <mets:mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVRIGHTS"> 
+    <mets:xmlData> 
+     <dv:rights> 
+      <dv:owner>Landesarchiv Baden-Württemberg, Abt. Hauptstaatsarchiv Stuttgart</dv:owner> 
+      <dv:ownerSiteURL>http://www.landesarchiv-bw.de/hstas</dv:ownerSiteURL> 
+      <dv:ownerContact>mailto:landesarchiv@la-bw.de</dv:ownerContact> 
+      <dv:ownerLogo>https://www.landesarchiv-bw.de/dfgviewer/logo.jpg</dv:ownerLogo> 
+     </dv:rights> 
+    </mets:xmlData> 
+   </mets:mdWrap> 
+  </mets:rightsMD> 
+  <mets:digiprovMD ID="digiprov1"> 
+   <mets:mdWrap MIMETYPE="text/xml" MDTYPE="OTHER" OTHERMDTYPE="DVLINKS"> 
+    <mets:xmlData> 
+     <dv:links> 
+      <dv:reference>http://www.landesarchiv-bw.de/plink/?f=1-1263080</dv:reference> 
+      <dv:presentation>http://www.landesarchiv-bw.de/plink/?f=1-1263080-1</dv:presentation> 
+     </dv:links> 
+    </mets:xmlData> 
+   </mets:mdWrap> 
+  </mets:digiprovMD> 
+ </mets:amdSec> 
+
+ 
+ <mets:fileSec> 
+  <mets:fileGrp USE="DEFAULT"> 
+   <mets:file ID="file-full-image_1-1263080-1" MIMETYPE="image/jpeg"> 
+    <mets:FLocat LOCTYPE="URL" 
+     xlink:href="http://www.landesarchiv-bw.de/plink/?f=1-1263080-1&amp;ext=456788&amp;format=jpg"/> 
+   </mets:file> 
+   <mets:file ID="file-full-image_1-1263080-2" MIMETYPE="image/jpeg"> 
+    <mets:FLocat LOCTYPE="URL" 
+     xlink:href="http://www.landesarchiv-bw.de/plink/?f=1-1263080-2&amp;ext=456788&amp;format=jpg"/> 
+   </mets:file> 
+   <mets:file ID="file-full-image_1-1263080-3" MIMETYPE="image/jpeg"> 
+    <mets:FLocat LOCTYPE="URL" 
+     xlink:href="http://www.landesarchiv-bw.de/plink/?f=1-1263080-6&amp;ext=456788&amp;format=jpg"/> 
+   </mets:file> 
+  </mets:fileGrp> 
+ </mets:fileSec> 
+ <mets:structMap TYPE="PHYSICAL"> 
+  <mets:div ID="phys1" TYPE="physSequence"> 
+   <mets:div ID="image_1-1263080-1" ORDER="1" TYPE="page"> 
+    <mets:fptr FILEID="file-full-image_1-1263080-1"/> 
+   </mets:div> 
+   <mets:div ID="image_1-1263080-2" ORDER="2" TYPE="page"> 
+    <mets:fptr FILEID="file-full-image_1-1263080-2"/> 
+   </mets:div> 
+   <mets:div ID="image_1-1263080-3" ORDER="3" TYPE="page"> 
+    <mets:fptr FILEID="file-full-image_1-1263080-3"/> 
+   </mets:div> 
+  </mets:div> 
+ </mets:structMap> 
+ <mets:structMap TYPE="LOGICAL"> 
+  <mets:div ID="log1" TYPE="act" DMDID="DMDLOG_1" ADMID="amd1" 
+   LABEL="Kaiser Karl publiziert die dreiundzwanzig ersten Kapitel der Goldenen Bulle" ORDER="1"> 
+   <mets:div ID="Bild1" TYPE="section" LABEL="Schmuckkassette" ORDER="2"/> 
+   <mets:div ID="Bild2" TYPE="section" LABEL="Einband Vorderseite" ORDER="3"/> 
+   <mets:div ID="Bild3" TYPE="section" LABEL="fol 01r" ORDER="4"/> 
+  </mets:div> 
+ </mets:structMap> 
+ <mets:structLink> 
+  <mets:smLink xlink:from="Bild1" xlink:to="image_1-1263080-1"/> 
+  <mets:smLink xlink:from="Bild2" xlink:to="image_1-1263080-2"/> 
+  <mets:smLink xlink:from="Bild3" xlink:to="image_1-1263080-3"/> 
+ </mets:structLink> 
+</mets:mets>  
+
+ 
+5. Hinzurechnen einer Fußzeile 
+Die Fußzeile sollte bei den an die Nutzer ausgelieferten bzw. im Internet angebotenen Formaten 
+am unteren Rand des Images hinzurechnet werden. Links sollte sich das Institutionslogo, bei 
+Förderung durch die DFG nach Möglichkeit rechts zusätzlich das Logo der DFG befinden. Die 
+Angabe einer zitierfähigen URL im Mittelbereich (ergänzend zur Übergabe in der Viewer-XML-Datei) wird empfohlen. Schrift und Logos müssen der Auflösung entsprechend skaliert werden. 
+In PDF-Dateien zum Download können – zusätzlich zu einem Vorblatt – ebenfalls Fußzeilen an 
+jedes Bild angefügt werden. Vergleiche die untenstehenden Beispiele: 
+ 
+ 
+ 
  
  
  
 
-
-
-4. Hinzurechnen einer Fußzeile 
-Die Fußzeile sollte bei den an die Nutzer ausgelieferten bzw. im Internet angebotenen Formaten am unteren Rand des Images hinzurechnet werden. Links sollte sich das 
-Bibliothekslogo, bei Förderung durch die DFG nach Möglichkeit rechts zusätzlich das Logo der DFG befinden. Die Angabe einer zitierfähigen URL im Mittelbereich (ergänzend zur Übergabe 
-in der Viewer-XML-Datei) wird empfohlen. Schrift und Logos müssen der Auflösung 
-entsprechend skaliert werden. In PDF-Dateien zum Download können – zusätzlich zu einem Vorblatt – ebenfalls Fußzeilen an jedes Bild angefügt werden. Vergleiche die untenstehenden Beispiele: 
- 
- 
- 
-
- 
- 
- 
- 
- 
 
  
 Anhang B: 
@@ -477,20 +760,21 @@ METS/TEI-Spezifikation für die Darstellung von digitalisierten Handschriften
 # DFG-Viewer 
 
 Ziel der vorliegenden METS/TEI-Spezifikation für digitalisierte mittelalterliche und frühneuzeitliche 
-Handschriften ist die Darstellung der Digitalisate unter der vereinheitlichten Oberfläche des DFG-Viewers. Der ursprünglich für die Präsentation von digitalisierten Druckwerken geschaffene DFG-Viewer wird somit medientypologisch erweitert, ohne dabei die gewohnte Bedienoberfläche 
-aufzugeben. Diese wird lediglich um wenige Funktionen ergänzt, um den spezifischen Anforderungen des neuen Medientyps gerecht zu werden. 
+Handschriften ist die Darstellung der Digitalisate unter der vereinheitlichten Oberfläche des DFG-Viewers. Der ursprünglich für die Präsentation von digitalisierten Druckwerken geschaffene DFG-Viewer wird somit medientypologisch erweitert, ohne dabei die gewohnte Bedienoberfläche aufzugeben.
+Diese wird lediglich um wenige Funktionen ergänzt, um den spezifischen Anforderungen des neuen Medientyps gerecht zu werden. 
 Da es sich nicht um eine grundsätzlich neue Implementierung des DFG-Viewers handelt, sondern 
 lediglich um die Unterstützung eines zusätzlichen Anwendungsprofils für METS/TEI, gelten die in 
-Anhang A gemachten Angaben zu Druckwerken analog auch für digitalisierte Handschriften – insbesondere die allgemeinen Informationen zum DFG-Viewer in Abschnitt 1 sowie die Hinweise zum Hinzurechnen einer Fußzeile in Abschnitt 4. 
+Anhang A gemachten Angaben zu Druckwerken analog auch für digitalisierte Handschriften – insbesondere die allgemeinen Informationen zum DFG-Viewer in Abschnitt 1 sowie die Hinweise zum Hinzurechnen einer Fußzeile in Abschnitt 5. 
 Weitere Informationen zu den vom DFG-Viewer unterstützten Datenformaten und Funktionen sowie 
-zur Einbindung des Webdienstes in das eigene Angebot finden Sie auf der Webseite des DFG-Viewers 1 . 
+zur Einbindung des Webdienstes in das eigene Angebot finden Sie auf der Webseite des DFG-Viewers [1]. 
 
 
 # TEI-DFG-Standard-Set (Handschriftenbestände) 
+
 Die folgenden Angaben zur Kodierung einer digitalisierten Handschrift in TEI beschränken sich auf die 
 nötigen Pflichtfelder und stellen nicht das vollständige Spektrum aller Möglichkeiten dar. 
 Eine ausführliche Dokumentation aller Optionen findet sich auf der Webseite des DFG-Viewers. 
-Grundlagen des Anwendungsprofils sind die TEI-Spezifikation der Text Encoding Initiative 2 sowie die Vorarbeiten des Europeana Regia-Projekts 3 zu denen das DFG-Standard-Set kompatibel ist. 
+Grundlagen des Anwendungsprofils sind die TEI-Spezifikation der Text Encoding Initiative [2] sowie die Vorarbeiten des Europeana Regia-Projekts [3] zu denen das DFG-Standard-Set kompatibel ist. 
 Element / Unterelement wiederholbar 
 Bemerkungen / Erläuterungen Status 
 1 Angaben zur Identifikation 
@@ -508,11 +792,10 @@ Pflicht
 2 http://www.tei-c.org/ 
 3 http://www.europeanaregia.eu/ 
 
- 
 <msIdentifier> / 
 <repository> 
 nein Enthält den Namen der die Handschrift 
-aufbewahrenden Einrichtung. 
+aufbewahrenden Einrichtung.
 Pflicht 
 <msIdentifier> / <idno> nein Enthält einen innerhalb der aufbewahrenden 
 Einrichtung eindeutigen Identifikator, in der 
@@ -547,27 +830,24 @@ paper
 , 
 parchment
 , 
+
 papyrus
-, 
-sowie 
+, sowie 
 mixed
  wird empfohlen. 
 Pflicht, 
 wenn vh. 
-<supportDesc> / 
-<support> 
+<supportDesc> / <support> 
 nein Enthält Angaben zum Beschreibstoff wie sie 
 im DFG-Viewer angezeigt werden sollen. 
 Pflicht, 
 wenn vh. 
-<supportDesc> / 
-<extent> / <measure> 
+<supportDesc> / <extent> / <measure> 
 nein Enthält Mengenangaben zum Umfang wie z.B. 
 die Blattzahl, die auch im DFG-Viewer angezeigt wird. 
 Pflicht, 
 wenn vh. 
-<supportDesc> / 
-<extent> /<dimensions> 
+<supportDesc> / <extent> /<dimensions> 
 nein Enthält Angaben zur physischen Abmessung 
 wie etwa das Blattformat, das auch im DFG-Viewer angezeigt wird. 
 Die konkreten Größenangaben erfolgen in den 
@@ -578,7 +858,7 @@ wenn vh.
  
 4 Angaben zum Inhalt 
 Alle in diesem Abschnitt beschriebenen Elemente sind Unterelemente von 
-teiHeader/fileDesc/sourceDesc/msDesc/msContents . 
+teiHeader/fileDesc/sourceDesc/msDesc/msContents. 
 <summary> nein Enthält eine summarische 
 Inhaltsbeschreibung. 
 Empfohlen 
@@ -595,7 +875,7 @@ müssen Sprachcodes nach den Standards ISO
 639-2 oder ISO 639-3 sein. 
 Empfohlen 
 5 Administrative Angaben zum Digitalisat 
-Alle in diesem Abschnitt beschriebenen Elemente sind Unterelemente von teiHeader/fileDesc . 
+Alle in diesem Abschnitt beschriebenen Elemente sind Unterelemente von teiHeader/fileDes . 
 <titleStmt> / <title> nein Enthält einen Titel für das Digitalisat. In der 
 Regel ist dies die Schlagzeile nach DFG-Richtlinien bestehend aus Signatur der digitalisierten Handschrift und deren Titel. 
 Dieses Feld ist nicht mit dem Titel zu verwechseln und kommt im DFG-Viewer nicht zur Anzeige! 
@@ -622,7 +902,7 @@ urn
  oder 
 purl
  
-Pflicht, 
+ Pflicht, 
 wenn vh. 
 
  
@@ -773,7 +1053,7 @@ siehe http://www.museen-in-deutschland.de/)
  
  
 Pflicht 
-
+                        
 [1] Dies können sowohl publizierte, zentral gepflegte als auch unpublizierte, lokal gepflegte Vokabulare sein. Im Sinne der Vernetzung ist ersteren i.d.R. der Vorzug zu geben. 
 
  
@@ -913,7 +1193,7 @@ Je nach Objektart sind typische
 Ereignisse: Herstellung, Fund, 
 Nutzung. Für empfohlene 
 Ereignistypen 
-sieht http://terminology.lido-schema.org/eventType 
+sieht http://terminology.lido-schema.org/eventType
 Konzept 
  
   
@@ -1469,7 +1749,7 @@ Sammlungs- und Bestandsbeschreibung
 
 1. Kernelemente für die Sammlungs- und Bestandsbeschreibung 
 
-Sammlungs- und Bestandsbeschreibungen können gemäß Dublin Core Collections Application Profile [1] oder in demselben Metadatenstandard erfolgen, in dem auch die Objektbeschreibungen verfügbar gemacht werden: METS, MODS oder TEI-Header, EAD/SAFT sowie LIDO bieten entsprechende Möglichkeiten. 
+Sammlungs- und Bestandsbeschreibungen können gemäß Dublin Core Collections Application Profile [1] oder in demselben Metadatenstandard erfolgen, in dem auch die Objektbeschreibungen verfügbar gemacht werden: METS, MODS oder TEI-Header, EAD/DDB sowie LIDO bieten entsprechende Möglichkeiten. 
 In Anlehnung an die im ISO-Standard ISO 27730, Information and Documentation – 
 International Standard Collection Identifier (ISCI) vorgeschriebenen Beschreibungsfelder für 
 eine Sammlung, welche im Dublin Core Collections Application Profile definiert sind, werden 
@@ -1506,8 +1786,8 @@ wenn vh.
 ja Andere Sammlung mit Bezug zur 
 beschriebenen Sammlung 
 Empfohlen 
-  
-                         [1] http://dublincore.org/groups/collections/collection-application-profile/ 
+                        
+[1] http://dublincore.org/groups/collections/collection-application-profile/ 
 
  
 ## Erstes Beispiel einer Sammlungsbeschreibung im Dublin Core 
