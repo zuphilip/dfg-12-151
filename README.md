@@ -1,5 +1,3 @@
-( 🚧 Work in Progress 🚧 )
-
 Das Repositorium beinhaltet die Texte der DFG-Richtlinien "Digitalisierung" (DFG 12.151)
 als Markdown-Dateien. Aktuell sind die Version von 2016 und 2013 in den entsprechenden
 Forks/Branches gespeichert:
@@ -44,8 +42,11 @@ enthält.
 | [6 Bereitstellen](https://github.com/zuphilip/dfg-12-151/blob/2016-12/6-Bereitstellen.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/fec836359732ccddf7ec0e835ad3e74ff12f41fb?short_path=c681402#diff-c6814028e0725434de6bba7ee37bc405) :arrow_forward: | [Kapitel 5](https://github.com/zuphilip/dfg-12-151/blob/2013-02/5-Bereitstellen.md) |
 | [7 Präsentationsstandards](https://github.com/zuphilip/dfg-12-151/blob/2016-12/7-Praesentationsstandards.md) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/c6a2ebfbf02e6f0ed0fadd36366c5ea34fe24378?short_path=8bf2548#diff-8bf25481f0789a32f91122629f95b088) :arrow_forward: | [Kapitel 6](https://github.com/zuphilip/dfg-12-151/blob/2013-02/6-Praesentationsstandards.md) |
 | - |  | [Kapitel 8: Durchführung](https://github.com/zuphilip/dfg-12-151/blob/2013-02/8-Durchfuehrung.md) |
+| [Anhang](https://github.com/zuphilip/dfg-12-151/blob/2016-12/Anhang.txt) | :arrow_backward: [DIFF](https://github.com/zuphilip/dfg-12-151/commit/29e87277065da3c57d1dbc59bc43771c1a9195a5?diff=split) :arrow_forward: | [Anhang](https://github.com/zuphilip/dfg-12-151/blob/2013-02/Anhang.txt) |
 
-(weitere Kapitel folgen noch)
+(Der Anhang wurde nur rudimentär bearbeitet und als normale Textdatei behandelt ohne
+die ganzen Auszeichnungen in Markdown. Für einen ersten Vergleich der Version sollte dies
+aber bereits genügen.)
 
 ## Fehler, Korrekturvorschläge
 
